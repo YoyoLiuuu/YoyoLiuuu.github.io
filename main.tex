@@ -1,0 +1,359 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+% Edited by: Yoyo Liu
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+% \addtolength{\oddsidemargin}{-0.6in}
+% \addtolength{\evensidemargin}{-0.6in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{0.9in}
+\addtolength{\textheight}{1.4in}
+\usepackage[top=0.6in, bottom=0.5in, left=0.7in, right=0.7in]{geometry}
+
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{6pt}\item   
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-3pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeawardlist}[2]{
+  \item \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+    \textbf{#1} & \textbf{\small #2} \\
+  \end{tabular*}\vspace{-4pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{0pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    {\Huge \scshape Yimeng (Yoyo) Liu} \\ 
+% \href{https://drive.google.com/drive/folders/1oGPs56IEIpGM-qOOXq6WRZzlqVs2sCVr?usp=sharing}{\raisebox{-0.2\height}\ \underline{Wisedocs Supplement}}
+\raisebox{-0.1\height}\faPhone\ 587-372-1266 ~ \href{mailto:yoyoyimeng.liu@mail.utoronto.ca}{\raisebox{-0.2\height}\faEnvelope\  \underline{yoyo@cs.toronto.edu}} ~ 
+    \href{https://www.linkedin.com/in/yoyo-liu-023332219/}{\raisebox{-0.2\height}\faLinkedin\ \underline{LinkedIn: yoyo-liu-023332219}}  ~
+    \href{https://github.com/YoyoLiuuu}{\raisebox{-0.2\height}\ \underline{Github:YoyoLiuuu}}  ~
+\end{center}
+%-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Toronto, St. George Campus}{Toronto, ON, Canada}
+      {Bachelor of Science in Computer Science, Minor in Biological Chemistry \quad GPA: 3.92}{Sept. 2023 -- June 2027}
+      \resumeItemListStart
+        \resumeItem{Specialist in Artificial Intelligence, Technology Leadership Initiative}
+        \resumeItem{Arts and Science Internship Program (Co-op)}
+        \resumeItem{Relevant Coursework: Deep Learning, Machine Learning, Numerical Algorithms, Operating Systems, Algorithm Design and Complexity, Biological/Organic/Physical Chemistry}
+      \resumeItemListEnd
+    \resumeSubheading
+      {Old Scona Academic High School}{Edmonton, AB, Canada} 
+      {Outstanding Citizenship Award (Top award for \textbf{one} graduating student each year)}{September 2020 to June 2023}
+  \resumeSubHeadingListEnd
+        
+%-----------EXPERIENCE-----------------
+\section{Research Experiences}
+
+  \resumeSubHeadingListStart
+      
+\resumeSubheading
+      {Yale University - Gerstein Lab}{Remote}
+      {Research Assistant - Protein Design}{August - September 2025}
+      \resumeItemListStart
+          \resumeItem{Contributed to an \textbf{inverse-folding based protein design paper} (under review at Nature Computational Science), including designing evaluation experiments and writing sections of the manuscript and the point-to-point rebuttal letter.}
+        \resumeItem{Researched and implemented experiments to test the model performance against protein design benchmarks (\textbf{PepMerge for peptide design, SAbDab for antibody design}) to cover concerns of the reviewers.}
+        \resumeItem{Analyzed sources of poor model performance on specific proteins in the CATH 4.2 test set, providing explanations to guide further refinement.} 
+        \resumeItem{Improved model performance by addressing benchmark limitations, including \textbf{implementing new evaluation metrics informed by chemistry and biology background}.}
+
+      \resumeItemListEnd
+
+\resumeSubheading
+  {National University of Singapore - SERIUS Engineering Internship}{Singapore, Singapore}
+  {Research Internship - Large Language Models (LLMs)}{May 2025 — Aug 2025}
+\resumeItemListStart
+    \resumeItem{One of thirty students from North America selected to participate in the 2025 SERIUS internship program at NUS.}
+    \resumeItem{Defined the project scope and \textbf{led end-to-end research} on evaluating and fine-tuning LLMs for metabolite pathway engineering.}
+    \resumeItem{Engineered a complete dataset pipeline by converting a newly published metabolite database into graph representations and generating chain-of-thought prompts to improve reasoning over bioengineering data.}
+    \resumeItem{Designed and conducted experiments evaluating table-, graph-, and text-based fine-tuning using models such as Google Gemma and DeepSeek, benchmarking with BLEU, ROUGE, and custom biological reasoning metrics.}
+    \resumeItem{Secured \$8,000 CAD in research funding from the University of Toronto to support project execution.}
+\resumeItemListEnd
+      
+    \resumeSubheading
+      {University of Toronto - Chemspace Lab}{Toronto, ON}
+      {Part-time Research Assistant - Algorithm and Machine Learning}{May 2024 - August 2024}
+      \resumeItemListStart
+        \resumeItem{Investigated methods for \textbf{designing chemical features} for molecular energy curves by comparing interpolation-based 3D sorting with ML-based approaches, analyzing how ordering or representation of atoms affects downstream model interpretability and usability.}
+        \resumeItem{Implemented algorithms such as A*, locality-sensitive hashing, and genetic algorithms on a molecular energy curve sorting. Developed a KNN classifier to group molecules for generating smooth 3D molecular energy curves.}
+        \resumeItem{Explored how a \textbf{generative Gaussian mixture model} with cross-validation using PyTorch could be used to predict low-energy conformers of 4-atom molecules.}
+      \resumeItemListEnd
+    \newpage
+    \resumeSubheading
+    {Pioneer Academics}{Remote}
+    {Researcher - Computational Chemistry}{May 2022 - September 2022}
+    \resumeItemListStart
+    \resumeItem{\textbf{Modeled the secondary and tertiary structures of the HIV-1 RNA terminal loop hairpin}, integrating computational chemistry and molecular structural analysis under the mentorship of Professor Leckta (Johns Hopkins University). Achieved a grade of A.}
+    \resumeItem{Utilized Gaussian, GAMESS, and Spartan to optimize 3D RNA conformations and studied how \textbf{hairpin folding} influences key \textbf{molecular properties}, including polarity, energy, intramolecular forces, and interactions with other molecules.}
+    \resumeItemListEnd
+
+    \resumeSubheading
+      {University of Alberta - Brown Lab}{Edmonton, AB}
+      {Research Assistant - Computational Chemistry}{October 2021 - July 2023}
+      \resumeItemListStart
+        \resumeItem{Assisted in the research of the \textbf{effects of distance and location of a charge on a HBDI chromophore molecule's excitation energy} in different solvent environments.}
+        \resumeItem{Wrote scripts to \textbf{automate DFT/Hartree-Fock calculations of molecules} in Compute Canada with Bash.}
+      \resumeItemListEnd
+
+\section{Work Experiences}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Shopify}{Toronto, ON}
+      {Applied Machine Learning Engineer Intern}{January - April 2026}
+        \resumeItemListStart
+        \resumeItem{Part of the Core\textemdash Search Relevance (Metric) Team. Integrating LLM in search relevance judgment; building world-best product search engine with machine learning.}
+
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {University of Toronto - Department of Computer Science (DCS)}{Toronto, ON}
+      {DCS Ambassador}{September 2025 - Present}
+        \resumeItemListStart
+        \resumeItem{\textbf{Represent the department at DCS events}, including university fairs, open house, company visits, networking panels, and information sessions.}        
+        \resumeItem{Host weekly \textbf{resume review sessions} for CS students, providing personalized feedback and career guidance.}
+        \resumeItem{Develop and create blogs, guides, media content, and resources for the CS community.}
+        \resumeItem{Compile and share student tips and job postings via the weekly DCS newsletter.}
+        \resumeItem{Collaborate on departmental projects, including website overhaul/rebrand, media documentation, and alumni mentorship initiatives.}
+        \resumeItemListEnd
+
+    \resumeSubheading
+      {Simon Fraser University - Invent the Future AI4ALL Summer Program}{Remote}
+      {Teaching Assistant - AI Summer Program}{May 2023 - July 2023}
+      \resumeItemListStart
+        \resumeItem{Mentored high school students in learning scikit-learn, pandas, PyTorch, TensorFlow, and MONAI Medical Imaging library to apply \textbf{computer vision and natural language processing techniques to computational biology.}}
+        \resumeItem{Worked in a team of 5 to \textbf{organise technical workshops}, create resources, plan networking events and host an \textbf{online hackathon} to encourage gender minorities to enter the field of technology.}
+        \resumeItemListEnd
+        
+    \resumeSubheading
+      {University of Alberta - The Intelligent Robot Learning Lab}{Edmonton, AB}
+      {Intern - Web Development}{June 2022 - August 2022}
+      \resumeItemListStart
+        \resumeItem{Led a team of 4 interns to develop a \textbf{Django web app} that reminds people to drink water.} 
+        \resumeItem{Connected the web app with \textbf{Firebase database} to collect users' daily water intake. Data collected were used to train a \textbf{reinforcement learning model} that can recognise water consumption patterns. }
+      \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Leadership and Outreach}
+    \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Toronto Women in Computer Science Club (UofT WiCS)}{Toronto, ON}
+      {Co-president}{October 2023 - Present}
+      \resumeItemListStart
+        \resumeItem{Organize and promote events to encourage women in CS, including an AI Ethics Hackathon, mentorship sessions for high school and first-year students, and community-building initiatives.}
+        \resumeItem{Secured over \$5,000 in sponsorships and partnered with UofT DCS, Block, SAP, Okta, Hubspot, and other organizations to host office visits, career panels, interview prep sessions, and industry/academic networking events.}
+        \resumeItem{Oversee strategic outreach and engagement initiatives to foster mentorship, professional development, and representation of women in computing.}
+    \resumeItemListEnd
+
+    \resumeSubheading
+    {Toronto Ethics in AI Symposium (TEAS)}{Toronto, ON}
+    {Founder, Organizer}{November 2023 - June 2024}
+    \resumeItemListStart
+        \resumeItem{Founded Toronto’s \textbf{first undergraduate ethics in AI conference}, hosting 120+ participants from Toronto and beyond.}
+        \resumeItem{Organized a full-day, free-to-attend event featuring researchers, industry professionals, United Nations representatives, policymakers, and philosophers.}
+        \resumeItem{Secured \$2,000 in funding from the Vector Institute to support the event.}
+    \resumeItemListEnd
+
+    \resumeSubheading
+    {National Center for Women \& Information Technology (NCWIT)}{Toronto, ON}
+    {Campus Representative}{September 2024 - May 2025}
+    \resumeItemListStart
+        \resumeItem{Promoted NCWIT initiatives at UofT and organized events supporting women in CS, leveraging resources and programs across North America.}
+        \resumeItem{Helped run the 2024 CAN-CWiC (Canadian Celebration of Women in Computing) and presented awards to NCWIT Aspirations in Computing National winners.}
+        \resumeItem{Identified, funded, and supported local women in CS events in Toronto.}
+        \resumeItem{Coordinated the Ontario high school award ceremony, including event organization, promotion of campus representative work, and serving as a panelist to engage high school students.}
+    \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+\section{Projects}
+  \resumeSubHeadingListStart
+  
+    \resumeSubheading
+      {RiboFold - Ribozyme RNA 3D Folding Prediction}{October 2024 - March 2025}
+      {University of Toronto Machine Intelligence Student Team}{Team Lead}
+      \resumeItemListStart
+        \resumeItem{Led a team of 6 developers to research and develop a model that \textbf{predicts 3D RNA folding} of ribozymes.}
+        \resumeItem{ Won the \textbf{Cross-Disciplinary Impact Award} at the Canadian Undergraduate Conference on AI 2025 amongst 70+ projects.}
+    \resumeItemListEnd
+
+\resumeSubheading
+  {Eco-Score Calculator (Partnership with Cash App)}{September 2025 – January 2025}
+  {University of Toronto, Focus in Technology Leadership Program}{Developer}
+\resumeItemListStart
+    \resumeItem{Developed an open-source web platform that calculates \textbf{environmental impact scores} for Cash App credit card transactions based on merchant ESG ratings and purchase amounts.}
+    \resumeItem{Collaborating with Cash App engineers to integrate sustainability metrics into personalized financial insights.}
+\resumeItemListEnd
+
+    
+    \resumeSubheading
+      {Aercoustics - Construction Audio Classification}{February 2024 - August 2024}
+      {University of Toronto Machine Intelligence Student Team}{Researcher}
+      \resumeItemListStart
+        \resumeItem{Fintuned pre-trained audio transformers} with audio data from Aercoustics Engineering Ltd and improved \textbf{multi-label} audio classification from 62\% to 85\%, \textbf{surpassing models by external companies}.
+        \resumeItem{Performed physics-informed audio data augmentation and worked with clients directly to tailor pipeline towards client needs.}
+          \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+
+\section{Technical Skills}
+
+\textbf{AI/Machine Learning:} PyTorch, scikit-learn, NumPy, OpenCV, LLM fine-tuning, Data Augmentation, Computer Vision, Scientific ML \\[0.5em]
+
+\textbf{Languages:} Python, Java, C/C++, MIPS Assembly, JavaScript/HTML/CSS, Bash/Shell Scripting\\[0.5em]
+
+\textbf{Scientific Computing \& Biological Chemistry:} Quantum Chemistry (Gaussian, GAMESS, MatMolPlot), Molecular Modelling/Docking (AutoDock, PyMOL), Wet Lab Techniques \\[0.5em]
+\textbf{Other:} Software Engineering, Web Development, DevOps, Wireframing, Data Visualization
+
+\section{Publications and Conferences}
+
+\textbf{AAAI 2026 Undergraduate Consortium}.  
+\textit{Towards Data-Efficient Deep Learning for RNA 3D Structure Prediction and Design. } \\
+Author: \textbf{Yimeng Liu}.
+
+\textbf{Nature Computational Sciences} (in review).  
+\textit{BC-Design: A Biochemistry-Aware Framework for Inverse Protein Design.  \\
+}Authors: Xiangru Tang*, Xinwu Ye*, Fang Wu*, \textbf{Yimeng Liu}, Anna Su, Antonia Panescu, Guanlue Li, Daniel Shao, Dong Xu, Mark Gerstein.  
+
+\textbf{Canadian Undergraduate Conference on AI (CUCAI) 2025}. 
+\textit{RiboFold\textemdash Ribozyme RNA 3D Folding Prediction. } \\
+Authors: \textbf{Yimeng Liu}*, Purav Gupta*, Nicholas Carbones, Xin Lei Lin, Flora Liu, Ahmad Khan, Rahul Selvakumar.  
+
+*: Equal contribution.
+
+
+\section{Academic/Research Awards}
+  \resumeSubHeadingListStart
+  \resumeawardlist
+      {AAAI 2026 Undergraduate Consortium Scholarship Recipient}{AAAI 2026} \\[0.5em]
+
+\resumeawardlist
+      {Dean's List 2024, 2025}{University of Toronto} \\[0.5em]
+\resumeawardlist {The Dr Lorus J. Milne and Dr Margery J. Milne Research Award (\$3,000)}{}\\[0.5em]
+\resumeawardlist {Centre of International Experience Summer Research Exchange Award (\$5,000)} {}\\[0.5em]
+\resumeawardlist {The John Grant Leadership Award (\$1,500)}{}\\[0.5em]
+\resumeawardlist
+  {The Katherine St. John Scholarship (\$1,000)}{}\\[0.5em]
+\resumeawardlist
+    {Department of Computer Science Engagement Award (\$500)}{}\\[0.5em]
+\resumeSubHeadingListEnd
+
+\end{document}
