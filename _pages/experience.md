@@ -13,7 +13,7 @@ author_profile: true
   width: 100%;
   height: 520px;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
   margin-bottom: 1.5em;
   z-index: 1;
 }
@@ -22,7 +22,7 @@ author_profile: true
   display: flex;
   gap: 1.5em;
   margin-bottom: 1.5em;
-  font-size: 0.9em;
+  font-size: 0.85em;
   color: #636e72;
   flex-wrap: wrap;
 }
@@ -38,11 +38,14 @@ author_profile: true
   height: 12px;
   border-radius: 50%;
   display: inline-block;
+  flex-shrink: 0;
 }
 
 .legend-dot.physical { background: #6c5ce7; }
-.legend-dot.remote { background: #00b894; border: 2px dashed #00b894; background: rgba(0,184,148,0.3); }
-.legend-dot.path { background: none; border-top: 2px solid rgba(108,92,231,0.4); width: 20px; height: 0; border-radius: 0; }
+.legend-dot.remote { background: #b8b5e7; }
+.legend-dot.current { background: #00b894; }
+.legend-dot.birth { background: #fd79a8; }
+.legend-line { width: 20px; height: 0; border-top: 2px solid #6c5ce7; border-radius: 0; }
 
 .leaflet-popup-content-wrapper {
   border-radius: 10px !important;
@@ -75,234 +78,246 @@ author_profile: true
   font-size: 13px;
 }
 
-/* Custom marker styles */
+.popup-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-bottom: 6px;
+}
+
+.popup-tag.physical { background: rgba(108,92,231,0.1); color: #6c5ce7; }
+.popup-tag.remote { background: rgba(184,181,231,0.2); color: #7c78c9; }
+.popup-tag.current { background: rgba(0,184,148,0.1); color: #00b894; }
+
+/* Marker styles */
 .marker-physical {
   background: #6c5ce7;
-  border: 3px solid #fff;
+  border: 2.5px solid #fff;
   border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(108,92,231,0.4);
+  box-shadow: 0 2px 6px rgba(108,92,231,0.35);
 }
 
 .marker-remote {
-  background: rgba(0,184,148,0.3);
-  border: 2px dashed #00b894;
+  background: #b8b5e7;
+  border: 2.5px solid #fff;
   border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(0,184,148,0.3);
+  box-shadow: 0 2px 6px rgba(108,92,231,0.2);
 }
 
 .marker-birth {
   background: #fd79a8;
-  border: 3px solid #fff;
+  border: 2.5px solid #fff;
   border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(253,121,168,0.4);
+  box-shadow: 0 2px 6px rgba(253,121,168,0.35);
 }
 
-/* Arrow markers for the path */
+.marker-current {
+  background: #00b894;
+  border: 2.5px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(0,184,148,0.2), 0 2px 6px rgba(0,184,148,0.35);
+}
+
 .path-arrow {
-  color: rgba(108,92,231,0.5);
+  color: rgba(108,92,231,0.6);
 }
 </style>
 
 My journey so far — hover over the pins to explore.
 
 <div class="map-legend">
+  <span><span class="legend-dot birth"></span> Birthplace</span>
+  <span><span class="legend-dot current"></span> Current</span>
   <span><span class="legend-dot physical"></span> In-person</span>
   <span><span class="legend-dot remote"></span> Remote</span>
-  <span><span class="legend-dot" style="background:#fd79a8;"></span> Birthplace</span>
-  <span><span class="legend-dot path"></span> Life path</span>
+  <span><span class="legend-line"></span> Life path</span>
 </div>
 
 <div id="journey-map"></div>
 
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 (function() {
   var map = L.map('journey-map', {
     scrollWheelZoom: false,
     zoomControl: true
-  }).setView([35, 20], 2);
+  }).setView([35, 10], 2);
 
   L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
     maxZoom: 19
   }).addTo(map);
 
-  // Data: all locations
-  var locations = [
+  // Each pin is one city. Entries array holds all things that happened there.
+  var pins = [
     {
       lat: 43.8, lng: 87.6, type: 'birth',
       city: 'Xinjiang, China',
-      year: '2005',
-      desc: 'Birthplace'
+      entries: [
+        { year: '2005', desc: 'Birthplace' }
+      ]
     },
     {
       lat: 39.9, lng: 116.4, type: 'physical',
       city: 'Beijing, China',
-      year: '2005 – 2014',
-      desc: 'Kindergarten + Elementary School (Grades 1–3)'
+      entries: [
+        { year: '2005 – 2014', desc: 'Kindergarten + Elementary School (Grades 1–3)' },
+        { year: '2017 – 2019', desc: 'Middle School (Grades 7–8)' }
+      ]
     },
     {
       lat: 33.75, lng: -84.39, type: 'physical',
       city: 'Atlanta, Georgia, USA',
-      year: '2014 – 2017',
-      desc: 'Elementary School (Grades 4–5) + Middle School (Grade 6)'
-    },
-    {
-      lat: 40.1, lng: 116.6, type: 'physical',
-      city: 'Beijing, China',
-      year: '2017 – 2019',
-      desc: 'Middle School (Grades 7–8)',
-      offset: true
+      entries: [
+        { year: '2014 – 2017', desc: 'Elementary School (Grades 4–5) + Middle School (Grade 6)' }
+      ]
     },
     {
       lat: 53.54, lng: -113.49, type: 'physical',
       city: 'Edmonton, Alberta, Canada',
-      year: '2019 – 2023',
-      desc: 'Junior High (Grade 9) + High School (Grades 10–12) at Old Scona Academic'
+      entries: [
+        { year: '2019 – 2023', desc: 'Junior High (Grade 9) + High School (Grades 10–12) at Old Scona Academic' },
+        { year: '2021 – 2023', desc: 'Computational Chemistry Research under Prof. Alex Brown, University of Alberta' },
+        { year: 'Summer 2022', desc: 'Web Development & RL Intern under Prof. Matthew E. Taylor, University of Alberta' }
+      ]
     },
     {
-      lat: 53.54, lng: -113.49, type: 'physical',
-      city: 'Edmonton, Alberta, Canada',
-      year: '2021 – 2023',
-      desc: 'Computational Chemistry Research under Prof. Alex Brown, University of Alberta',
-      subpin: 1
+      lat: 50.45, lng: -104.62, type: 'physical',
+      city: 'Regina, Saskatchewan, Canada',
+      entries: [
+        { year: 'Summer 2022', desc: 'FNJA — The National Ambassador Youth Forum (French/English Bilingual)' }
+      ]
     },
     {
-      lat: 53.54, lng: -113.49, type: 'physical',
-      city: 'Edmonton, Alberta, Canada',
-      year: 'Summer 2022',
-      desc: 'Web Development & RL Intern under Prof. Matthew E. Taylor, University of Alberta',
-      subpin: 2
-    },
-    {
-      lat: 43.65, lng: -79.38, type: 'physical',
+      lat: 43.65, lng: -79.38, type: 'current',
       city: 'Toronto, Ontario, Canada',
-      year: '2023 – Present',
-      desc: 'University of Toronto — B.Sc. Computer Science (AI) + Chemistry Minor'
-    },
-    {
-      lat: 43.65, lng: -79.38, type: 'physical',
-      city: 'Toronto, Ontario, Canada',
-      year: 'Jan 2026 – Apr 2026',
-      desc: 'Shopify — Applied ML Engineer Intern, Search Relevance Team',
-      subpin: 1
+      entries: [
+        { year: '2023 – Present', desc: 'University of Toronto — B.Sc. Computer Science (AI) + Chemistry Minor' },
+        { year: 'Jan – Apr 2026', desc: 'Shopify — Applied ML Engineer Intern, Search Relevance Team' }
+      ]
     },
     {
       lat: 1.35, lng: 103.82, type: 'physical',
       city: 'Singapore',
-      year: 'Jan 2025',
-      desc: 'AAAI 2025 — Undergraduate Consortium Presentation'
+      entries: [
+        { year: 'Jan 2025', desc: 'AAAI 2025 — Undergraduate Consortium Presentation' },
+        { year: 'Summer 2025', desc: 'NUS SERIUS Research Internship — LLM fine-tuning for metabolite pathway engineering' }
+      ]
     },
     {
-      lat: 1.35, lng: 103.82, type: 'physical',
-      city: 'Singapore',
-      year: 'Summer 2025',
-      desc: 'NUS SERIUS Research Internship — LLM fine-tuning for metabolite pathway engineering',
-      subpin: 1
+      lat: 40.71, lng: -74.01, type: 'physical',
+      city: 'New York City, USA',
+      entries: [
+        { year: 'Nov 2025', desc: 'CSAW CTF Competition' }
+      ]
     },
     {
       lat: 49.25, lng: -122.95, type: 'remote',
-      city: 'Burnaby, BC (Remote)',
-      year: 'Summer 2023',
-      desc: 'SFU Invent the Future AI4ALL — Teaching Assistant'
+      city: 'Burnaby, BC',
+      entries: [
+        { year: 'Summer 2023', desc: 'SFU Invent the Future AI4ALL — Teaching Assistant' }
+      ]
     },
     {
       lat: 41.31, lng: -72.92, type: 'remote',
-      city: 'Yale University (Remote)',
-      year: 'Fall 2025',
-      desc: 'Gerstein Lab — Protein inverse folding research, Nature Comp. Sci. paper'
+      city: 'Yale University',
+      entries: [
+        { year: 'Fall 2025', desc: 'Gerstein Lab — Protein inverse folding research, Nature Comp. Sci. paper' }
+      ]
+    },
+    {
+      lat: 45.42, lng: -75.69, type: 'remote',
+      city: 'Ottawa, Ontario, Canada',
+      entries: [
+        { year: '2020, 2021, 2022', desc: 'CyberTitan National Cyber Defense Competition' }
+      ]
     }
   ];
 
-  // Physical path (main life moves, chronological)
-  var physicalPath = [
+  // Life path
+  var lifePath = [
     [43.8, 87.6],     // Xinjiang
     [39.9, 116.4],    // Beijing
     [33.75, -84.39],  // Atlanta
-    [40.1, 116.6],    // Beijing (return)
+    [39.9, 116.4],    // Beijing (return)
     [53.54, -113.49], // Edmonton
+    [50.45, -104.62], // Regina
+    [53.54, -113.49], // Edmonton (return)
     [43.65, -79.38],  // Toronto
     [1.35, 103.82],   // Singapore (AAAI)
-    [43.65, -79.38],  // Toronto (return)
+    [43.65, -79.38],  // Toronto
     [1.35, 103.82],   // Singapore (NUS)
-    [43.65, -79.38]   // Toronto (return)
+    [43.65, -79.38],  // Toronto
+    [40.71, -74.01],  // NYC
+    [43.65, -79.38]   // Toronto
   ];
 
-  // Draw path with animated dashes
-  L.polyline(physicalPath, {
+  L.polyline(lifePath, {
     color: '#6c5ce7',
     weight: 2,
-    opacity: 0.35,
-    dashArray: '8, 8',
+    opacity: 0.45,
     smoothFactor: 1
   }).addTo(map);
 
-  // Add arrow decorators along the path using simple mid-point markers
+  // Arrows at midpoints of long segments
   function addArrow(from, to) {
     var midLat = (from[0] + to[0]) / 2;
     var midLng = (from[1] + to[1]) / 2;
     var angle = Math.atan2(to[1] - from[1], to[0] - from[0]) * (180 / Math.PI);
-
     var arrowIcon = L.divIcon({
       className: 'path-arrow',
-      html: '<div style="transform: rotate(' + (-angle + 90) + 'deg); color: rgba(108,92,231,0.5); font-size: 14px; line-height: 1;">&#9660;</div>',
-      iconSize: [14, 14],
-      iconAnchor: [7, 7]
+      html: '<div style="transform:rotate(' + (-angle + 90) + 'deg);font-size:12px;line-height:1;">&#9660;</div>',
+      iconSize: [12, 12],
+      iconAnchor: [6, 6]
     });
-
     L.marker([midLat, midLng], { icon: arrowIcon, interactive: false }).addTo(map);
   }
 
-  for (var i = 0; i < physicalPath.length - 1; i++) {
-    addArrow(physicalPath[i], physicalPath[i + 1]);
+  for (var i = 0; i < lifePath.length - 1; i++) {
+    var from = lifePath[i], to = lifePath[i + 1];
+    var dist = Math.abs(from[0] - to[0]) + Math.abs(from[1] - to[1]);
+    if (dist > 2) addArrow(from, to);
   }
 
-  // Dashed lines from remote locations to Toronto (base)
-  var remoteLines = [
-    { from: [49.25, -122.95], to: [43.65, -79.38] },  // Burnaby -> Toronto
-    { from: [41.31, -72.92], to: [43.65, -79.38] }     // Yale -> Toronto
-  ];
-
-  remoteLines.forEach(function(line) {
-    L.polyline([line.from, line.to], {
-      color: '#00b894',
-      weight: 1.5,
-      opacity: 0.3,
-      dashArray: '4, 8'
-    }).addTo(map);
-  });
-
-  // Create markers
-  function makeIcon(type, subpin) {
-    var size = type === 'birth' ? 16 : 14;
-    var cls = 'marker-' + type;
-    var offset = subpin ? (subpin * 6) : 0;
-
+  // One marker per city, combined popup
+  function makeIcon(type) {
+    var size = type === 'current' ? 16 : (type === 'birth' ? 15 : 13);
     return L.divIcon({
-      className: cls,
+      className: 'marker-' + type,
       iconSize: [size, size],
-      iconAnchor: [size/2 + offset, size/2 - offset]
+      iconAnchor: [size / 2, size / 2]
     });
   }
 
-  locations.forEach(function(loc) {
-    var popupContent =
-      '<div class="popup-city">' + loc.city + '</div>' +
-      '<div class="popup-year">' + loc.year + '</div>' +
-      '<div class="popup-desc">' + loc.desc + '</div>';
+  pins.forEach(function(pin) {
+    var tagLabel = pin.type === 'current' ? 'current home' : (pin.type === 'remote' ? 'remote' : (pin.type === 'birth' ? 'birthplace' : ''));
 
-    var marker = L.marker([loc.lat, loc.lng], {
-      icon: makeIcon(loc.type, loc.subpin || 0)
+    var html = '<div class="popup-city">' + pin.city + '</div>';
+    if (tagLabel) html += '<span class="popup-tag ' + pin.type + '">' + tagLabel + '</span>';
+
+    pin.entries.forEach(function(entry, i) {
+      if (i > 0) html += '<div style="border-top:1px solid #eee; margin:8px 0;"></div>';
+      html += '<div class="popup-year">' + entry.year + '</div>';
+      html += '<div class="popup-desc">' + entry.desc + '</div>';
+    });
+
+    var marker = L.marker([pin.lat, pin.lng], {
+      icon: makeIcon(pin.type)
     }).addTo(map);
 
-    marker.bindPopup(popupContent, {
+    marker.bindPopup(html, {
       closeButton: false,
       offset: [0, -4],
-      minWidth: 180,
-      maxWidth: 260
+      minWidth: 200,
+      maxWidth: 300
     });
 
-    marker.on('mouseover', function(e) { this.openPopup(); });
-    marker.on('mouseout', function(e) { this.closePopup(); });
+    marker.on('mouseover', function() { this.openPopup(); });
+    marker.on('mouseout', function() { this.closePopup(); });
   });
 })();
 </script>
