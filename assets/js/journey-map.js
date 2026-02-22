@@ -7,7 +7,7 @@
     zoomControl: true
   }).setView([35, 10], 2);
 
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
     maxZoom: 19
   }).addTo(map);
@@ -175,4 +175,5 @@
     marker.on('mouseover', function() { this.openPopup(); });
     marker.on('mouseout', function() { this.closePopup(); });
   });
+
 })();
