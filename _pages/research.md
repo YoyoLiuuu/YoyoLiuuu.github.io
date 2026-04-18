@@ -8,6 +8,20 @@ author_profile: true
 My research focuses on building ML systems for scientific problems — particularly at the intersection of AI, chemistry, and structural biology. I've worked across protein design, RNA folding, molecular modeling, and LLM-driven bioengineering.
 
 ---
+## Acceleration Consortium — Matter Lab/Organic Small Molecule Self-Driving Lab 
+** Summer Undergraduate Research Program in Accelerated Discovery - Machine Learning Research Intern** | Expected May - August 2026 | Toronto, ON
+
+---
+
+## University of Toronto — Chemspace Lab
+** Research Student — Algorithm and Machine Learning** | May 2024 – August 2024, January 2026 - Present | Toronto, ON
+
+- Investigated methods for **designing chemical features** for molecular energy curves by comparing interpolation-based 3D sorting with ML-based approaches, analyzing how ordering/representation of atoms affects downstream model interpretability.
+- Implemented algorithms such as A\*, locality-sensitive hashing, and genetic algorithms on molecular energy curve sorting. Developed a KNN classifier to group molecules for generating smooth 3D molecular energy curves.
+- Explored how a **generative Gaussian mixture model** with cross-validation using PyTorch could predict low-energy conformers of 4-atom molecules.
+- Researching alchemical invariant exchange molecular representation and data efficient machine learning. 
+
+---
 
 ## Yale University — Gerstein Lab
 **Research Assistant — Protein Design** | August – September 2025 | Remote
@@ -19,7 +33,7 @@ My research focuses on building ML systems for scientific problems — particula
 
 ---
 
-## National University of Singapore — SERIUS Engineering Internship
+## National University of Singapore — SERIUS Internship
 **Research Internship — Large Language Models** | May – August 2025 | Singapore
 
 - One of thirty students from North America selected for the 2025 SERIUS internship program at NUS.
@@ -27,15 +41,6 @@ My research focuses on building ML systems for scientific problems — particula
 - Engineered a complete dataset pipeline by converting a newly published metabolite database into graph representations and generating chain-of-thought prompts to improve reasoning over bioengineering data.
 - Designed and conducted experiments evaluating table-, graph-, and text-based fine-tuning using models such as Google Gemma and DeepSeek, benchmarking with BLEU, ROUGE, and custom biological reasoning metrics.
 - Secured $8,000 CAD in research funding from the University of Toronto to support project execution.
-
----
-
-## University of Toronto — Chemspace Lab
-**Part-time Research Assistant — Algorithm and Machine Learning** | May – August 2024 | Toronto, ON
-
-- Investigated methods for **designing chemical features** for molecular energy curves by comparing interpolation-based 3D sorting with ML-based approaches, analyzing how ordering/representation of atoms affects downstream model interpretability.
-- Implemented algorithms such as A\*, locality-sensitive hashing, and genetic algorithms on molecular energy curve sorting. Developed a KNN classifier to group molecules for generating smooth 3D molecular energy curves.
-- Explored how a **generative Gaussian mixture model** with cross-validation using PyTorch could predict low-energy conformers of 4-atom molecules.
 
 ---
 

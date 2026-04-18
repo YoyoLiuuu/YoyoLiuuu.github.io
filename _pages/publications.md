@@ -13,6 +13,12 @@ Author: **Yimeng Liu**.
 
 ---
 
+** ICLR Workshop in Latent & Implicit Reasoning**
+*LatentChem: From Textual CoT to Latent Thinking in Chemical Reasoning.*
+Authors: Xinwu Ye, Yicheng Mao, Jia Zhang, **Yimeng Liu**, Li Hao, Fang Wu, Zhiwei Li, Yuxuan Liao, Zehong Wang, Yingcheng Wu, Zhiyuan Liu, Zhenfei Yin, Li Yuan, Philip Torr, Huan Sun, Xiangxiang Zeng, Mengdi Wang, Le Cong, Shenghua Gao, Xiangru Tang
+
+---
+
 **Canadian Undergraduate Conference on AI (CUCAI) 2025**
 *RiboFold — Ribozyme RNA 3D Folding Prediction.*
 Authors: **Yimeng Liu**\*, Purav Gupta\*, Nicholas Carbones, Xin Lei Lin, Flora Liu, Ahmad Khan, Rahul Selvakumar.
