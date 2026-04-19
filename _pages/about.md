@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I'm a Computer Science specialist (Focus in AI and Technology Leadership) with a Chemistry minor at the **University of Toronto**, and currently an **Applied ML Engineer Intern at Shopify** on the Search Relevance team. 
+I'm a Computer Science (Focus in AI and Technology Leadership) and Biological Chemistry student at the **University of Toronto**, and currently an **Applied ML Engineer Intern at Shopify** on the Search Relevance team. 
 
 I build machine learning systems that work at the intersection of AI and the natural sciences: RNA structure prediction, drug discovery, protein design, cheminformatics, and molecular modeling.
 
