@@ -13,7 +13,7 @@ Author: **Yimeng Liu**.
 
 ---
 
-**ICLR Workshop in Latent & Implicit Reasoning**
+**ICML 2026**
 *LatentChem: From Textual CoT to Latent Thinking in Chemical Reasoning.*
 Authors: Xinwu Ye, Yicheng Mao, Jia Zhang, **Yimeng Liu**, Li Hao, Fang Wu, Zhiwei Li, Yuxuan Liao, Zehong Wang, Yingcheng Wu, Zhiyuan Liu, Zhenfei Yin, Li Yuan, Philip Torr, Huan Sun, Xiangxiang Zeng, Mengdi Wang, Le Cong, Shenghua Gao, Xiangru Tang
 
@@ -27,7 +27,7 @@ Authors: **Yimeng Liu**\*, Purav Gupta\*, Nicholas Carbones, Xin Lei Lin, Flora 
 
 ## Journal Papers
 
-**Nature Computational Sciences** *(in review)*
+**Cell Systems** *(in review)*
 *BC-Design: A Biochemistry-Aware Framework for Inverse Protein Design.*
 Authors: Xiangru Tang\*, Xinwu Ye\*, Fang Wu\*, **Yimeng Liu**, Anna Su, Antonia Panescu, Guanlue Li, Daniel Shao, Dong Xu, Mark Gerstein.
 
