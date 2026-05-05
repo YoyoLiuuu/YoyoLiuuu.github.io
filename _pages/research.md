@@ -9,7 +9,10 @@ My research focuses on building ML systems for scientific problems — particula
 
 ---
 ## Acceleration Consortium — Matter Lab/Organic Small Molecule Self-Driving Lab 
-**Summer Undergraduate Research Program in Accelerated Discovery - Machine Learning Research Intern** | Expected May - August 2026 | Toronto, ON
+**Summer Undergraduate Research Program in Accelerated Discovery - Machine Learning Research Intern** | May – August 2026 | Toronto, ON
+
+- Developing data-driven agentic platforms to optimize complex organic synthesis in a self-driving lab for pharmaceuticals, catalysis, and functional materials.
+- Contributing to the El Agente Fármaco project, developing agentic AI systems for early-stage drug discovery.
 
 ---
 

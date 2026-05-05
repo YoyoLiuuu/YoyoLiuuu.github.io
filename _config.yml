@@ -24,9 +24,9 @@ author:
   avatar           : "profile.png"
   name             : "Yoyo Liu"
   pronouns         : "she/her"  
-  bio              : "CS + Chemistry @ UofT. I build ML systems for protein design, RNA folding, and scientific discovery. Currently an MLE Intern at Shopify."
+  bio              : "CS + Chemistry @ UofT. I build ML systems for protein design, RNA folding, and scientific discovery. Incoming ML Research Intern at the Acceleration Consortium."
   location         : "Toronto, ON"
-  employer         : "Shopify (MLE Intern)"
+  employer         : "Acceleration Consortium (ML Research Intern)"
   uri              : # URL
   email            : "yoyo@cs.toronto.edu"
 

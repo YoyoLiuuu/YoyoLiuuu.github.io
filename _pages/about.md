@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I'm a Computer Science (Focus in AI and Technology Leadership) and Biological Chemistry student at the **University of Toronto**, and currently an **Applied ML Engineer Intern at Shopify** on the Search Relevance team. 
+I'm a Computer Science (Focus in AI and Technology Leadership) and Biological Chemistry student at the **University of Toronto**. I am an **ML Research Intern at the Acceleration Consortium — Self-driving lab for organic small molecules** and recently completed an **Applied ML Engineering Internship at Shopify** on the Core (Search Relevance) team. 
 
 I build machine learning systems that work at the intersection of AI and the natural sciences: RNA structure prediction, drug discovery, protein design, cheminformatics, and molecular modeling.
 
@@ -19,9 +19,10 @@ I've been interested in reasoning in the chemical space and data-efficient learn
 
 ## What I'm working on now
 
-- **Shopify**: LLM pipeline migration, exploring model accuracy-cost trade-offs, building world-class product search with machine learning.
-- **Alchemical invariant learning**: machine learning the chemical space - can we use half the data to learn chemicals as effectively? 
-- **AutoGrader**: OCR + LLM pipeline for automatic grading of calculus tests/assignments. 
+- **Acceleration Consortium**: Developing data-driven agentic platforms to optimize complex organic synthesis in a self-driving lab for pharmaceuticals, catalysis, and functional materials. 
+- **Matter Lab** Contributing to the El Agente Fármaco project for early-stage drug discovery.
+- **Alchemical invariant learning**: machine learning the chemical space — can we use half the data to learn chemicals as effectively?
+- **AutoGrader**: OCR + LLM pipeline for automatic grading of calculus tests/assignments.
 
 ---
 

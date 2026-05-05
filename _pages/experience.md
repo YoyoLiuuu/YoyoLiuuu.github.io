@@ -25,7 +25,11 @@ My journey so far — hover over the pins to explore.
 
 ### Shopify — Applied Machine Learning Engineer Intern
 January – April 2026 | Toronto, ON
-- Part of the Core — Search Relevance (Metric) Team. Integrating LLM in search relevance judgment; building world-best product search engine with machine learning.
+- Part of the Core — Search Relevance (Metric) Team.
+- Experimented with LLM and SLM implementations for search relevance judgment, query-rewriting, and cluster candidate reranking.
+- Built a company-wide unified model distillation pipeline.
+- Implemented multi-arm retrieval infrastructure in search retrieval.
+- Built reranker models.
 
 ---
 
