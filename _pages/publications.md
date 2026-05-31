@@ -33,10 +33,20 @@ Authors: Xiangru Tang\*, Xinwu Ye\*, Fang Wu\*, **Yimeng Liu**, Anna Su, Antonia
 
 ---
 
-## Workshop Papers (Work in Progress)
+## Not published
 
 **ICML 2026, Women in Machine Learning Symposium**
 *Trajectory-Based Confidence for Efficient Hint Retrieval in Agentic SLMs.* 
 Yimeng Liu\*, Priyanka Mary Mammen\*, Mahalakshmi Venkateswarlu
+
+---
+
+*Alchemical Exchange Invariant Machine Learning for Data-Efficient Exploration of Chemical Space* 
+Undergraduate Research Project with Professor Anatole von Lilienfeld 
+
+---
+
+*Input Representation Matters: A Comparative Study of LLM Strategies for Structured Biochemical Data*
+Summer Research Project at the National University of Singapore, with Yeoh Jing Wui and Professor Poh Cheuh Loo
 
 \*: Equal contribution.
