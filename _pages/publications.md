@@ -33,4 +33,10 @@ Authors: Xiangru Tang\*, Xinwu Ye\*, Fang Wu\*, **Yimeng Liu**, Anna Su, Antonia
 
 ---
 
+## Workshop Papers (Work in Progress)
+
+**ICML 2026, Women in Machine Learning Symposium**
+*Trajectory-Based Confidence for Efficient Hint Retrieval in Agentic SLMs.* 
+Yimeng Liu\*, Priyanka Mary Mammen\*, Mahalakshmi Venkateswarlu
+
 \*: Equal contribution.

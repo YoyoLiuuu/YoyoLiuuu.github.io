@@ -7,13 +7,15 @@ redirect_from:
   - /about.html
 ---
 
-I'm a Computer Science (Focus in AI and Technology Leadership) and Biological Chemistry student at the **University of Toronto**. I am an **ML Research Intern at the Acceleration Consortium — Self-driving lab for organic small molecules** and recently completed an **Applied ML Engineering Internship at Shopify** on the Core (Search Relevance) team. 
+I'm a Computer Science (Focus in AI and Technology Leadership) and Biological Chemistry student at the **University of Toronto**. I am an **ML Research Intern at the Acceleration Consortium** where I develop methods to incorporate chemistry reasoning agents with self-driving lab for analytical chemistry. 
+
+I recently completed an **Applied ML Engineering Internship at Shopify** on the Core (Search Relevance) team. 
 
 I build machine learning systems that work at the intersection of AI and the natural sciences: RNA structure prediction, drug discovery, protein design, cheminformatics, and molecular modeling.
 
 I care about making ML useful for scientific problems: not just training models, but designing evaluation pipelines, engineering datasets, and building systems that scale. Whether it's fine-tuning LLMs for metabolite pathway reasoning or implementing inverse-folding benchmarks for protein design, I like getting my hands dirty with the full stack of research engineering. 
 
-I've been interested in reasoning in the chemical space and data-efficient learning, and I am currently a research student under Professor Anatole von Lilienfeld, exploring ways to learn alchemical invariant chemicals efficiently. 
+I've been interested in reasoning in the chemical space, scientific discovery agents in self-driving lab, and data-efficient learning. I currently work under Professor Alán Aspuru-Guzik and I was a research student under Professor Anatole von Lilienfeld. 
 
 ---
 
