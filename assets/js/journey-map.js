@@ -22,7 +22,7 @@
       ]
     },
     {
-      lat: 39.9, lng: 116.4, type: 'physical',
+      lat: 39.9, lng: 116.4, type: 'home',
       city: 'Beijing, China',
       entries: [
         { year: '2005 \u2013 2014', desc: 'Kindergarten + Elementary School (Grades 1\u20133)' },
@@ -30,14 +30,14 @@
       ]
     },
     {
-      lat: 33.75, lng: -84.39, type: 'physical',
+      lat: 33.75, lng: -84.39, type: 'home',
       city: 'Atlanta, Georgia, USA',
       entries: [
         { year: '2014 \u2013 2017', desc: 'Elementary School (Grades 4\u20135) + Middle School (Grade 6)' }
       ]
     },
     {
-      lat: 53.54, lng: -113.49, type: 'physical',
+      lat: 53.54, lng: -113.49, type: 'home',
       city: 'Edmonton, Alberta, Canada',
       entries: [
         { year: '2019 \u2013 2023', desc: 'Junior High (Grade 9) + High School (Grades 10\u201312) at Old Scona Academic' },
@@ -70,7 +70,7 @@
       ]
     },
     {
-      lat: 51.17, lng: 71.43, type: 'family',
+      lat: 51.17, lng: 71.43, type: 'home',
       city: 'Astana, Kazakhstan',
       entries: [
         { year: 'Summers 2025 & 2026', desc: 'My parents lived here for two years \u2014 I spent about a month with them each summer' }
@@ -179,7 +179,7 @@
   }
 
   pins.forEach(function(pin) {
-    var tagLabel = pin.type === 'current' ? 'current home' : (pin.type === 'remote' ? 'remote' : (pin.type === 'birth' ? 'birthplace' : (pin.type === 'family' ? 'family' : '')));
+    var tagLabel = pin.type === 'current' ? 'current home' : (pin.type === 'remote' ? 'remote' : (pin.type === 'birth' ? 'birthplace' : (pin.type === 'home' ? 'lived here' : '')));
 
     var html = '<div class="popup-city">' + pin.city + '</div>';
     if (tagLabel) html += '<span class="popup-tag ' + pin.type + '">' + tagLabel + '</span>';

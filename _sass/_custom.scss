@@ -148,7 +148,7 @@ a {
   &.remote { background: #b8b5e7; }
   &.current { background: #00b894; }
   &.birth { background: #fd79a8; }
-  &.family { background: #fdcb6e; }
+  &.home { background: #fdcb6e; }
 }
 
 .legend-line {
@@ -203,7 +203,7 @@ a {
   &.physical { background: rgba(108, 92, 231, 0.1); color: #6c5ce7; }
   &.remote { background: rgba(184, 181, 231, 0.2); color: #7c78c9; }
   &.current { background: rgba(0, 184, 148, 0.1); color: #00b894; }
-  &.family { background: rgba(253, 203, 110, 0.25); color: #b7791f; }
+  &.home { background: rgba(253, 203, 110, 0.25); color: #b7791f; }
 }
 
 .marker-physical {
@@ -227,7 +227,7 @@ a {
   box-shadow: 0 2px 6px rgba(253, 121, 168, 0.35);
 }
 
-.marker-family {
+.marker-home {
   background: #fdcb6e;
   border: 2.5px solid #fff;
   border-radius: 50%;
