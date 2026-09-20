@@ -13,7 +13,6 @@ My journey so far — hover over the pins to explore.
   <span><span class="legend-dot current"></span> Current</span>
   <span><span class="legend-dot physical"></span> In-person</span>
   <span><span class="legend-dot remote"></span> Remote</span>
-  <span><span class="legend-line"></span> Life path</span>
 </div>
 
 <div id="journey-map"></div>

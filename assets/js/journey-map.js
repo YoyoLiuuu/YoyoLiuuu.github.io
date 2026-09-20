@@ -120,43 +120,6 @@
     }
   ];
 
-  // Only actual moves (places lived), not trips: trips are pins, not path.
-  var lifePath = [
-    [43.8, 87.6],      // Xinjiang
-    [39.9, 116.4],     // Beijing
-    [33.75, -84.39],   // Atlanta
-    [39.9, 116.4],     // Beijing
-    [53.54, -113.49],  // Edmonton
-    [43.65, -79.38]    // Toronto
-  ];
-
-  L.polyline(lifePath, {
-    color: '#6c5ce7',
-    weight: 2,
-    opacity: 0.45,
-    dashArray: '6 6',
-    smoothFactor: 1
-  }).addTo(map);
-
-  function addArrow(from, to) {
-    var midLat = (from[0] + to[0]) / 2;
-    var midLng = (from[1] + to[1]) / 2;
-    var angle = Math.atan2(to[1] - from[1], to[0] - from[0]) * (180 / Math.PI);
-    var arrowIcon = L.divIcon({
-      className: 'path-arrow',
-      html: '<div style="transform:rotate(' + (-angle + 90) + 'deg);font-size:12px;line-height:1;">&#9660;</div>',
-      iconSize: [12, 12],
-      iconAnchor: [6, 6]
-    });
-    L.marker([midLat, midLng], { icon: arrowIcon, interactive: false }).addTo(map);
-  }
-
-  for (var i = 0; i < lifePath.length - 1; i++) {
-    var from = lifePath[i], to = lifePath[i + 1];
-    var dist = Math.abs(from[0] - to[0]) + Math.abs(from[1] - to[1]);
-    if (dist > 2) addArrow(from, to);
-  }
-
   function makeIcon(type) {
     var size = type === 'current' ? 16 : (type === 'birth' ? 15 : 13);
     return L.divIcon({
