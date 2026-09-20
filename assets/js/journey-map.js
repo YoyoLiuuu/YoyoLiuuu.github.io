@@ -7,9 +7,10 @@
     zoomControl: true
   }).setView([35, 10], 2);
 
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
-    maxZoom: 19
+  // Esri Light Gray Canvas: no API key needed, light and unlabelled like the old CARTO basemap.
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles &copy; <a href="https://www.esri.com/">Esri</a> &mdash; Esri, DeLorme, NAVTEQ',
+    maxZoom: 16
   }).addTo(map);
 
   var pins = [
@@ -69,6 +70,13 @@
       ]
     },
     {
+      lat: 51.17, lng: 71.43, type: 'family',
+      city: 'Astana, Kazakhstan',
+      entries: [
+        { year: 'Summers 2025 & 2026', desc: 'My parents lived here for two years \u2014 I spent about a month with them each summer' }
+      ]
+    },
+    {
       lat: 37.57, lng: 126.98, type: 'physical',
       city: 'Seoul, South Korea',
       entries: [
@@ -125,6 +133,8 @@
     [43.65, -79.38],
     [1.35, 103.82],
     [43.65, -79.38],
+    [51.17, 71.43],
+    [43.65, -79.38],
     [40.71, -74.01],
     [43.65, -79.38],
     [37.57, 126.98],
@@ -169,7 +179,7 @@
   }
 
   pins.forEach(function(pin) {
-    var tagLabel = pin.type === 'current' ? 'current home' : (pin.type === 'remote' ? 'remote' : (pin.type === 'birth' ? 'birthplace' : ''));
+    var tagLabel = pin.type === 'current' ? 'current home' : (pin.type === 'remote' ? 'remote' : (pin.type === 'birth' ? 'birthplace' : (pin.type === 'family' ? 'family' : '')));
 
     var html = '<div class="popup-city">' + pin.city + '</div>';
     if (tagLabel) html += '<span class="popup-tag ' + pin.type + '">' + tagLabel + '</span>';

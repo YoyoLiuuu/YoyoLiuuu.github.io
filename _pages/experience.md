@@ -10,6 +10,7 @@ My journey so far — hover over the pins to explore.
 <div class="map-legend">
   <span><span class="legend-dot birth"></span> Birthplace</span>
   <span><span class="legend-dot current"></span> Current</span>
+  <span><span class="legend-dot family"></span> Family</span>
   <span><span class="legend-dot physical"></span> In-person</span>
   <span><span class="legend-dot remote"></span> Remote</span>
   <span><span class="legend-line"></span> Life path</span>
