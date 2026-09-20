@@ -18,7 +18,7 @@ My journey so far — hover over the pins to explore.
 
 <div id="journey-map"></div>
 
-<script src="/assets/js/journey-map.js"></script>
+<script src="/assets/js/journey-map.js?v=2"></script>
 
 ---
 
