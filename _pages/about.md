@@ -52,6 +52,6 @@ In my PhD, I hope to study how to best represent and reason with chemical molecu
 
 ## A bit more about me
 
-Outside the lab, I am the co-president of **UofT Women in Computer Science** (WiCS), founded the **Toronto Ethics in AI Symposium** (TEAS), and served as a **NCWIT Campus Representative**. I also sing, play double bass and make jewelry. I love watching old Sci-Fi movies :D
+Outside the lab, I am the co-president of **UofT Women in Computer Science** (WiCS) and a **Student Ambassador for the Department of Computer Science** at UofT. I founded the **Toronto Ethics in AI Symposium** (TEAS) and served as a **NCWIT Campus Representative**. I also sing, play double bass and make jewelry. I love watching old Sci-Fi movies :D
 
 Feel free to reach out if you're working on AI for science, or if you just want to chat about research.

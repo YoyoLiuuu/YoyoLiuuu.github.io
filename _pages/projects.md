@@ -5,7 +5,7 @@ permalink: /projects/
 author_profile: true
 ---
 
-## [AutoGrader](https://github.com/UofT-CSC490-W2026/AutoGrader) — Automatic Grading for Handwritten Math
+## AutoGrader — Automatic Grading for Handwritten Math
 **Developer** | CSC490 Capstone Project, University of Toronto | January – April 2026
 
 - Built an end-to-end pipeline that grades handwritten math assignments in a team of 4: **YOLOv8 strike-through detection** → **Gemini Vision OCR** (PDF to LaTeX) → **LLM grading** against a rubric on AWS Bedrock.
