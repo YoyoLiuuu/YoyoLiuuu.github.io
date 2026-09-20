@@ -32,7 +32,7 @@
           'Could GPU / hardware be designed for better molecular representation?',
           'Could statistical methods be developed to predict molecular dynamics over long ranges of time?'
         ]],
-        'Can we design networks with high inductive bias that are still generalizable — train on small amounts of data, but have it work for a large number of use cases?'
+        'Can we design networks with high inductive bias that are still generalizable (train on small amounts of data, but have it work for a large number of use cases)?'
       ]
     },
     {
@@ -48,7 +48,7 @@
         'Could we leverage ideas from world models and robotics, where 3D models are also built to encode physical laws?',
         'Can molecular representation interact with reasoning to self-improve?',
         ['Can we reason with diffusion models, or other model families?', [
-          'I learnt about Kan extension transformers at ICML — I’d like to look into how they work and whether they apply here.'
+          'I learnt about Kan extension transformers at ICML, I’d like to look into how they work and whether they apply here.'
         ]],
         'Scaling laws in molecular space, and ways to encode inductive bias in large models.'
       ]
@@ -72,7 +72,7 @@
       color: '#00b894', soft: 'rgba(0, 184, 148, 0.2)',
       label: 'Agents in the lab', scale: 'self-driving lab · physical',
       title: 'Agentic systems connecting language, geometry and experimental feedback',
-      sub: 'Where the loop closes on real experiments — and where reliability stops being optional.',
+      sub: 'Where the loop closes on real experiments, and where reliability stops being optional.',
       tree: [
         ['When experimental feedback is provided, can agents reason better about molecular structure or reaction planning?', [
           'How could an agent make reliable hypotheses, design experiments, and self-improve from the results of physical experiments?'
@@ -93,10 +93,10 @@
       color: '#e17055', soft: 'rgba(225, 112, 85, 0.26)', bg: 'rgba(225, 112, 85, 0.08)', bgHover: 'rgba(225, 112, 85, 0.16)',
       label: 'Model safety', short: 'Model safety',
       title: 'Model safety',
-      sub: 'Decision making, reasoning, interpretability, and confidence calibration — can we trust what the model is doing before it acts?',
+      sub: 'Decision making, reasoning, interpretability, and confidence calibration. Can we trust what the model is doing before it acts?',
       tree: [
         ['How does decision making inside an agentic system actually work?', [
-          'What makes a model pick one tool call, one hypothesis, or one next experiment over another — and is the stated reasoning the real reason?',
+          'What makes a model pick one tool call, one hypothesis, or one next experiment over another. Is the stated reasoning the real reason?',
           'Can we intervene on that process directly, rather than only filtering its outputs?'
         ]],
         ['Does confidence calibration built for benchmarks hold up for scientific discovery?', [
@@ -119,9 +119,9 @@
       tree: [
         ['What guardrails does an agent need to be autonomous in a lab without catastrophic failures?', [
           'Which actions must be validated, permission-scoped, or simulated before they touch real equipment or reagents?',
-          'Can safety constraints — chemical incompatibilities, reagent and temperature limits — be part of planning itself, rather than a filter bolted on afterwards?'
+          'Can safety constraints (chemical incompatibilities, reagent and temperature limits) be part of planning itself, rather than a filter bolted on afterwards?'
         ]],
-        ['Where does the human sit in the loop — approver, monitor, or override — and how should that shift as trust in the agent builds?', [
+        ['Where does the human sit in the loop (approver, monitor, or override) and how should that shift as trust in the agent builds?', [
           'How do we keep a human able to understand and intervene, without giving up the speed that made the lab autonomous in the first place?'
         ]],
         ['How does an agent notice an experiment going wrong, and recover safely?', [
@@ -184,7 +184,7 @@
 
   var header = el('div', 'ai4chem__header');
   header.appendChild(el('div', 'ai4chem__eyebrow', 'Interactive · click a node or a safety layer, hover an edge'));
-  header.appendChild(el('div', 'ai4chem__title', 'Where AI for chemistry is headed — and where I want to work'));
+  header.appendChild(el('div', 'ai4chem__title', 'Where AI for chemistry is headed + where I want to work'));
   header.appendChild(el('div', 'ai4chem__sub', 'From “fundamental” chemistry on the left to agentic, cross-discipline work on the right. Each layer feeds the next, feedback runs back the other way, and two safety layers run underneath: one for the model, one for the lab.'));
   root.appendChild(header);
 
