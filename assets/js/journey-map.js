@@ -55,16 +55,31 @@
       lat: 43.65, lng: -79.38, type: 'current',
       city: 'Toronto, Ontario, Canada',
       entries: [
-        { year: '2023 \u2013 Present', desc: 'University of Toronto \u2014 B.Sc. Computer Science (AI) + Chemistry Minor' },
-        { year: 'Jan \u2013 Apr 2026', desc: 'Shopify \u2014 Applied ML Engineer Intern, Search Relevance Team' }
+        { year: '2023 \u2013 Present', desc: 'University of Toronto \u2014 Honours B.Sc. Computer Science and Biological Chemistry' },
+        { year: 'Jan \u2013 Apr 2026', desc: 'Shopify \u2014 Applied ML Engineer Intern, Search Relevance Team' },
+        { year: 'May 2026 \u2013 Present', desc: 'Acceleration Consortium \u2014 ML Research Intern, agentic AI in self-driving labs' }
       ]
     },
     {
       lat: 1.35, lng: 103.82, type: 'physical',
       city: 'Singapore',
       entries: [
-        { year: 'Jan 2025', desc: 'AAAI 2025 \u2014 Undergraduate Consortium Presentation' },
-        { year: 'Summer 2025', desc: 'NUS SERIUS Research Internship \u2014 LLM fine-tuning for metabolite pathway engineering' }
+        { year: 'Summer 2025', desc: 'NUS SERIUS Research Internship \u2014 LLM fine-tuning for metabolite pathway engineering' },
+        { year: 'Jan 2026', desc: 'AAAI 2026 \u2014 Undergraduate Consortium Presentation' }
+      ]
+    },
+    {
+      lat: 37.57, lng: 126.98, type: 'physical',
+      city: 'Seoul, South Korea',
+      entries: [
+        { year: 'Jul 2026', desc: 'ICML 2026 \u2014 presented LatentChem (main conference) and Trajectory-Based Confidence (Women in ML Workshop)' }
+      ]
+    },
+    {
+      lat: 37.77, lng: -122.42, type: 'physical',
+      city: 'San Francisco, California, USA',
+      entries: [
+        { year: 'Jul 25\u201326, 2026', desc: 'YC Startup School' }
       ]
     },
     {
@@ -85,7 +100,7 @@
       lat: 41.31, lng: -72.92, type: 'remote',
       city: 'Yale University',
       entries: [
-        { year: 'Fall 2025', desc: 'Gerstein Lab \u2014 Protein inverse folding research, Nature Comp. Sci. paper' }
+        { year: 'Fall 2025', desc: 'Gerstein Lab \u2014 Protein inverse folding research, BC-Design paper (under review, Cell Systems)' }
       ]
     },
     {
@@ -111,6 +126,10 @@
     [1.35, 103.82],
     [43.65, -79.38],
     [40.71, -74.01],
+    [43.65, -79.38],
+    [37.57, 126.98],
+    [43.65, -79.38],
+    [37.77, -122.42],
     [43.65, -79.38]
   ];
 

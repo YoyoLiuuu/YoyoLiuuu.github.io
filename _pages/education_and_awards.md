@@ -10,9 +10,9 @@ redirect_from:
 ## Education
 
 **University of Toronto, St. George Campus**, September 2023 – June 2027<br>
-*Bachelor of Science in Computer Science, Minor in Biological Chemistry*, GPA: 3.92
+*Honours Bachelor of Science in Computer Science and Biological Chemistry*, GPA: 3.92
 
-- Focus in Artificial Intelligence, Technology Leadership
+- Specialist in Artificial Intelligence, Technology Leadership Initiative
 - Arts and Science Internship Program (Co-op)
 - Relevant Coursework: Deep Learning, Machine Learning, Numerical Algorithms, Operating Systems, Algorithm Design and Complexity, Biological/Organic/Physical Chemistry
 

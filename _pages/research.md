@@ -8,28 +8,38 @@ author_profile: true
 My research focuses on building ML systems for scientific problems — particularly at the intersection of AI, chemistry, and structural biology. I've worked across protein design, RNA folding, molecular modeling, and LLM-driven bioengineering.
 
 ---
-## Acceleration Consortium — Matter Lab/Organic Small Molecule Self-Driving Lab 
-**Summer Undergraduate Research Program in Accelerated Discovery - Machine Learning Research Intern** | May – August 2026 | Toronto, ON
+## University of Toronto — Matter Lab (Aspuru-Guzik Group)
+**Undergraduate Research Project — Unhobble Science: Building a Model-Adaptive Layer in Chemistry Agents** | September 2026 – Present | Toronto, ON
+*Advised by Professor Alán Aspuru-Guzik and Professor Varinia Bernales*
 
-- Developing data-driven agentic platforms to optimize complex organic synthesis in a self-driving lab for pharmaceuticals, catalysis, and functional materials.
-- Contributing to the El Agente Fármaco project, developing agentic AI systems for early-stage drug discovery.
+- Studying how to **unhobble a model and move knowledge between harnesses**: what is transferable across scaffolds, what is scaffold-specific, and what turns out to be unnecessary altogether.
+
+---
+
+## Acceleration Consortium — Alán Aspuru-Guzik Group
+**Machine Learning Research Intern — Agentic AI in Self-Driving Labs** | May 2026 – Present | Toronto, ON
+
+- Architected and implemented a **full-stack platform connecting LLM agents with laboratory hardware and scientific software** through validated, permission-scoped interfaces for self-driving laboratories.
+- Deployed and served open-weight LLMs on local compute clusters, building inference infrastructure and tooling for researchers to run models within on-premise scientific workflows.
+- Engineered **closed-loop agentic workflows** for experiment execution, data analysis, and adaptive decision-making, integrating physical hardware with automated tool execution and failure recovery.
+- Continuing part-time after the summer internship on **reliable agentic reasoning and decision making** — making an agent's reasoning trustworthy enough to act on.
 
 ---
 
 ## University of Toronto — Chemspace Lab
-**Research Student — Algorithm and Machine Learning** | May 2024 – August 2024, January 2026 - Present | Toronto, ON
+**Machine Learning Research Student** | May 2024 – April 2026 | Toronto, ON
 
+- Developed a **data-efficient learning architecture** by deriving symmetric representations from second-derivative Hessian and DFT matrices, accelerating the modeling of alchemical exchange invariant molecules by **2×**.
 - Investigated methods for **designing chemical features** for molecular energy curves by comparing interpolation-based 3D sorting with ML-based approaches, analyzing how ordering/representation of atoms affects downstream model interpretability.
 - Implemented algorithms such as A\*, locality-sensitive hashing, and genetic algorithms on molecular energy curve sorting. Developed a KNN classifier to group molecules for generating smooth 3D molecular energy curves.
 - Explored how a **generative Gaussian mixture model** with cross-validation using PyTorch could predict low-energy conformers of 4-atom molecules.
-- Researching alchemical invariant exchange molecular representation and data efficient machine learning. 
 
 ---
 
 ## Yale University — Gerstein Lab
-**Research Assistant — Protein Design** | August – September 2025 | Remote
+**Machine Learning Research Assistant — Protein Design** | August – September 2025 | Remote
 
-- Contributed to an **inverse-folding based protein design paper** (under review at *Nature Computational Science*), including designing evaluation experiments and writing sections of the manuscript and point-to-point rebuttal letter.
+- Contributed to an **inverse-folding based protein design paper** (under review at *Cell Systems*), including designing evaluation experiments and writing sections of the manuscript and point-to-point rebuttal letter.
 - Researched and implemented experiments to test model performance against protein design benchmarks (**PepMerge for peptide design, SAbDab for antibody design**) to address reviewer concerns.
 - Analyzed sources of poor model performance on specific proteins in the CATH 4.2 test set, providing explanations to guide further refinement.
 - Improved model performance by addressing benchmark limitations, including **implementing new evaluation metrics informed by chemistry and biology background**.
@@ -37,7 +47,7 @@ My research focuses on building ML systems for scientific problems — particula
 ---
 
 ## National University of Singapore — SERIUS Internship
-**Research Internship — Large Language Models** | May – August 2025 | Singapore
+**Machine Learning Research Intern — Large Language Models (LLMs)** | May – August 2025 | Singapore
 *Supervised by Yeoh Jing Wui and Professor Poh Chueh Loo*
 
 - One of thirty students from North America selected for the 2025 SERIUS internship program at NUS.
@@ -52,7 +62,7 @@ My research focuses on building ML systems for scientific problems — particula
 ## Pioneer Academics
 **Researcher — Computational Chemistry** | May – September 2022 | Remote
 
-- **Modeled the secondary and tertiary structures of the HIV-1 RNA terminal loop hairpin**, integrating computational chemistry and molecular structural analysis under the mentorship of Professor Leckta (Johns Hopkins University). Achieved a grade of A.
+- **Modeled the secondary and tertiary structures of the HIV-1 RNA terminal loop hairpin**, integrating computational chemistry and molecular structural analysis under the mentorship of Professor Lectka (Johns Hopkins University). Achieved a grade of A.
 - Utilized Gaussian, GAMESS, and Spartan to optimize 3D RNA conformations and studied how **hairpin folding** influences key **molecular properties**, including polarity, energy, intramolecular forces, and interactions with other molecules.
 
 ---

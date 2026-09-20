@@ -26,10 +26,10 @@ My journey so far — hover over the pins to explore.
 ### Shopify — Applied Machine Learning Engineer Intern
 January – April 2026 | Toronto, ON
 - Part of the Core — Search Relevance (Metric) Team.
-- Experimented with LLM and SLM implementations for search relevance judgment, query-rewriting, and cluster candidate reranking.
-- Built a company-wide unified model distillation pipeline.
-- Implemented multi-arm retrieval infrastructure in search retrieval.
-- Built reranker models.
+- Designed and implemented a **parallel multi-arm retrieval infrastructure** across the core search stack, bypassing strict query bottlenecks. Generated custom training data for a new reranker model, improving retrieval depth by 3× and increasing production search relevance by 2%.
+- Engineered a **cost-optimization strategy** for search relevance pipelines by benchmarking open-weight models (Qwen3 VL) to replace OpenAI API calls, identifying a deployment path projected to reduce compute overhead by 40×.
+- Developed the **Direct Preference Optimization (DPO) and language-only SFT training pipeline** in the company-wide model distillation pipeline; led the migration of the first production use-case.
+- Executed 5 distinct architectural and machine learning projects across the search stack, receiving a high positive performance rating and return offers for both internship and full-time roles.
 
 ---
 

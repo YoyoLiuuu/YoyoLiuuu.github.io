@@ -17,7 +17,7 @@ Author: **Yimeng Liu**.
 
 **ICML 2026**
 *LatentChem: From Textual CoT to Latent Thinking in Chemical Reasoning.*
-Authors: Xinwu Ye, Yicheng Mao, Jia Zhang, **Yimeng Liu**, Li Hao, Fang Wu, Zhiwei Li, Yuxuan Liao, Zehong Wang, Yingcheng Wu, Zhiyuan Liu, Zhenfei Yin, Li Yuan, Philip Torr, Huan Sun, Xiangxiang Zeng, Mengdi Wang, Le Cong, Shenghua Gao, Xiangru Tang
+Authors: Xinwu Ye\*, Yicheng Mao\*, Jia Zhang, **Yimeng Liu**, Li Hao, Fang Wu, Zhiwei Li, Yuxuan Liao, Zehong Wang, Yingcheng Wu, Zhiyuan Liu, Zhenfei Yin, Li Yuan, Philip Torr, Huan Sun, Xiangxiang Zeng, Mengdi Wang, Le Cong, Shenghua Gao, Xiangru Tang
 
 ---
 
