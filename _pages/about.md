@@ -34,7 +34,7 @@ I've been interested in reliability and decision making in agentic systems, reas
 In my PhD, I hope to study how to best represent and reason with chemical molecules — though I'm open to other ideas and directions. There are a few layers where this question can be tackled, from "fundamental" chemistry to agentic, cross-discipline work, and every layer feeds the others. Click a node to open it; hover an edge to see how two layers connect.
 
 <div id="ai4chem" class="ai4chem">
-  <noscript><p style="padding:1em 1.3em">This interactive map needs JavaScript. The short version: molecular representation → reasoning in molecule space → language meets geometry → agents in the lab, with experimental feedback flowing all the way back to the start.</p></noscript>
+  <noscript><p style="padding:1em 1.3em">This interactive map needs JavaScript. The short version: molecular representation → reasoning in molecule space → language meets geometry → agents in the lab, with experimental feedback flowing all the way back to the start, and two safety layers underneath: model safety (decision making, reasoning, interpretability, calibration) and lab-in-the-loop guardrails.</p></noscript>
 </div>
 
 <script src="/assets/js/ai4chem.js"></script>

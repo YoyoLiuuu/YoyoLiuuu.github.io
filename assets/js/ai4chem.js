@@ -8,7 +8,8 @@
     repr: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="12" x2="5" y2="6.5"/><line x1="12" y1="12" x2="19" y2="6.5"/><line x1="12" y1="12" x2="12" y2="20"/><circle cx="12" cy="12" r="3" fill="currentColor" stroke="none"/><circle cx="5" cy="6.5" r="2.2" fill="currentColor" stroke="none"/><circle cx="19" cy="6.5" r="2.2" fill="currentColor" stroke="none"/><circle cx="12" cy="20" r="2.2" fill="currentColor" stroke="none"/></svg>',
     reason: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 18.5L20.5 4.5" stroke-dasharray="2 2.5" opacity=".55"/><polyline points="3.5,18.5 9,8.5 14.5,14 20.5,4.5"/><circle cx="3.5" cy="18.5" r="2" fill="currentColor" stroke="none"/><circle cx="9" cy="8.5" r="2" fill="currentColor" stroke="none"/><circle cx="14.5" cy="14" r="2" fill="currentColor" stroke="none"/><circle cx="20.5" cy="4.5" r="2" fill="currentColor" stroke="none"/></svg>',
     lang: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3.5h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H9.5L5 20.5v-4H4a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2z"/><polygon points="12,6.2 15.3,8.1 15.3,11.9 12,13.8 8.7,11.9 8.7,8.1"/></svg>',
-    lab: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2.5h6"/><path d="M10 2.5v6.2L4.6 18a2 2 0 0 0 1.7 3h11.4a2 2 0 0 0 1.7-3L14 8.7V2.5"/><path d="M7.2 15h9.6"/><circle cx="10.5" cy="17.8" r=".9" fill="currentColor" stroke="none"/><circle cx="13.6" cy="18.9" r=".7" fill="currentColor" stroke="none"/></svg>'
+    lab: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2.5h6"/><path d="M10 2.5v6.2L4.6 18a2 2 0 0 0 1.7 3h11.4a2 2 0 0 0 1.7-3L14 8.7V2.5"/><path d="M7.2 15h9.6"/><circle cx="10.5" cy="17.8" r=".9" fill="currentColor" stroke="none"/><circle cx="13.6" cy="18.9" r=".7" fill="currentColor" stroke="none"/></svg>',
+    shield: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5l8 3v6c0 5-3.4 8.6-8 10-4.6-1.4-8-5-8-10v-6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>'
   };
 
   // Tree items are either a string or [text, [children]].
@@ -85,6 +86,53 @@
     }
   ];
 
+  // Safety layers sit under the node row and span the nodes they cover.
+  var LAYERS = [
+    {
+      id: 'model-safety', type: 'layer', covers: ['repr', 'reason', 'lang', 'lab'],
+      color: '#e17055', soft: 'rgba(225, 112, 85, 0.26)', bg: 'rgba(225, 112, 85, 0.08)', bgHover: 'rgba(225, 112, 85, 0.16)',
+      label: 'Model safety', short: 'Model safety',
+      title: 'Model safety',
+      sub: 'Decision making, reasoning, interpretability, and confidence calibration — can we trust what the model is doing before it acts?',
+      tree: [
+        ['How does decision making inside an agentic system actually work?', [
+          'What makes a model pick one tool call, one hypothesis, or one next experiment over another — and is the stated reasoning the real reason?',
+          'Can we intervene on that process directly, rather than only filtering its outputs?'
+        ]],
+        ['Does confidence calibration built for benchmarks hold up for scientific discovery?', [
+          'Trajectory-level confidence signals, not just token probabilities: can an agent tell when it is out of its depth?',
+          'When should an agent abstain, ask for help, or escalate instead of acting?'
+        ]],
+        ['Interpretability for chemistry models.', [
+          'What have molecular representations and reasoning models actually learned about chemistry, and can we check it against what we already know?',
+          'Can we tell a model that generalizes from one that memorized the benchmark?'
+        ]],
+        'How much of a model’s reliability lives in the model, and how much in the harness around it? Which of that transfers when we move a model between harnesses?'
+      ]
+    },
+    {
+      id: 'lab-safety', type: 'layer', covers: ['lang', 'lab'],
+      color: '#d63031', soft: 'rgba(214, 48, 49, 0.24)', bg: 'rgba(214, 48, 49, 0.07)', bgHover: 'rgba(214, 48, 49, 0.14)',
+      label: 'Lab-in-the-loop safety', short: 'Lab guardrails',
+      title: 'Lab-in-the-loop safety',
+      sub: 'The guardrails that let an agent run experiments autonomously without a catastrophic mistake.',
+      tree: [
+        ['What guardrails does an agent need to be autonomous in a lab without catastrophic failures?', [
+          'Which actions must be validated, permission-scoped, or simulated before they touch real equipment or reagents?',
+          'Can safety constraints — chemical incompatibilities, reagent and temperature limits — be part of planning itself, rather than a filter bolted on afterwards?'
+        ]],
+        ['Where does the human sit in the loop — approver, monitor, or override — and how should that shift as trust in the agent builds?', [
+          'How do we keep a human able to understand and intervene, without giving up the speed that made the lab autonomous in the first place?'
+        ]],
+        ['How does an agent notice an experiment going wrong, and recover safely?', [
+          'From its own uncertainty, from instrument feedback, or both?',
+          'What does a safe fallback look like when a run is aborted part-way through?'
+        ]],
+        'What does a reliability evaluation for a self-driving lab look like, and how do we know an agent is ready for real-world adoption?'
+      ]
+    }
+  ];
+
   var EDGES = [
     { from: 'repr', to: 'reason', kind: 'flow', label: 'Representations are what reasoning operates on' },
     { from: 'reason', to: 'lang', kind: 'flow', label: 'Language models guide, and act on, the reasoning' },
@@ -94,8 +142,10 @@
     { from: 'lab', to: 'repr', kind: 'loop', label: 'Experimental feedback flows all the way back to representation' }
   ];
 
+  NODES.forEach(function(n) { n.type = 'node'; });
+  var ITEMS = NODES.concat(LAYERS);
   var byId = {};
-  NODES.forEach(function(n) { byId[n.id] = n; });
+  ITEMS.forEach(function(it) { byId[it.id] = it; });
 
   // ---- helpers ---------------------------------------------------------------
 
@@ -133,9 +183,9 @@
   root.innerHTML = '';
 
   var header = el('div', 'ai4chem__header');
-  header.appendChild(el('div', 'ai4chem__eyebrow', 'Interactive · click a node, hover an edge'));
+  header.appendChild(el('div', 'ai4chem__eyebrow', 'Interactive · click a node or a safety layer, hover an edge'));
   header.appendChild(el('div', 'ai4chem__title', 'Where AI for chemistry is headed — and where I want to work'));
-  header.appendChild(el('div', 'ai4chem__sub', 'From “fundamental” chemistry on the left to agentic, cross-discipline work on the right. Each layer feeds the next, and feedback runs back the other way.'));
+  header.appendChild(el('div', 'ai4chem__sub', 'From “fundamental” chemistry on the left to agentic, cross-discipline work on the right. Each layer feeds the next, feedback runs back the other way, and two safety layers run underneath: one for the model, one for the lab.'));
   root.appendChild(header);
 
   var stage = el('div', 'ai4chem__stage');
@@ -194,6 +244,22 @@
   });
   stage.appendChild(nodesRow);
 
+  var layersRow = el('div', 'ai4chem__layers');
+  LAYERS.forEach(function(l) {
+    var b = el('button', 'ai4chem__layer');
+    b.type = 'button';
+    b.setAttribute('data-layer', l.id);
+    b.setAttribute('aria-pressed', 'false');
+    b.style.setProperty('--c', l.color);
+    b.style.setProperty('--c-soft', l.soft);
+    b.style.setProperty('--c-bg', l.bg);
+    b.style.setProperty('--c-bg-hover', l.bgHover);
+    b.innerHTML = ICONS.shield + '<span class="ai4chem__layer-full">' + l.label + '</span><span class="ai4chem__layer-short">' + l.short + '</span>';
+    l.btn = b;
+    layersRow.appendChild(b);
+  });
+  stage.appendChild(layersRow);
+
   var tip = el('div', 'ai4chem__tip');
   stage.appendChild(tip);
   root.appendChild(stage);
@@ -242,6 +308,14 @@
       e.path.setAttribute('d', d);
       e.hit.setAttribute('d', d);
     });
+
+    var off = layersRow.getBoundingClientRect().left - sr.left;
+    LAYERS.forEach(function(l) {
+      var first = pos[l.covers[0]], last = pos[l.covers[l.covers.length - 1]];
+      var left = first.x - first.r, right = last.x + last.r;
+      l.btn.style.marginLeft = (left - off) + 'px';
+      l.btn.style.width = (right - left) + 'px';
+    });
   }
 
   // ---- state -----------------------------------------------------------------
@@ -259,13 +333,46 @@
     });
   }
 
+  function applyCoverage(layer) {
+    nodesRow.classList.toggle('has-layer', !!layer);
+    nodesRow.style.setProperty('--lc-soft', layer ? layer.soft : 'transparent');
+    NODES.forEach(function(n) {
+      n.btn.classList.toggle('is-covered', !!layer && layer.covers.indexOf(n.id) !== -1);
+    });
+  }
+
+  // Re-apply the visuals for whatever is currently selected (after a hover ends).
+  function restore() {
+    var it = byId[activeId];
+    if (it && it.type === 'layer') { applyCoverage(it); paintEdges(null); }
+    else { applyCoverage(null); paintEdges(activeId); }
+  }
+
+  function chip(color, arrow, label, sub, targetId) {
+    var c = el('button', 'ai4chem__chip');
+    c.type = 'button';
+    c.style.setProperty('--chip', color);
+    c.innerHTML = '<b>' + arrow + ' ' + label + '</b>' + (sub ? '<span>' + sub + '</span>' : '');
+    c.addEventListener('click', function() { select(targetId, true); });
+    return c;
+  }
+
+  function chipGroup(heading) {
+    var g = el('div', 'ai4chem__conn');
+    g.appendChild(el('div', 'ai4chem__conn-h', heading));
+    var chips = el('div', 'ai4chem__chips');
+    g.appendChild(chips);
+    g.chips = chips;
+    return g;
+  }
+
   function renderDetail(n) {
     detail.innerHTML = '';
     detail.style.setProperty('--c', n.color);
     detail.style.setProperty('--c-soft', n.soft);
 
     var head = el('div', 'ai4chem__dhead');
-    head.appendChild(el('span', 'ai4chem__dnum', String(n.num)));
+    head.appendChild(el('span', 'ai4chem__dnum' + (n.type === 'layer' ? ' ai4chem__dnum--shield' : ''), n.type === 'layer' ? ICONS.shield : String(n.num)));
     var ht = el('div');
     ht.appendChild(el('div', 'ai4chem__dtitle', n.title));
     ht.appendChild(el('div', 'ai4chem__dsub', n.sub));
@@ -276,32 +383,40 @@
     tree.className = 'ai4chem__tree';
     detail.appendChild(tree);
 
-    var conn = el('div', 'ai4chem__conn');
-    conn.appendChild(el('div', 'ai4chem__conn-h', 'Connected to'));
-    var chips = el('div', 'ai4chem__chips');
-    edgesOf(n.id).forEach(function(e) {
-      var outgoing = e.from === n.id;
-      var other = byId[outgoing ? e.to : e.from];
-      var arrow = outgoing ? (e.kind === 'loop' ? '↺' : '→') : (e.kind === 'loop' ? '↻' : '←');
-      var c = el('button', 'ai4chem__chip');
-      c.type = 'button';
-      c.style.setProperty('--chip', other.color);
-      c.innerHTML = '<b>' + arrow + ' ' + other.label + '</b><span>' + e.label + '</span>';
-      c.addEventListener('click', function() { select(other.id, true); });
-      chips.appendChild(c);
-    });
-    conn.appendChild(chips);
-    detail.appendChild(conn);
+    if (n.type === 'layer') {
+      var covers = chipGroup('Covers');
+      n.covers.forEach(function(id) {
+        var node = byId[id];
+        covers.chips.appendChild(chip(node.color, String(node.num), node.label, null, id));
+      });
+      detail.appendChild(covers);
+    } else {
+      var conn = chipGroup('Connected to');
+      edgesOf(n.id).forEach(function(e) {
+        var outgoing = e.from === n.id;
+        var other = byId[outgoing ? e.to : e.from];
+        var arrow = outgoing ? (e.kind === 'loop' ? '↺' : '→') : (e.kind === 'loop' ? '↻' : '←');
+        conn.chips.appendChild(chip(other.color, arrow, other.label, e.label, other.id));
+      });
+      detail.appendChild(conn);
 
-    var idx = NODES.indexOf(n);
+      var safety = chipGroup('Safety layers');
+      LAYERS.forEach(function(l) {
+        if (l.covers.indexOf(n.id) === -1) return;
+        safety.chips.appendChild(chip(l.color, ICONS.shield, l.label, l.sub, l.id));
+      });
+      detail.appendChild(safety);
+    }
+
+    var idx = ITEMS.indexOf(n);
     var nav = el('div', 'ai4chem__nav');
-    var prev = el('button', 'ai4chem__navbtn', idx > 0 ? '← ' + NODES[idx - 1].label : '');
-    var next = el('button', 'ai4chem__navbtn', idx < NODES.length - 1 ? NODES[idx + 1].label + ' →' : '');
+    var prev = el('button', 'ai4chem__navbtn', idx > 0 ? '← ' + ITEMS[idx - 1].label : '');
+    var next = el('button', 'ai4chem__navbtn', idx < ITEMS.length - 1 ? ITEMS[idx + 1].label + ' →' : '');
     prev.type = next.type = 'button';
     prev.disabled = idx === 0;
-    next.disabled = idx === NODES.length - 1;
-    prev.addEventListener('click', function() { select(NODES[idx - 1].id, true); });
-    next.addEventListener('click', function() { select(NODES[idx + 1].id, true); });
+    next.disabled = idx === ITEMS.length - 1;
+    prev.addEventListener('click', function() { select(ITEMS[idx - 1].id, true); });
+    next.addEventListener('click', function() { select(ITEMS[idx + 1].id, true); });
     nav.appendChild(prev);
     nav.appendChild(next);
     detail.appendChild(nav);
@@ -310,12 +425,12 @@
   function select(id, focus) {
     if (id === activeId) return;
     activeId = id;
-    NODES.forEach(function(n) {
-      var on = n.id === id;
-      n.btn.classList.toggle('is-active', on);
-      n.btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    ITEMS.forEach(function(it) {
+      var on = it.id === id;
+      it.btn.classList.toggle('is-active', on);
+      it.btn.setAttribute('aria-pressed', on ? 'true' : 'false');
     });
-    paintEdges(id);
+    restore();
     detail.classList.add('is-swapping');
     renderDetail(byId[id]);
     // Force a reflow so the fade-in restarts.
@@ -326,13 +441,16 @@
 
   // ---- events ----------------------------------------------------------------
 
-  NODES.forEach(function(n, i) {
-    n.btn.addEventListener('click', function() { select(n.id); });
-    n.btn.addEventListener('mouseenter', function() { paintEdges(n.id); });
-    n.btn.addEventListener('mouseleave', function() { paintEdges(activeId); });
-    n.btn.addEventListener('keydown', function(ev) {
-      if (ev.key === 'ArrowRight' && i < NODES.length - 1) { ev.preventDefault(); select(NODES[i + 1].id, true); }
-      if (ev.key === 'ArrowLeft' && i > 0) { ev.preventDefault(); select(NODES[i - 1].id, true); }
+  ITEMS.forEach(function(it, i) {
+    it.btn.addEventListener('click', function() { select(it.id); });
+    it.btn.addEventListener('mouseenter', function() {
+      if (it.type === 'layer') { applyCoverage(it); paintEdges(null); }
+      else paintEdges(it.id);
+    });
+    it.btn.addEventListener('mouseleave', restore);
+    it.btn.addEventListener('keydown', function(ev) {
+      if (ev.key === 'ArrowRight' && i < ITEMS.length - 1) { ev.preventDefault(); select(ITEMS[i + 1].id, true); }
+      if (ev.key === 'ArrowLeft' && i > 0) { ev.preventDefault(); select(ITEMS[i - 1].id, true); }
     });
   });
 
@@ -351,7 +469,7 @@
     e.hit.addEventListener('mouseleave', function() {
       tip.classList.remove('is-visible');
       e.path.classList.remove('is-hover');
-      paintEdges(activeId);
+      restore();
     });
   });
 

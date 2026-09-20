@@ -399,6 +399,66 @@ a {
     @media (max-width: 640px) { display: none; }
   }
 
+  /* when a safety layer is selected or hovered, fade the nodes it doesn't cover */
+  &__nodes.has-layer .ai4chem__node:not(.is-covered) { opacity: 0.4; }
+  &__node { transition: opacity 0.2s ease; }
+  &__node.is-covered .ai4chem__disc { box-shadow: 0 0 0 5px var(--lc-soft), 0 4px 12px var(--c-soft); }
+
+  /* safety layer bands under the node row */
+  &__layers {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    margin-top: 12px;
+  }
+
+  &__layer {
+    --c: #e17055;
+    --c-soft: rgba(225, 112, 85, 0.26);
+    --c-bg: rgba(225, 112, 85, 0.08);
+    --c-bg-hover: rgba(225, 112, 85, 0.16);
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    min-height: 32px;
+    padding: 0.3em 0.8em;
+    border: 1.5px dashed var(--c);
+    border-radius: 8px;
+    background: var(--c-bg);
+    color: var(--c);
+    font: inherit;
+    font-size: 0.72em;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-appearance: none;
+    transition: background 0.15s ease, box-shadow 0.15s ease;
+
+    svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+    &:hover { background: var(--c-bg-hover); }
+    &:focus { outline: none; }
+    &:focus-visible { box-shadow: 0 0 0 3px #fff, 0 0 0 5px var(--c); }
+    &.is-active { border-style: solid; background: var(--c-bg-hover); box-shadow: 0 0 0 3px var(--c-soft); }
+
+    &-short { display: none; }
+
+    @media (max-width: 640px) {
+      font-size: 0.6em;
+      min-height: 26px;
+      padding: 0.25em 0.55em;
+
+      &-full { display: none; }
+      &-short { display: inline; }
+    }
+  }
+
   /* axis under the stage */
   &__axis {
     display: flex;
@@ -486,6 +546,8 @@ a {
     justify-content: center;
   }
 
+  &__dnum--shield svg { width: 16px; height: 16px; }
+
   &__dtitle {
     font-weight: 700;
     font-size: 1.05em;
@@ -551,6 +613,8 @@ a {
     border-top: 1px dashed #e0e4e8;
   }
 
+  &__conn + &__conn { margin-top: 0.8em; padding-top: 0.8em; }
+
   &__conn-h {
     margin-bottom: 0.5em;
     font-size: 0.68em;
@@ -583,7 +647,8 @@ a {
     cursor: pointer;
     transition: border-color 0.15s ease, box-shadow 0.15s ease;
 
-    b { color: var(--chip); font-weight: 700; white-space: nowrap; }
+    b { color: var(--chip); font-weight: 700; white-space: nowrap; display: inline-flex; align-items: center; gap: 0.3em; }
+    b svg { width: 13px; height: 13px; flex-shrink: 0; }
     span { color: #636e72; }
 
     &:hover { border-color: var(--chip); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); }
