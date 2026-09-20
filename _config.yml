@@ -24,9 +24,9 @@ author:
   avatar           : "profile.png"
   name             : "Yoyo Liu"
   pronouns         : "she/her"  
-  bio              : "CS + Chemistry @ UofT. I build ML systems for protein design, RNA folding, and scientific discovery. Incoming ML Research Intern at the Acceleration Consortium."
+  bio              : "CS + Chemistry @ UofT. I build ML systems for protein design, RNA folding, and scientific discovery. ML Research Student at the Acceleration Consortium."
   location         : "Toronto, ON"
-  employer         : "Acceleration Consortium (ML Research Intern)"
+  employer         : "Acceleration Consortium (ML Research Student)"
   uri              : # URL
   email            : "yoyo@cs.toronto.edu"
 
