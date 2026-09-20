@@ -31,99 +31,13 @@ I've been interested in reliability and decision making in agentic systems, reas
 
 ## Where I'm headed {#phd-directions}
 
-I want to study how we best represent and reason with molecules — and how to do that safely. I'm open to other directions, but I see it as one pathway: from the smallest scale, fully in silico, up to the physical lab, with reliability running underneath every step. That is where AI safety and chemistry meet for me.
+In my PhD, I hope to study how to best represent and reason with chemical molecules — though I'm open to other ideas and directions. There are a few layers where this question can be tackled, from "fundamental" chemistry to agentic, cross-discipline work, and every layer feeds the others. Click a node to open it; hover an edge to see how two layers connect.
 
-<div class="phd-path">
-  <div class="phd-axis" aria-hidden="true">
-    <div class="phd-axis__bar"></div>
-    <div class="phd-axis__nodes">
-      <span class="phd-node phd-node--1">1</span>
-      <span class="phd-node phd-node--2">2</span>
-      <span class="phd-node phd-node--3">3</span>
-      <span class="phd-node phd-node--4">4</span>
-    </div>
-    <div class="phd-axis__labels">
-      <span>molecule · fully in silico</span>
-      <span>lab · physical experiments</span>
-    </div>
-  </div>
-  <div class="phd-steps">
-    <div class="phd-step phd-step--1">
-      <div class="phd-step__head">
-        <span class="phd-step__num">1</span>
-        <div>
-          <div class="phd-step__title">Molecular representation</div>
-          <span class="phd-step__scale">how a molecule gets written down</span>
-        </div>
-        <i class="fas fa-atom" aria-hidden="true"></i>
-      </div>
-      <ul>
-        <li>Do SMILES, SELFIES, and GNNs actually carry enough geometry?</li>
-        <li>Could we treat molecules as continuous landscapes and descend on them directly, instead of tokenizing strings into a loss function?</li>
-        <li>Networks with strong inductive bias that still generalize from very little data</li>
-      </ul>
-    </div>
-    <div class="phd-step phd-step--2">
-      <div class="phd-step__head">
-        <span class="phd-step__num">2</span>
-        <div>
-          <div class="phd-step__title">Reasoning in molecule space</div>
-          <span class="phd-step__scale">how reactions and structure get thought about</span>
-        </div>
-        <i class="fas fa-diagram-project" aria-hidden="true"></i>
-      </div>
-      <ul>
-        <li>What does reasoning over molecules look like — a reaction trajectory on a graph, or something latent?</li>
-        <li>Borrowing from world models and robotics, where 3D models are built to encode physical law</li>
-        <li>Representation and reasoning that improve each other, plus scaling laws in molecular space</li>
-      </ul>
-    </div>
-    <div class="phd-step phd-step--3">
-      <div class="phd-step__head">
-        <span class="phd-step__num">3</span>
-        <div>
-          <div class="phd-step__title">Language meets geometry</div>
-          <span class="phd-step__scale">LLMs and agents acting on structure</span>
-        </div>
-        <i class="fas fa-language" aria-hidden="true"></i>
-      </div>
-      <ul>
-        <li>Language models that act on molecules — edit functional groups, compare homologous structures — in a feedback loop</li>
-        <li>Do methods from language learning transfer to chemistry?</li>
-        <li>Closing the gap between text reasoning and 3D space</li>
-      </ul>
-    </div>
-    <div class="phd-step phd-step--4">
-      <div class="phd-step__head">
-        <span class="phd-step__num">4</span>
-        <div>
-          <div class="phd-step__title">Agents in the lab</div>
-          <span class="phd-step__scale">experimental feedback and automation</span>
-        </div>
-        <i class="fas fa-flask" aria-hidden="true"></i>
-      </div>
-      <ul>
-        <li>Reliable hypotheses → experiment design → self-improvement from physical results</li>
-        <li>Agent systems that are actually suited to adoption in a real laboratory</li>
-        <li>Are different LLMs inherently different — and does multi-agent collaboration help chemistry?</li>
-      </ul>
-    </div>
-  </div>
-  <div class="phd-safety">
-    <div class="phd-safety__head">
-      <i class="fas fa-shield-halved" aria-hidden="true"></i>
-      <div>
-        <div class="phd-safety__title">Reliable understanding &amp; model safety</div>
-        <span class="phd-safety__scale">threaded through every layer</span>
-      </div>
-    </div>
-    <ul>
-      <li>Does confidence calibration that works on benchmarks hold up for scientific discovery?</li>
-      <li>How does decision making inside an agent — the tool calls — actually work, and when should it refuse to act?</li>
-      <li>We do not want a system that confidently mixes water and sodium.</li>
-    </ul>
-  </div>
+<div id="ai4chem" class="ai4chem">
+  <noscript><p style="padding:1em 1.3em">This interactive map needs JavaScript. The short version: molecular representation → reasoning in molecule space → language meets geometry → agents in the lab, with experimental feedback flowing all the way back to the start.</p></noscript>
 </div>
+
+<script src="/assets/js/ai4chem.js"></script>
 
 ---
 
