@@ -4,14 +4,24 @@
 
   var map = L.map('journey-map', {
     scrollWheelZoom: false,
-    zoomControl: true
+    zoomControl: true,
+    minZoom: 2,
+    maxZoom: 5,
+    maxBounds: [[-85, -180], [85, 180]],
+    maxBoundsViscosity: 1.0
   }).setView([35, 10], 2);
 
-  // Esri Light Gray Canvas: no API key needed, light and unlabelled like the old CARTO basemap.
-  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
-    attribution: 'Tiles &copy; <a href="https://www.esri.com/">Esri</a> &mdash; Esri, DeLorme, NAVTEQ',
-    maxZoom: 16
-  }).addTo(map);
+  // No tile basemap: land polygons drawn as flat shapes, so there are no
+  // labels, no borders, and no external tile server to depend on.
+  map.attributionControl.addAttribution('Land: <a href="https://www.naturalearthdata.com/">Natural Earth</a>');
+  fetch('/assets/data/land.geojson')
+    .then(function(r) { return r.json(); })
+    .then(function(land) {
+      L.geoJSON(land, {
+        interactive: false,
+        style: { fillColor: '#e6e9ed', color: '#d5d9de', weight: 0.6, fillOpacity: 1 }
+      }).addTo(map);
+    });
 
   var pins = [
     {
