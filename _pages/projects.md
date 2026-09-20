@@ -5,14 +5,13 @@ permalink: /projects/
 author_profile: true
 ---
 
-## AutoGrader — Automatic Grading for Handwritten Math
-**Developer** | CSC490 Capstone Project, University of Toronto | January – April 2026
+## AutoGrader — Automated Math Assignment Grading System
+**Machine Learning Engineer** | CSC490 Capstone Design Project, University of Toronto | January – April 2026
 
-- Built an end-to-end pipeline that grades handwritten math assignments in a team of 4: **YOLOv8 strike-through detection** → **Gemini Vision OCR** (PDF to LaTeX) → **LLM grading** against a rubric on AWS Bedrock.
-- Trained YOLOv8m on 20,000 synthetic pages for strike-through masking (mAP@50 = 0.9945); benchmarked Gemini Vision OCR against Tesseract and Pix2Text across datasets.
-- Added **RAG-enhanced grading** with pgvector similarity search over prior human feedback, and a meta-LLM prompt optimization loop that iterates on the grading policy to minimize MAE.
-- Implemented **confidence scoring** to route each submission to auto-grade or human review — deciding when the model should not be trusted to act alone.
-- Deployed as containers on AWS ECS Fargate with Terraform IaC, CloudWatch logging, and test-coverage CI.
+- Collaborated with a team of 4 to build an end-to-end pipeline that **automates grading of handwritten math assignments**: YOLOv8 for strike-through detection, Gemini Vision for PDF-to-LaTeX OCR, and AWS Bedrock (Nova Pro) for rubric-based LLM grading.
+- Architected the **entire cloud infrastructure** on AWS (ECS Fargate, Lambda, RDS, S3, ECR) with Terraform IaC, Dockerized services, VPC networking, and CI/CD for dev and production environments.
+- Owned the **LLM grading component**: designed the Nova Pro pipeline and implemented a **meta-LLM prompt optimizer with LLM-as-a-judge** to iteratively refine grading policies and minimize MAE against human graders.
+- Built **confidence scoring** that routes each submission to auto-grade or human review — deciding when the model should not be trusted to act alone.
 
 ---
 

@@ -32,7 +32,7 @@ Authors: **Yimeng Liu**\*, Purav Gupta\*, Nicholas Carbones, Xin Lei Lin, Flora 
 **NeurIPS 2026, Women in Machine Learning Workshop**
 *Recovering Hidden Chemistry: Improving LLM Fine-Tuning on Metabolic Pathways.*
 Author: **Yimeng Liu**.
-Work from the SERIUS research internship at the National University of Singapore, with Yeoh Jing Wui and Professor Poh Cheuh Loo.
+*Grew out of my [SERIUS research internship](/research/#national-university-of-singapore--serius-internship) at the National University of Singapore.*
 
 ---
 

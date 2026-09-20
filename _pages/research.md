@@ -38,12 +38,14 @@ My research focuses on building ML systems for scientific problems — particula
 
 ## National University of Singapore — SERIUS Internship
 **Research Internship — Large Language Models** | May – August 2025 | Singapore
+*Supervised by Yeoh Jing Wui and Professor Poh Chueh Loo*
 
 - One of thirty students from North America selected for the 2025 SERIUS internship program at NUS.
 - Defined the project scope and **led end-to-end research** on evaluating and fine-tuning LLMs for metabolite pathway engineering.
 - Engineered a complete dataset pipeline by converting a newly published metabolite database into graph representations and generating chain-of-thought prompts to improve reasoning over bioengineering data.
 - Designed and conducted experiments evaluating table-, graph-, and text-based fine-tuning using models such as Google Gemma and DeepSeek, benchmarking with BLEU, ROUGE, and custom biological reasoning metrics.
 - Secured $8,000 CAD in research funding from the University of Toronto to support project execution.
+- This work grew into *Recovering Hidden Chemistry: Improving LLM Fine-Tuning on Metabolic Pathways*, accepted to the [NeurIPS 2026 Women in Machine Learning Workshop](/publications/).
 
 ---
 

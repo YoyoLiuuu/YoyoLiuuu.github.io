@@ -23,11 +23,14 @@ redirect_from:
 
 ## Awards
 
+- **Summer Research Award in Accelerated Discovery** — Acceleration Consortium
 - **AAAI 2026 Undergraduate Consortium Scholarship Recipient** — AAAI 2026
-- **Dean's List 2024, 2025** — University of Toronto
-- **The Dr Lorus J. Milne and Dr Margery J. Milne Research Award** 
+- **Dean's List 2024, 2025, 2026** — University of Toronto
+- **The Dr Lorus J. Milne and Dr Margery J. Milne Research Award**
 - **Centre of International Experience Summer Research Exchange Award**
 - **The John Grant Leadership Award**
+- **The Roy Alvin Hope Scholarship**
+- **The Dr Roseann Runte Award**
 - **The Katherine St. John Scholarship**
 - **Department of Computer Science Engagement Award**
 
