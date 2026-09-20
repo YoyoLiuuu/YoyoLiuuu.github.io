@@ -11,7 +11,7 @@ I'm a Computer Science (Focus in AI and Technology Leadership) and Biological Ch
 
 I recently completed an **ML Research Internship at the Acceleration Consortium**, where I built agentic infrastructure for self-driving labs, connecting SDL workflows, agentic capabilities, and human control to close the analyze-design gap. I continue to work with AC part-time on reliable agentic reasoning and decision making. 
 
-Before that, I was an **Applied ML Engineer Intern at Shopify** on the Core (Search Relevance) team, and a research student advised by **Professor Anatole von Lilienfeld**. 
+Before that, I was an **Applied ML Engineer Intern at Shopify** on the Core (Search Relevance) team, a **LLM for metabolic engineering Research Intern at the National University of Singapore**  a research student advised by **Professor Anatole von Lilienfeld**. 
 
 I build machine learning systems that work at the intersection of AI and the natural sciences: RNA structure prediction, drug discovery, protein design, cheminformatics, and molecular modeling.
 
