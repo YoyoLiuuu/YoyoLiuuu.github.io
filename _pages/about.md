@@ -7,7 +7,7 @@ redirect_from:
   - /about.html
 ---
 
-I'm a Computer Science (Focus in AI and Technology Leadership) and Biological Chemistry student at the **University of Toronto**. I am currently completing my 4th year research project **Unhobble Science: Building a Model-Adaptive Layer in Chemistry Agents**, advised by **Professor Alán Aspuru-Guzik and Professor Varinia Bernales**.
+I'm a Computer Science (Focus in AI and Technology Leadership) student at the **University of Toronto**. I am currently completing my 4th year research project **Unhobble Science: Building a Model-Adaptive Layer in Chemistry Agents**, advised by **Professor Alán Aspuru-Guzik and Professor Varinia Bernales**.
 
 I recently completed an **ML Research Internship at the Acceleration Consortium**, where I built agentic infrastructure for self-driving labs, connecting SDL workflows, agentic capabilities, and human control to close the analyze-design gap. I continue to work with AC part-time on reliable agentic reasoning and decision making. 
 
