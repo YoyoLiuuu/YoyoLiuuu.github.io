@@ -94,6 +94,20 @@
       ]
     },
     {
+      lat: -33.87, lng: 151.21, type: 'physical',
+      city: 'Sydney, Australia',
+      entries: [
+        { year: 'Dec 2026', desc: 'NeurIPS 2026 — presenting The A to D in DMTA (AI4Mat Workshop, first author) and Recovering Hidden Chemistry (Women in ML Workshop)' }
+      ]
+    },
+    {
+      lat: 51.51, lng: -0.13, type: 'physical',
+      city: 'London, UK',
+      entries: [
+        { year: 'Jan 2027 (incoming)', desc: 'MATS 12.0 — Research Fellow, Lila Sciences stream (biosecurity)' }
+      ]
+    },
+    {
       lat: 37.77, lng: -122.42, type: 'physical',
       city: 'San Francisco, California, USA',
       entries: [

@@ -9,7 +9,9 @@ redirect_from:
 
 I'm a Computer Science (Focus in AI and Technology Leadership) student at the **University of Toronto**. I am currently completing my 4th year research project **Unhobble Science: Building a Model-Adaptive Layer in Chemistry Agents**, advised by **Professor Alán Aspuru-Guzik and Professor Varinia Bernales**.
 
-I recently completed an **ML Research Internship at the Acceleration Consortium**, where I built agentic infrastructure for self-driving labs, connecting SDL workflows, agentic capabilities, and human control to close the analyze-design gap. I continue to work with AC part-time on reliable agentic reasoning and decision making. 
+In January 2027, I'll join **MATS** (12.0) as a **Research Fellow** in London, in the Lila Sciences stream (biosecurity track) mentored by **David Peinador Veiga**, working on evaluating and mitigating catastrophic risks from dangerous scientific capabilities in frontier AI.
+
+Since May 2026, I've been an **ML Research Intern at the Acceleration Consortium**, where I built agentic infrastructure for self-driving labs, connecting SDL workflows, agentic capabilities, and human control to close the analyze-design gap. This work became a first-author paper at the **NeurIPS 2026 AI4Mat Workshop**. After the summer, I've continued with AC part-time on reliable agentic reasoning and decision making. 
 
 Before that, I was an **Applied ML Engineer Intern at Shopify** on the Core (Search Relevance) team, a **LLM Research Intern at the National University of Singapore**, and a research student advised by **Professor Anatole von Lilienfeld**. 
 
@@ -24,6 +26,7 @@ I've been interested in reliability and decision making in agentic systems, reas
 ## What I'm working on now
 
 - **Applying to PhD programs** — where I want to take all of this is mapped out [below](#phd-directions).
+- **MATS 12.0** (incoming, January 2027) — *biosecurity*: evaluating and mitigating risks from dangerous scientific capabilities in frontier AI, particularly biology, chemistry, and agents connected to physical lab equipment.
 - **Unhobble Science** — *building a model-adaptive layer in chemistry agents*: how to unhobble a model and move knowledge between harnesses. What is actually transferable across scaffolds, what is scaffold-specific, and what turns out to be unnecessary altogether?
 - **Acceleration Consortium** (part-time) — *reliable agentic reasoning and decision making*: making an agent's reasoning trustworthy enough to act on, so it can recognize a bad plan and escalate rather than run it. This grew out of the SDL infrastructure work, narrowed to the reliability question underneath it.
 

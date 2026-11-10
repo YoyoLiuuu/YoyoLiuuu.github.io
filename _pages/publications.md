@@ -17,7 +17,7 @@ Author: **Yimeng Liu**.
 
 **ICML 2026**
 *LatentChem: From Textual CoT to Latent Thinking in Chemical Reasoning.*
-Authors: Xinwu Ye\*, Yicheng Mao\*, Jia Zhang, **Yimeng Liu**, Li Hao, Fang Wu, Zhiwei Li, Yuxuan Liao, Zehong Wang, Yingcheng Wu, Zhiyuan Liu, Zhenfei Yin, Li Yuan, Philip Torr, Huan Sun, Xiangxiang Zeng, Mengdi Wang, Le Cong, Shenghua Gao, Xiangru Tang
+Authors: Xinwu Ye\*, Yicheng Mao\*, Yuxuan Liao, Jia Zhang, **Yimeng Liu**, Li Hao, Fang Wu, Zhiwei Li, Zehong Wang, Yingcheng Wu, Zhiyuan Liu, Zhenfei Yin, Li Yuan, Philip Torr, Huan Sun, Xiangxiang Zeng, Mengdi Wang, Le Cong, Shenghua Gao, Xiangru Tang
 
 ---
 
@@ -29,6 +29,13 @@ Authors: **Yimeng Liu**\*, Purav Gupta\*, Nicholas Carbones, Xin Lei Lin, Flora 
 
 ## Workshop Papers
 
+**NeurIPS 2026, AI for Accelerated Materials Design (AI4Mat) Workshop**
+*The A to D in DMTA (Design, Make, Test, and Analyze): Agentic Analysis for Self-Driving Labs.*
+Authors: **Yimeng Liu**, E. Isbrandt\*, F. Katzenburg\*, Kevin Greenman, H. Hao, Y. Cao, Varinia Bernales, Alán Aspuru-Guzik.
+*Grew out of my [ML research internship](/research/) at the Acceleration Consortium.*
+
+---
+
 **NeurIPS 2026, Women in Machine Learning Workshop**
 *Recovering Hidden Chemistry: Improving LLM Fine-Tuning on Metabolic Pathways.*
 Author: **Yimeng Liu**.
@@ -39,6 +46,14 @@ Author: **Yimeng Liu**.
 **ICML 2026, Women in Machine Learning Workshop**
 *Trajectory-Based Confidence for Efficient Hint Retrieval in Agentic Small Language Models.*
 Authors: **Yimeng Liu**\*, Priyanka Mary Mammen\*, Mahalakshmi Venkateswarlu.
+
+---
+
+## Preprints
+
+**arXiv, 2026**
+*El Agente Fármaco: A Scalable AI Scientist for Drug Discovery.*
+Authors: M. Müller, M. G. Vakili, Y. Ogura, E. Ashoori, S. Wang, A. S. Nascimento, E. Calleja, Y. Zhao, **Yimeng Liu**, et al. [arXiv:2611.03832](https://arxiv.org/abs/2611.03832)
 
 ---
 

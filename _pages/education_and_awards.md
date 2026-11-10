@@ -23,6 +23,7 @@ redirect_from:
 
 ## Awards
 
+- **WiML Travel Grant** — Women in Machine Learning Workshop at NeurIPS 2026
 - **Summer Research Award in Accelerated Discovery** — Acceleration Consortium
 - **AAAI 2026 Undergraduate Consortium Scholarship Recipient** — AAAI 2026
 - **Dean's List 2024, 2025, 2026** — University of Toronto
