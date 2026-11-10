@@ -34,13 +34,14 @@ layout: default
       </ul>
     </div>
 
-    {% if page.hero_molecule %}
+    {% assign visual = page.hero_visual %}
+    {% if visual %}
     <figure class="hero__visual">
-      <canvas id="molecule" class="hero__canvas" role="img" aria-label="{{ page.hero_molecule.alt }}"></canvas>
+      <canvas id="{{ visual.type }}" class="hero__canvas hero__canvas--{{ visual.type }}" role="img" aria-label="{{ visual.alt }}"></canvas>
       <figcaption class="hero__caption">
-        <strong>{{ page.hero_molecule.name }}</strong>
-        <span>{{ page.hero_molecule.note }}</span>
-        <span class="hero__hint">drag to rotate</span>
+        <strong>{{ visual.name }}</strong>
+        <span>{{ visual.note }}</span>
+        {% if visual.hint %}<span class="hero__hint">{{ visual.hint }}</span>{% endif %}
       </figcaption>
     </figure>
     {% endif %}
@@ -54,4 +55,4 @@ layout: default
   </article>
 </div>
 
-{% if page.hero_molecule %}<script src="{{ base_path }}/assets/js/molecule.js"></script>{% endif %}
+{% if visual %}<script src="{{ base_path }}/assets/js/{{ visual.type }}.js"></script>{% endif %}

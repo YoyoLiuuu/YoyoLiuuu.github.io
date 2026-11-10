@@ -5,7 +5,7 @@ permalink: /research/
 author_profile: true
 ---
 
-My research focuses on building ML systems for scientific problems — particularly at the intersection of AI, chemistry, and structural biology. I've worked across protein design, RNA folding, molecular modeling, and LLM-driven bioengineering.
+I study machine-learning models and language-model agents in the natural sciences, where mistakes are costly: how they learn from scarce data, whether their reasoning can be checked, and when their decisions can be trusted. Chemistry and biology are where I test this, from molecular representations to agents that choose experiments in a real laboratory.
 
 ---
 ## MATS (Machine Alignment, Transparency & Security)

@@ -241,10 +241,10 @@ body {
 }
 
 .hero__lede {
-  max-width: 32rem;
+  max-width: 33rem;
   margin: 0 0 1.5rem;
   color: var(--ink-2);
-  font-size: clamp(1.1rem, 1.7vw, 1.3rem);
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
   line-height: 1.55;
   letter-spacing: -0.01em;
   text-wrap: pretty;
@@ -309,6 +309,13 @@ body {
 
   &.is-dragging { cursor: grabbing; }
 
+  /* the trajectory visual is steered by hovering, not dragging */
+  &--trajectory {
+    aspect-ratio: 4 / 3;
+    cursor: crosshair;
+    touch-action: auto;
+  }
+
   @media (min-width: $bp-wide) {
     /* let the model run a little past the column, toward the page edge */
     width: 112%;
@@ -318,11 +325,11 @@ body {
 
 .hero__caption {
   display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: center;
-  gap: 0.2rem 0.6rem;
-  margin-top: 0.25rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.5rem;
+  text-align: center;
   color: var(--muted);
   font-family: $font-mono;
   font-size: 0.72rem;
@@ -336,10 +343,16 @@ body {
 }
 
 .hero__hint {
+  margin-top: 0.2rem;
   padding: 0.05rem 0.5rem;
   border: 1px solid var(--border);
   border-radius: 999px;
   white-space: nowrap;
+}
+
+/* "move your cursor" / "drag" hints make no sense without a pointer */
+@media (hover: none) {
+  .hero__hint { display: none; }
 }
 
 @media (prefers-reduced-motion: no-preference) {

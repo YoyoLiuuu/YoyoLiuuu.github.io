@@ -184,7 +184,7 @@
 
   var header = el('div', 'ai4chem__header');
   header.appendChild(el('div', 'ai4chem__eyebrow', 'Interactive · click a node or a safety layer, hover an edge'));
-  header.appendChild(el('div', 'ai4chem__title', 'Where AI for chemistry is headed + where I want to work'));
+  header.appendChild(el('div', 'ai4chem__title', 'From molecules to agents in the lab, with safety underneath'));
   header.appendChild(el('div', 'ai4chem__sub', 'From “fundamental” chemistry on the left to agentic, cross-discipline work on the right. Each layer feeds the next, feedback runs back the other way, and two safety layers run underneath: one for the model, one for the lab.'));
   root.appendChild(header);
 
