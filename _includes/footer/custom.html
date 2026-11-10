@@ -1,2 +1,9 @@
 <!-- start custom footer snippets -->
+{% if site.author.email %}
+<section class="cta">
+  <p class="cta__eyebrow">Get in touch</p>
+  <p class="cta__title">Working on AI for science, or just want to chat about research?</p>
+  <a class="btn-pill btn-pill--primary" href="mailto:{{ site.author.email }}">{{ site.author.email }}<span aria-hidden="true"> &rarr;</span></a>
+</section>
+{% endif %}
 <!-- end custom footer snippets -->

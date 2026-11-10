@@ -1,0 +1,199 @@
+// Progressive enhancement. Every page reads fine without this file; with it:
+//   - the homepage is split into sections with a sticky heading column
+//   - research / projects / experience entries become a timeline
+//   - publications become cards
+//   - things fade in as they scroll into view, and a progress bar tracks scroll
+(function () {
+  var root = document.documentElement;
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var slice = Array.prototype.slice;
+
+  function el(tag, cls) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    return n;
+  }
+  function isTag(n, names) {
+    return n.nodeType === 1 && names.indexOf(n.tagName) !== -1;
+  }
+
+  // ---- homepage: sections ----------------------------------------------------
+
+  function buildHomeSections() {
+    var content = document.querySelector('.home .page__content');
+    if (!content) return;
+
+    var groups = [];
+    var current = { heading: null, nodes: [] };
+    slice.call(content.childNodes).forEach(function (n) {
+      if (isTag(n, ['HR'])) return;                       // sections replace the rules
+      if (isTag(n, ['SCRIPT', 'NOSCRIPT'])) { current.nodes.push(n); return; }
+      if (isTag(n, ['H2'])) {
+        groups.push(current);
+        current = { heading: n, nodes: [] };
+        return;
+      }
+      current.nodes.push(n);
+    });
+    groups.push(current);
+
+    var frag = document.createDocumentFragment();
+    groups.forEach(function (g) {
+      var hasContent = g.heading || g.nodes.some(function (n) { return n.nodeType === 1; });
+      if (!hasContent) return;
+
+      var sec = el('section', 'sec');
+      var head = el('div', 'sec__head');
+      var body = el('div', 'sec__body');
+      if (g.heading) {
+        sec.setAttribute('data-sec', g.heading.id || '');
+        head.appendChild(g.heading);
+      } else {
+        sec.className += ' sec--intro';
+        var label = el('p', 'sec__label');
+        label.textContent = content.getAttribute('data-intro-label') || 'About';
+        head.appendChild(label);
+      }
+      g.nodes.forEach(function (n) { body.appendChild(n); });
+      sec.appendChild(head);
+      sec.appendChild(body);
+      frag.appendChild(sec);
+    });
+
+    content.innerHTML = '';
+    content.appendChild(frag);
+    content.classList.add('is-enhanced');
+  }
+
+  // ---- inner pages: timeline entries and publication cards -------------------
+
+  // "Role | May 2026 – Present | Toronto, ON" -> pieces separated by dots
+  function tidyMeta(p) {
+    slice.call(p.childNodes).forEach(function (n) {
+      if (n.nodeType !== 3 || n.nodeValue.indexOf('|') === -1) return;
+      var parts = n.nodeValue.split('|');
+      var frag = document.createDocumentFragment();
+      parts.forEach(function (part, i) {
+        if (i > 0) {
+          var sep = el('span', 'entry__sep');
+          sep.setAttribute('aria-hidden', 'true');
+          sep.textContent = '·';
+          frag.appendChild(sep);
+        }
+        if (part.trim()) frag.appendChild(document.createTextNode(part.trim()));
+      });
+      p.replaceChild(frag, n);
+    });
+  }
+
+  function buildEntries(archive, headingTag) {
+    var stops = ['H1', 'H2', 'H3', 'HR'];
+    slice.call(archive.children).forEach(function (h) {
+      if (h.tagName !== headingTag || h.parentNode !== archive) return;
+      var entry = el('div', 'entry');
+      var prev = h.previousElementSibling;
+      while (prev && prev.tagName === 'HR') prev = prev.previousElementSibling;
+      if (!prev || !prev.classList.contains('entry')) entry.classList.add('entry--first');
+      archive.insertBefore(entry, h);
+      var n = h.nextSibling;
+      entry.appendChild(h);
+      while (n && !isTag(n, stops)) {
+        var next = n.nextSibling;
+        entry.appendChild(n);
+        n = next;
+      }
+      var meta = h.nextElementSibling;
+      if (meta && meta.tagName === 'P') {
+        meta.classList.add('entry__meta');
+        tidyMeta(meta);
+        if (/present|incoming|starting/i.test(meta.textContent + ' ' + h.textContent)) {
+          entry.classList.add('entry--current');
+        }
+      }
+    });
+    archive.classList.add('is-enhanced');
+  }
+
+  function buildPubCards(archive) {
+    slice.call(archive.children).forEach(function (p) {
+      if (p.tagName !== 'P' || p.classList.contains('pub-links')) return;
+      var first = p.firstElementChild;
+      if (first && (first.tagName === 'STRONG' || first.tagName === 'EM') && p.firstChild === first) {
+        p.classList.add('pub');
+      }
+    });
+    archive.classList.add('is-enhanced');
+  }
+
+  function buildInnerPages() {
+    var archive = document.querySelector('.archive');
+    if (!archive) return;
+    var body = document.body.classList;
+    if (body.contains('page--research') || body.contains('page--projects')) buildEntries(archive, 'H2');
+    else if (body.contains('page--experience')) buildEntries(archive, 'H3');
+    else if (body.contains('page--publications')) buildPubCards(archive);
+  }
+
+  // ---- reveal on scroll ------------------------------------------------------
+
+  function setupReveal() {
+    if (reduceMotion || !window.IntersectionObserver) return;
+    var targets = slice.call(document.querySelectorAll('.sec, .entry, .pub, .cta'));
+    if (!targets.length) return;
+
+    var vh = window.innerHeight || 800;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('is-in');
+        io.unobserve(e.target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+
+    targets.forEach(function (t) {
+      // anything already on screen stays put; only content below the fold animates in
+      if (t.getBoundingClientRect().top < vh * 0.92) return;
+      t.classList.add('reveal');
+      io.observe(t);
+    });
+  }
+
+  // ---- scroll progress -------------------------------------------------------
+
+  function setupProgress() {
+    var bar = document.querySelector('.scroll-progress');
+    if (!bar) return;
+    var ticking = false;
+    function update() {
+      ticking = false;
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      var p = max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0;
+      bar.style.transform = 'scaleX(' + p + ')';
+    }
+    window.addEventListener('scroll', function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(update); }
+    }, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  }
+
+  // ---- card spotlight --------------------------------------------------------
+
+  function setupSpotlight() {
+    if (!window.matchMedia || !window.matchMedia('(hover: hover)').matches) return;
+    document.addEventListener('pointermove', function (e) {
+      var card = e.target.closest && e.target.closest('.pub, .sec[data-sec="what-im-working-on-now"] .sec__body > ul > li');
+      if (!card) return;
+      var r = card.getBoundingClientRect();
+      card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    }, { passive: true });
+  }
+
+  buildHomeSections();
+  buildInnerPages();
+  root.classList.add('is-enhanced');
+  setupReveal();
+  setupProgress();
+  setupSpotlight();
+})();

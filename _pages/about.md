@@ -1,7 +1,19 @@
 ---
 permalink: /
 title: "Hey, I'm Yoyo."
-author_profile: true
+layout: home
+author_profile: false
+# --- homepage hero (edit freely) ---
+hero_title: "Hey, I’m <em>Yoyo</em>."
+hero_eyebrow: "AI × Chemistry · University of Toronto"
+hero_now:
+  - "Incoming MATS 12.0 Research Fellow"
+  - "ML Research @ Acceleration Consortium"
+  - "Applying to PhD programs"
+hero_molecule:
+  name: "HBDI"
+  note: "the GFP chromophore, from my time in the Brown Lab"
+  alt: "Rotating 3D ball-and-stick model of HBDI, the chromophore of green fluorescent protein"
 redirect_from:
   - /about/
   - /about.html

@@ -1,0 +1,57 @@
+---
+layout: default
+---
+
+{% include base_path %}
+{% assign author = site.author %}
+
+<div id="main" class="home" role="main">
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__backdrop" aria-hidden="true"></div>
+
+    <div class="hero__text">
+      <p class="hero__eyebrow">
+        <img class="hero__avatar" src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" alt="{{ author.name }}" width="44" height="44">
+        <span>{{ page.hero_eyebrow | default: author.location }}</span>
+      </p>
+
+      <h1 class="hero__title" id="hero-title">{{ page.hero_title | default: page.title }}</h1>
+
+      <p class="hero__lede">{{ page.hero_lede | default: site.description }}</p>
+
+      {% if page.hero_now %}
+      <ul class="hero__now">
+        {% for item in page.hero_now %}<li>{{ item }}</li>{% endfor %}
+      </ul>
+      {% endif %}
+
+      <ul class="hero__links">
+        {% if author.email %}<li><a class="btn-pill btn-pill--primary" href="mailto:{{ author.email }}"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i>Email me</a></li>{% endif %}
+        {% if author.googlescholar %}<li><a class="btn-pill" href="{{ author.googlescholar }}"><i class="ai ai-google-scholar" aria-hidden="true"></i>Scholar</a></li>{% endif %}
+        {% if author.github %}<li><a class="btn-pill" href="https://github.com/{{ author.github }}"><i class="fab fa-fw fa-github" aria-hidden="true"></i>GitHub</a></li>{% endif %}
+        {% if author.linkedin %}<li><a class="btn-pill" href="https://www.linkedin.com/in/{{ author.linkedin }}"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>LinkedIn</a></li>{% endif %}
+      </ul>
+    </div>
+
+    {% if page.hero_molecule %}
+    <figure class="hero__visual">
+      <canvas id="molecule" class="hero__canvas" role="img" aria-label="{{ page.hero_molecule.alt }}"></canvas>
+      <figcaption class="hero__caption">
+        <strong>{{ page.hero_molecule.name }}</strong>
+        <span>{{ page.hero_molecule.note }}</span>
+        <span class="hero__hint">drag to rotate</span>
+      </figcaption>
+    </figure>
+    {% endif %}
+  </section>
+
+  <article class="page home__article" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="{{ site.title }}">
+    <section class="page__content" itemprop="text" data-intro-label="{{ page.intro_label | default: 'About' }}">
+      {{ content }}
+    </section>
+  </article>
+</div>
+
+{% if page.hero_molecule %}<script src="{{ base_path }}/assets/js/molecule.js"></script>{% endif %}
