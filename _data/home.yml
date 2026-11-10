@@ -1,0 +1,105 @@
+# Content for the homepage graphics (layout: _layouts/home.html).
+# Keep every `text` to one short line: the page is meant to be scanned.
+# `icon` is a name from _includes/icon.html.
+
+# --- Roadmap at the top: built -> now -> next -------------------------------
+roadmap:
+  built_label: "What I've built"
+  now_label: "Now"
+  next_label: "Where I'm heading"
+  built:
+    - title: "Representations"
+      text: "molecules, RNA, proteins"
+      icon: molecule
+      color: "#6c5ce7"
+    - title: "Reasoning"
+      text: "chemical language models"
+      icon: route
+      color: "#4f7fe0"
+    - title: "Agents"
+      text: "self-driving labs"
+      icon: flask
+      color: "#2ea0c4"
+  next:
+    - title: "Validation"
+      text: "can each decision be checked?"
+      icon: check
+    - title: "Safety"
+      text: "checks before every action"
+      icon: shield
+    - title: "Understanding"
+      text: "is the learned structure real?"
+      icon: eye
+
+# --- Where I am now ----------------------------------------------------------
+now:
+  - title: "MATS 12.0"
+    status: "Incoming · Jan 2027"
+    text: "Research Fellow on the biosecurity track with Lila Sciences, London."
+    icon: shield
+  - title: "Unhobble Science"
+    status: "4th-year project"
+    text: "What transfers between agent harnesses, and what doesn't."
+    icon: layers
+  - title: "Acceleration Consortium"
+    status: "Part-time"
+    text: "Reliable agentic reasoning for self-driving labs."
+    icon: flask
+  - title: "PhD applications"
+    status: "Fall 2027"
+    text: "Validation, safety and understanding of AI for science."
+    icon: cap
+
+# --- What I've built ---------------------------------------------------------
+built:
+  - title: "Representations"
+    text: "Building what the science already knows into what a model sees."
+    icon: molecule
+    color: "#6c5ce7"
+    tags: ["NeurIPS 2026 WiML", "AAAI 2026 UC", "CUCAI 2025", "Cell Systems (in review)"]
+  - title: "Reasoning"
+    text: "Latent reasoning and confidence in chemical language models."
+    icon: route
+    color: "#4f7fe0"
+    tags: ["ICML 2026", "ICML 2026 WiML"]
+  - title: "Agents"
+    text: "An agent that analyzes experiments in a self-driving lab, under human control."
+    icon: flask
+    color: "#2ea0c4"
+    tags: ["NeurIPS 2026 AI4Mat"]
+
+# --- Where I'm heading -------------------------------------------------------
+heading:
+  lede: "Each project left a question open about trust. In my PhD I want to work on those directly, with science as the test bed."
+  figure_title: "Reasoning, checked at every step"
+  figure_note: "Can a model flag when it leaves its validated domain, before an agent acts?"
+  figure_hint: "move your cursor to steer"
+  directions:
+    - title: "Safety cheap enough to use"
+      text: "Checks an agent can run before every action."
+      icon: shield
+    - title: "Reasoning that follows structure"
+      text: "A problem's structure, not its surface."
+      icon: route
+  map_intro: "The full map, from molecules to agents in the lab. Click a node."
+
+# --- Beyond research ---------------------------------------------------------
+beyond:
+  roles:
+    - text: "Co-president, UofT Women in CS"
+      icon: users
+    - text: "DCS Student Ambassador"
+      icon: flag
+    - text: "Founder, Toronto Ethics in AI Symposium"
+      icon: star
+    - text: "NCWIT Campus Representative"
+      icon: cap
+  hobbies:
+    - text: "Singing"
+      icon: mic
+    - text: "Double bass"
+      icon: music
+    - text: "Making jewelry"
+      icon: gem
+    - text: "Old sci-fi movies"
+      icon: film

@@ -1,5 +1,4 @@
 // Progressive enhancement. Every page reads fine without this file; with it:
-//   - the homepage is split into sections with a sticky heading column
 //   - research / projects / experience entries become a timeline
 //   - publications become cards
 //   - things fade in as they scroll into view, and a progress bar tracks scroll
@@ -15,54 +14,6 @@
   }
   function isTag(n, names) {
     return n.nodeType === 1 && names.indexOf(n.tagName) !== -1;
-  }
-
-  // ---- homepage: sections ----------------------------------------------------
-
-  function buildHomeSections() {
-    var content = document.querySelector('.home .page__content');
-    if (!content) return;
-
-    var groups = [];
-    var current = { heading: null, nodes: [] };
-    slice.call(content.childNodes).forEach(function (n) {
-      if (isTag(n, ['HR'])) return;                       // sections replace the rules
-      if (isTag(n, ['SCRIPT', 'NOSCRIPT'])) { current.nodes.push(n); return; }
-      if (isTag(n, ['H2'])) {
-        groups.push(current);
-        current = { heading: n, nodes: [] };
-        return;
-      }
-      current.nodes.push(n);
-    });
-    groups.push(current);
-
-    var frag = document.createDocumentFragment();
-    groups.forEach(function (g) {
-      var hasContent = g.heading || g.nodes.some(function (n) { return n.nodeType === 1; });
-      if (!hasContent) return;
-
-      var sec = el('section', 'sec');
-      var head = el('div', 'sec__head');
-      var body = el('div', 'sec__body');
-      if (g.heading) {
-        sec.setAttribute('data-sec', g.heading.id || '');
-        head.appendChild(g.heading);
-      } else {
-        sec.className += ' sec--intro';
-        var label = el('p', 'sec__label');
-        label.textContent = content.getAttribute('data-intro-label') || 'About';
-        head.appendChild(label);
-      }
-      g.nodes.forEach(function (n) { body.appendChild(n); });
-      sec.appendChild(head);
-      sec.appendChild(body);
-      frag.appendChild(sec);
-    });
-
-    content.innerHTML = '';
-    content.appendChild(frag);
-    content.classList.add('is-enhanced');
   }
 
   // ---- inner pages: timeline entries and publication cards -------------------
@@ -182,7 +133,7 @@
   function setupSpotlight() {
     if (!window.matchMedia || !window.matchMedia('(hover: hover)').matches) return;
     document.addEventListener('pointermove', function (e) {
-      var card = e.target.closest && e.target.closest('.pub, .sec[data-sec="what-im-working-on-now"] .sec__body > ul > li');
+      var card = e.target.closest && e.target.closest('.pub, .tile');
       if (!card) return;
       var r = card.getBoundingClientRect();
       card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
@@ -190,7 +141,6 @@
     }, { passive: true });
   }
 
-  buildHomeSections();
   buildInnerPages();
   root.classList.add('is-enhanced');
   setupReveal();

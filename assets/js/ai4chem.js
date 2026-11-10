@@ -483,5 +483,10 @@
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(scheduleDraw);
 
   draw();
-  select('repr');
+  // The homepage keeps the panel closed until a node is picked (less text up front).
+  if (root.hasAttribute('data-start-closed')) {
+    detail.innerHTML = '<p class="ai4chem__empty">Pick a node or a safety layer to see the questions I would ask there.</p>';
+  } else {
+    select('repr');
+  }
 })();
