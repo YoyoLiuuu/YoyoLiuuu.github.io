@@ -6,8 +6,8 @@
 // steers the next steps, so a visitor can push a trajectory out of the domain
 // and watch it get caught.
 (function () {
-  var canvas = document.getElementById('trajectory');
-  if (!canvas || !canvas.getContext) return;
+  function init(canvas) {
+  if (!canvas.getContext) return;
   var ctx = canvas.getContext('2d');
 
   // ---- layout (all in units of canvas width / height) ------------------------
@@ -322,4 +322,8 @@
   }
 
   schedule();
+  }
+
+  // one drawing per <canvas data-scene="trajectory">
+  Array.prototype.forEach.call(document.querySelectorAll('canvas[data-scene="trajectory"]'), init);
 })();

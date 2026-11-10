@@ -85,6 +85,44 @@
     else if (body.contains('page--publications')) buildPubCards(archive);
   }
 
+  // ---- homepage: roadmap boxes open a drawing ------------------------------
+
+  function setupStage() {
+    var stage = document.getElementById('stage');
+    if (!stage) return;
+    var boxes = slice.call(document.querySelectorAll('.roadmap__item[data-pane]'));
+    var panes = slice.call(stage.querySelectorAll('.stage__pane'));
+    var open = null;
+
+    function show(id) {
+      open = id;
+      stage.hidden = !id;
+      panes.forEach(function (p) { p.hidden = p.getAttribute('data-pane') !== id; });
+      boxes.forEach(function (b) {
+        var on = b.getAttribute('data-pane') === id;
+        b.classList.toggle('is-active', on);
+        b.setAttribute('aria-expanded', on ? 'true' : 'false');
+      });
+      if (id) {
+        // bring the drawing into view if it opened below the fold
+        var r = stage.getBoundingClientRect();
+        if (r.bottom > window.innerHeight || r.top < 0) {
+          stage.scrollIntoView({ block: 'nearest', behavior: reduceMotion ? 'auto' : 'smooth' });
+        }
+      }
+    }
+
+    boxes.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var id = b.getAttribute('data-pane');
+        show(open === id ? null : id);
+      });
+    });
+    var close = stage.querySelector('.stage__close');
+    if (close) close.addEventListener('click', function () { show(null); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && open) show(null); });
+  }
+
   // ---- reveal on scroll ------------------------------------------------------
 
   function setupReveal() {
@@ -142,6 +180,7 @@
   }
 
   buildInnerPages();
+  setupStage();
   root.classList.add('is-enhanced');
   setupReveal();
   setupProgress();

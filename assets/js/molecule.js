@@ -5,8 +5,8 @@
 // To show a different molecule, replace ATOMS and BONDS with another
 // conformer's atoms [element, x, y, z] and bonds [from, to, order].
 (function () {
-  var canvas = document.getElementById('molecule');
-  if (!canvas || !canvas.getContext) return;
+  function init(canvas) {
+  if (!canvas.getContext) return;
   var ctx = canvas.getContext('2d');
 
   var ATOMS = [
@@ -245,4 +245,8 @@
   }
 
   schedule();
+  }
+
+  // one drawing per <canvas data-scene="molecule">
+  Array.prototype.forEach.call(document.querySelectorAll('canvas[data-scene="molecule"]'), init);
 })();

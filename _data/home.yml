@@ -3,33 +3,57 @@
 # `icon` is a name from _includes/icon.html.
 
 # --- Roadmap at the top: built -> now -> next -------------------------------
+# Each box opens a drawing when clicked. `scene` picks the drawing:
+# molecule, latent, loop, trajectory, gate or lens (see assets/js/).
 roadmap:
   built_label: "What I've built"
   now_label: "Now"
   next_label: "Where I'm heading"
+  hint: "click a box to see it"
   built:
     - title: "Representations"
       text: "molecules, RNA, proteins"
       icon: molecule
       color: "#6c5ce7"
+      scene: molecule
+      scene_title: "Give the model what the science knows"
+      scene_note: "Symmetry and geometry go into the representation. This one is HBDI, the GFP chromophore from my time in the Brown Lab."
+      scene_hint: "drag to rotate"
     - title: "Reasoning"
       text: "chemical language models"
       icon: route
       color: "#4f7fe0"
+      scene: latent
+      scene_title: "Reasoning in latent space"
+      scene_note: "LatentChem reasons in continuous vectors instead of words. Similar chemistry seems to end up in nearby regions."
     - title: "Agents"
       text: "self-driving labs"
       icon: flask
       color: "#2ea0c4"
+      scene: loop
+      scene_title: "An agent inside the experiment"
+      scene_note: "The agent analyzes results and designs the next step. Anything that changes the lab waits for human approval."
   next:
     - title: "Validation"
       text: "can each decision be checked?"
       icon: check
+      scene: trajectory
+      scene_title: "Checked at every step"
+      scene_note: "Can a model flag when its reasoning leaves the validated domain, before an agent acts?"
+      scene_hint: "move your cursor to steer"
     - title: "Safety"
       text: "checks before every action"
       icon: shield
+      scene: gate
+      scene_title: "Checks before every action"
+      scene_note: "Safety cheap enough to run every time: safe actions pass, risky ones stop for review."
     - title: "Understanding"
       text: "is the learned structure real?"
       icon: eye
+      scene: lens
+      scene_title: "Is the structure real?"
+      scene_note: "Probe what a model has learned, then test whether it actually uses it."
+      scene_hint: "move your cursor to probe"
 
 # --- Where I am now ----------------------------------------------------------
 now:

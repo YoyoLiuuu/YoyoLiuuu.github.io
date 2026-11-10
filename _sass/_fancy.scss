@@ -620,14 +620,28 @@ body {
   list-style: none;
 }
 
+.roadmap__col > li {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  margin: 0;
+}
+
+/* each box is a button that opens its drawing in the stage below */
 .roadmap__item {
   --c: var(--live);
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  align-self: center;
+  width: 100%;
   min-width: 0;
   margin: 0;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  -webkit-appearance: none;
+          appearance: none;
   padding: 0.55rem 0.65rem;
   border: 1px solid var(--border);
   border-radius: 14px;
@@ -639,6 +653,7 @@ body {
     border-color: var(--c);
     transform: translateY(-2px);
   }
+
 
   @media (max-width: 479px) {
     justify-content: center;
@@ -654,6 +669,14 @@ body {
   border-color: color-mix(in srgb, var(--live) 55%, var(--border));
   background: var(--surface-veil);
   box-shadow: none;
+}
+
+/* the box whose drawing is open (after the "next" styles so it wins) */
+.roadmap__col .roadmap__item.is-active {
+  border-style: solid;
+  border-color: var(--c);
+  background: var(--surface);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--c) 22%, transparent), var(--shadow);
 }
 
 .roadmap__icon {
@@ -1037,4 +1060,131 @@ body {
   font-size: 0.97em;
 
   > :last-child { margin-bottom: 0; }
+}
+
+/* --------------------------------------------------------------------------
+   Stage: the drawing that opens when a roadmap box is clicked
+   -------------------------------------------------------------------------- */
+
+.roadmap__hint {
+  margin: 0.9rem 0 0;
+  color: var(--muted);
+  font-family: $font-mono;
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  text-align: center;
+
+  span { display: inline-block; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .roadmap__hint span { animation: nudge 1.6s ease-in-out infinite; }
+}
+
+@keyframes nudge {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+.stage {
+  --c: var(--live);
+  position: relative;
+  grid-column: 1 / -1;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+
+  &[hidden] { display: none; }
+}
+
+.stage__pane {
+  display: grid;
+  align-items: center;
+  padding-top: 2.4rem; // room for the close button above the drawing
+
+  &[hidden] { display: none; }
+
+  @media (min-width: 760px) {
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    padding-top: 0;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .stage__pane { animation: stage-pop 0.45s $ease-out both; }
+}
+
+@keyframes stage-pop {
+  from { opacity: 0; transform: translateY(10px) scale(0.985); }
+  to { opacity: 1; transform: none; }
+}
+
+.stage__canvas {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  touch-action: pan-y;
+
+  &--molecule { cursor: grab; }
+  &--molecule.is-dragging { cursor: grabbing; }
+  &--trajectory,
+  &--lens { cursor: crosshair; }
+}
+
+.stage__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.25rem 1.5rem 1.5rem;
+
+  @media (min-width: 760px) {
+    padding: 2rem 2.5rem 2rem 0.5rem;
+  }
+}
+
+.stage__kicker {
+  margin: 0 0 0.6rem;
+  color: var(--c);
+  font-family: $font-mono;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.stage__title {
+  margin: 0 0 0.6rem;
+  font-family: $font-display;
+  font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+}
+
+.stage__note {
+  margin: 0 0 0.9rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.stage__close {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  z-index: 1;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+
+  &:hover { border-color: var(--accent); color: var(--accent); }
 }
