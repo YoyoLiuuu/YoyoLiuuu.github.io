@@ -206,11 +206,11 @@
     m.setAttribute('orient', 'auto');
     var p = svgEl('path');
     p.setAttribute('d', 'M0 0L10 5L0 10z');
-    p.setAttribute('fill', color);
+    p.style.fill = color;
     m.appendChild(p);
     defs.appendChild(m);
   }
-  addMarker('muted', '#cfd4da');
+  addMarker('muted', 'var(--edge, #cfd4da)');
   NODES.forEach(function(n) { addMarker(n.id, n.color); });
 
   EDGES.forEach(function(e) {
@@ -327,7 +327,7 @@
       var on = id && (e.from === id || e.to === id);
       e.path.classList.toggle('is-on', !!on);
       e.path.classList.toggle('is-dim', !!id && !on);
-      var color = on ? byId[e.from].color : '#cfd4da';
+      var color = on ? byId[e.from].color : '';
       e.path.style.stroke = color;
       e.path.setAttribute('marker-end', 'url(#ai4-arrow-' + (on ? e.from : 'muted') + ')');
     });

@@ -9,14 +9,14 @@ My research focuses on building ML systems for scientific problems — particula
 
 ---
 ## MATS (Machine Alignment, Transparency & Security)
-**Research Fellow (incoming) — MATS 12.0, Lila Sciences stream, biosecurity track** | January 2027 | London, UK
+**Research Fellow (incoming) — MATS 12.0, Lila Sciences stream, biosecurity track** | January 2027 | London, UK<br>
 *Mentored by David Peinador Veiga*
 
 - Will work on **evaluating and mitigating catastrophic risks from dangerous scientific capabilities in frontier AI**, particularly biology, chemistry, and agents integrated with physical lab equipment.
 
 ---
 ## University of Toronto — Matter Lab (Aspuru-Guzik Group)
-**Undergraduate Research Project — Unhobble Science: Building a Model-Adaptive Layer in Chemistry Agents** | September 2026 – Present | Toronto, ON
+**Undergraduate Research Project — Unhobble Science: Building a Model-Adaptive Layer in Chemistry Agents** | September 2026 – Present | Toronto, ON<br>
 *Advised by Professor Alán Aspuru-Guzik and Professor Varinia Bernales*
 
 - Studying how to **unhobble a model and move knowledge between harnesses**: what is transferable across scaffolds, what is scaffold-specific, and what turns out to be unnecessary altogether.
@@ -55,7 +55,7 @@ My research focuses on building ML systems for scientific problems — particula
 ---
 
 ## National University of Singapore — SERIUS Internship
-**Machine Learning Research Intern — Large Language Models (LLMs)** | May – August 2025 | Singapore
+**Machine Learning Research Intern — Large Language Models (LLMs)** | May – August 2025 | Singapore<br>
 *Supervised by Yeoh Jing Wui and Professor Poh Chueh Loo*
 
 - One of thirty students from North America selected for the 2025 SERIUS internship program at NUS.

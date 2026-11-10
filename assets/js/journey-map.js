@@ -19,7 +19,7 @@
     .then(function(land) {
       L.geoJSON(land, {
         interactive: false,
-        style: { fillColor: '#e6e9ed', color: '#d5d9de', weight: 0.6, fillOpacity: 1 }
+        style: { className: 'journey-land', fillColor: '#e6e9ed', color: '#d5d9de', weight: 0.6, fillOpacity: 1 }
       }).addTo(map);
     });
 
@@ -160,7 +160,7 @@
     if (tagLabel) html += '<span class="popup-tag ' + pin.type + '">' + tagLabel + '</span>';
 
     pin.entries.forEach(function(entry, i) {
-      if (i > 0) html += '<div style="border-top:1px solid #eee; margin:8px 0;"></div>';
+      if (i > 0) html += '<div class="popup-sep"></div>';
       html += '<div class="popup-year">' + entry.year + '</div>';
       html += '<div class="popup-desc">' + entry.desc + '</div>';
     });

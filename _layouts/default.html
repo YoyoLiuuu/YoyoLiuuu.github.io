@@ -11,7 +11,8 @@ layout: compress
     {% include head/custom.html %}
   </head>
 
-  <body>
+  {% if page.url == "/" %}{% assign page_slug = "home" %}{% else %}{% assign page_slug = page.url | split: "/" | join: " " | strip | slugify %}{% endif %}
+  <body class="layout--{{ page.layout | default: layout.layout }} page--{{ page_slug }}">
 
     {% include browser-upgrade.html %}
     {% include masthead.html %}

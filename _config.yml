@@ -12,7 +12,7 @@ title                    : "Yoyo Liu"
 title_separator          : "-"
 name                     : &name "Yoyo Liu"
 description              : &description "AI + Chemistry researcher at the University of Toronto. Building ML systems for scientific discovery."
-url                      : https://yoyoliuuu.github.io/ # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : https://yoyoliuuu.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "YoyoLiuuu/YoyoLiuuu.github.io"
 

@@ -40,7 +40,7 @@ In my PhD, I hope to study how to best represent and reason with chemical molecu
   <noscript><p style="padding:1em 1.3em">This interactive map needs JavaScript. The short version: molecular representation → reasoning in molecule space → language meets geometry → agents in the lab, with experimental feedback flowing all the way back to the start, and two safety layers underneath: model safety (decision making, reasoning, interpretability, calibration) and lab-in-the-loop guardrails.</p></noscript>
 </div>
 
-<script src="/assets/js/ai4chem.js"></script>
+<script src="/assets/js/ai4chem.js?v=2"></script>
 
 ---
 
