@@ -5,7 +5,7 @@ permalink: /research/
 author_profile: true
 ---
 
-I study machine-learning models and language-model agents in the natural sciences, where mistakes are costly: how they learn from scarce data, whether their reasoning can be checked, and when their decisions can be trusted. Chemistry and biology are where I test this, from molecular representations to agents that choose experiments in a real laboratory.
+I build machine-learning models and agents for chemistry and biology, from molecular representations to agents that choose experiments in a real laboratory. Across that work I keep coming back to the same questions: how these systems learn from scarce data, whether their reasoning can be checked, and when their decisions can be trusted.
 
 ---
 ## MATS (Machine Alignment, Transparency & Security)

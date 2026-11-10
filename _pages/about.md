@@ -5,7 +5,7 @@ layout: home
 author_profile: false
 # --- homepage hero (edit freely) ---
 hero_title: "Hey, I’m <em>Yoyo</em>."
-hero_eyebrow: "Reasoning · Reliability · Safety — AI for science"
+hero_eyebrow: "ML for science · and when to trust it"
 hero_lede: "I study machine-learning models and language-model agents in the natural sciences, where mistakes are costly: how they learn from scarce data, whether their reasoning can be checked, and when their decisions can be trusted."
 hero_now:
   - "Incoming MATS 12.0 Research Fellow"
@@ -30,7 +30,7 @@ redirect_from:
   - /about.html
 ---
 
-I work on AI systems for science: how models and agents **reason**, how that reasoning can be **checked**, and when their decisions are **safe to act on**. Chemistry is my test bed, because it offers structure defined independently of the model and experiments that say whether a decision was right.
+I build machine-learning models and agents for chemistry and biology: molecular representations, chemical reasoning in language models, and agents that choose experiments in a real laboratory. The question that work keeps raising, and the one I want to spend my PhD on, is when these systems can be **checked**, **understood**, and **trusted**.
 
 I'm a Computer Science (Focus in AI and Technology Leadership) student at the **University of Toronto**. I am currently completing my 4th year research project **Unhobble Science: Building a Model-Adaptive Layer in Chemistry Agents**, advised by **Professor Alán Aspuru-Guzik and Professor Varinia Bernales**.
 
@@ -40,7 +40,7 @@ Since May 2026, I've been an **ML Research Intern at the Acceleration Consortium
 
 Before that, I was an **Applied ML Engineer Intern at Shopify** on the Core (Search Relevance) team, a **LLM Research Intern at the National University of Singapore**, and a research student advised by **Professor Anatole von Lilienfeld**. 
 
-I care about making ML useful for scientific problems: not just training models, but designing evaluation pipelines, engineering datasets, and building systems that scale. I got here through science — RNA structure prediction, protein design, and molecular modeling — and that work is why I now care most about the machine-learning questions underneath it.
+I care about making ML useful for scientific problems: not just training models, but designing evaluation pipelines, engineering datasets, and building systems that scale. Whether it's fine-tuning LLMs for metabolite pathway reasoning or implementing inverse-folding benchmarks for protein design, I like getting my hands dirty with the full stack of research engineering.
 
 ---
 
@@ -53,24 +53,27 @@ I care about making ML useful for scientific problems: not just training models,
 
 ---
 
+## What I've worked on {#research-interests}
+
+- **Representations that build in what the science knows** — symmetric molecular representations for data-efficient learning (von Lilienfeld group), reasoning traces for metabolic pathways ([NeurIPS 2026 WiML](/publications/)), and RNA 3D structure prediction and inverse protein design ([AAAI 2026 UC, RiboFold, BC-Design](/publications/))
+- **Reasoning in chemical language models** — latent reasoning in LatentChem ([ICML 2026](/publications/)), and confidence signals that tell a small model when to ask for a hint ([ICML 2026 WiML](/publications/))
+- **Agents inside the experiment** — an agent that selects and interprets measurements in a self-driving lab, with every action that changes the lab behind validation and human approval ([NeurIPS 2026 AI4Mat](/publications/))
+
+---
+
 ## Where I'm headed {#phd-directions}
 
-In my PhD, I want to study how AI models and agents for science can reason in ways we can check and act in ways we can trust — though I'm open to other ideas and directions. Two directions grow out of my work so far: **safety cheap enough to use**, meaning checks an agent can run before every action, and **reasoning that follows a problem's structure** rather than its surface. There are a few layers where these questions can be tackled, from "fundamental" chemistry to agentic, cross-discipline work, and every layer feeds the others. Click a node to open it; hover an edge to see how two layers connect.
+Each of those projects left the same kind of question open. Is the structure a model seems to learn real? Does its confidence mean anything? How much of an agent's reliability belongs to the model, and how much to the harness around it?
+
+In my PhD, I want to work on those questions directly: **validation**, **safety**, and **understanding** of models and agents for science — though I'm open to other ideas and directions. Two places I'd start: **safety cheap enough to use**, meaning checks an agent can run before every action, and **reasoning that follows a problem's structure** rather than its surface. Science stays the test bed, because it offers structure defined independently of the model and experiments that say whether a decision was right.
+
+The map below lays out the layers where these questions live, from "fundamental" chemistry to agentic, cross-discipline work, with two safety layers underneath. Click a node to open it; hover an edge to see how two layers connect.
 
 <div id="ai4chem" class="ai4chem">
   <noscript><p style="padding:1em 1.3em">This interactive map needs JavaScript. The short version: molecular representation → reasoning in molecule space → language meets geometry → agents in the lab, with experimental feedback flowing all the way back to the start, and two safety layers underneath: model safety (decision making, reasoning, interpretability, calibration) and lab-in-the-loop guardrails.</p></noscript>
 </div>
 
 <script src="/assets/js/ai4chem.js?v=3"></script>
-
----
-
-## Research interests
-
-- **Agents that are safe to act** — where an agent should sit in an experiment, what authority it holds, and how its decisions are validated and traced; knowing when a model is out of its depth, and what capability actually transfers between harnesses
-- **Reasoning that can be checked** — latent reasoning in chemical space, trajectory-based confidence signals, and whether a model's reasoning can flag when it leaves its validated domain
-- **What a model should be given** — molecular representations with symmetry built in, reasoning traces as training data, and data-efficient learning when experiments are scarce
-- **Where I started** — macromolecule structure prediction and design: 3D folding of ribozymes, tRNA structure prediction, protein inverse design
 
 ---
 
