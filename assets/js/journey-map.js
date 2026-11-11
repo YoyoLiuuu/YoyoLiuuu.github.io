@@ -19,7 +19,7 @@
     .then(function(land) {
       L.geoJSON(land, {
         interactive: false,
-        style: { fillColor: '#e6e9ed', color: '#d5d9de', weight: 0.6, fillOpacity: 1 }
+        style: { className: 'journey-land', fillColor: '#e6e9ed', color: '#d5d9de', weight: 0.6, fillOpacity: 1 }
       }).addTo(map);
     });
 
@@ -94,6 +94,20 @@
       ]
     },
     {
+      lat: -33.87, lng: 151.21, type: 'physical',
+      city: 'Sydney, Australia',
+      entries: [
+        { year: 'Dec 2026', desc: 'NeurIPS 2026 — presenting The A to D in DMTA (AI4Mat Workshop, first author) and Recovering Hidden Chemistry (Women in ML Workshop)' }
+      ]
+    },
+    {
+      lat: 51.51, lng: -0.13, type: 'physical',
+      city: 'London, UK',
+      entries: [
+        { year: 'Jan 2027 (incoming)', desc: 'MATS 12.0 — Research Fellow, Lila Sciences stream (biosecurity)' }
+      ]
+    },
+    {
       lat: 37.77, lng: -122.42, type: 'physical',
       city: 'San Francisco, California, USA',
       entries: [
@@ -146,7 +160,7 @@
     if (tagLabel) html += '<span class="popup-tag ' + pin.type + '">' + tagLabel + '</span>';
 
     pin.entries.forEach(function(entry, i) {
-      if (i > 0) html += '<div style="border-top:1px solid #eee; margin:8px 0;"></div>';
+      if (i > 0) html += '<div class="popup-sep"></div>';
       html += '<div class="popup-year">' + entry.year + '</div>';
       html += '<div class="popup-desc">' + entry.desc + '</div>';
     });

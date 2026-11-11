@@ -29,7 +29,7 @@ $calisto                    : "Calisto MT", serif;
 $garamond                   : Garamond, serif;
 
 $global-font-family         : "Inter", $sans-serif;
-$header-font-family         : "Inter", $sans-serif;
+$header-font-family         : "Newsreader", Georgia, "Times New Roman", serif;
 $caption-font-family        : $serif;
 
 /* type scale */
@@ -68,11 +68,11 @@ $code-background-color-dark : $light-gray;
 $text-color                 : #2d3436;
 $border-color               : #e9ecef;
 
-$primary-color              : #6c5ce7;
-$success-color              : #00b894;
-$warning-color              : #fdcb6e;
+$primary-color              : #c2185b;
+$success-color              : #7a2a6c;
+$warning-color              : #f2b84b;
 $danger-color               : #e17055;
-$info-color                 : #6c5ce7;
+$info-color                 : #c2185b;
 
 /* brands */
 $behance-color              : #1769FF;
@@ -102,11 +102,11 @@ $xing-color                 : #006567;
 
 
 /* links */
-$link-color                 : #6c5ce7;
+$link-color                 : #c2185b;
 $link-color-hover           : mix(#000, $link-color, 20%);
 $link-color-visited         : mix(#fff, $link-color, 15%);
 $masthead-link-color        : #2d3436;
-$masthead-link-color-hover  : #6c5ce7;
+$masthead-link-color-hover  : #c2185b;
 
 
 /*

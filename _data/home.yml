@@ -1,0 +1,132 @@
+# Content for the homepage graphics (layout: _layouts/home.html).
+# Keep every `text` to one short line: the page is meant to be scanned.
+# `icon` is a name from _includes/icon.html.
+
+# --- Roadmap at the top: built -> now -> next -------------------------------
+# Each box opens a drawing when clicked. `scene` picks the drawing:
+# molecule, latent, loop, trajectory, gate, lens or edit (see assets/js/).
+roadmap:
+  built_label: "What I've built"
+  now_label: "Now"
+  next_label: "Where I'm heading"
+  hint: "click a box to see it"
+  built:
+    - title: "Representations"
+      text: "molecules, RNA, proteins"
+      icon: molecule
+      color: "#7a2a6c"
+      scene: molecule
+      scene_title: "Give the model what the science knows"
+      scene_note: "Symmetry and geometry go into the representation. This one is HBDI, the GFP chromophore from my time in the Brown Lab."
+      scene_hint: "drag to rotate"
+    - title: "Reasoning"
+      text: "chemical language models"
+      icon: route
+      color: "#c2185b"
+      scene: latent
+      scene_title: "Reasoning in latent space"
+      scene_note: "LatentChem reasons in continuous vectors instead of words. Similar chemistry seems to end up in nearby regions."
+    - title: "Agents"
+      text: "self-driving labs"
+      icon: flask
+      color: "#e0527f"
+      scene: loop
+      scene_title: "An agent inside the experiment"
+      scene_note: "The agent analyzes results and designs the next step. Anything that changes the lab waits for human approval."
+  next:
+    - title: "Understand"
+      text: "what has the model learned about chemistry?"
+      icon: eye
+      scene: lens
+      scene_title: "Is the chemistry really in there?"
+      scene_note: "Do a model's internal states line up with real chemical structure, like motifs and 3D geometry, and does it use them?"
+      scene_hint: "move your cursor to probe"
+    - title: "Improve"
+      text: "reason over geometry and language"
+      icon: molecule
+      scene: edit
+      scene_title: "Better chemistry, not just better scores"
+      scene_note: "If that structure is real, can it steer molecular design better than text prompting?"
+    - title: "Trust"
+      text: "know when to verify in the lab"
+      icon: shield
+      scene: trajectory
+      scene_title: "Checked at every step"
+      scene_note: "Can a model flag when its reasoning leaves the chemistry it was validated on, before an agent acts?"
+      scene_hint: "move your cursor to steer"
+
+# --- Where I am now ----------------------------------------------------------
+now:
+  - title: "MATS 12.0"
+    status: "Incoming · Jan 2027"
+    text: "Research Fellow on the biosecurity track with Lila Sciences, London."
+    icon: shield
+  - title: "Unhobble Science"
+    status: "4th-year project"
+    text: "What transfers between agent harnesses, and what doesn't."
+    icon: layers
+  - title: "Acceleration Consortium"
+    status: "Part-time"
+    text: "Reliable agentic reasoning for self-driving labs."
+    icon: flask
+  - title: "PhD applications"
+    status: "Fall 2027"
+    text: "Understanding and improving ML models for chemistry."
+    icon: cap
+
+# --- What I've built ---------------------------------------------------------
+built:
+  - title: "Representations"
+    text: "Building what the science already knows into what a model sees."
+    icon: molecule
+    color: "#7a2a6c"
+    tags: ["NeurIPS 2026 WiML", "AAAI 2026 UC", "CUCAI 2025", "Cell Systems (in review)"]
+  - title: "Reasoning"
+    text: "Latent reasoning and confidence in chemical language models."
+    icon: route
+    color: "#c2185b"
+    tags: ["ICML 2026", "ICML 2026 WiML"]
+  - title: "Agents"
+    text: "An agent that analyzes experiments in a self-driving lab, under human control."
+    icon: flask
+    color: "#e0527f"
+    tags: ["NeurIPS 2026 AI4Mat"]
+
+# --- Where I'm heading -------------------------------------------------------
+heading:
+  lede: "I want to understand what chemistry models actually learn, use that to make them better, and know when they can be trusted in the lab."
+  figure_scene: gate
+  figure_title: "Checks before every action"
+  figure_note: "Cheap enough to run every time: safe actions pass, risky ones stop for review."
+  directions:
+    - title: "Does the model use chemistry, or only contain it?"
+      text: "Follow its reasoning against chemical motifs and 3D geometry."
+      icon: eye
+    - title: "Geometry and language together"
+      text: "Models that reason over molecules and text at once."
+      icon: molecule
+    - title: "Checks cheap enough to use"
+      text: "So an agent can verify before it acts in the lab."
+      icon: shield
+  map_intro: "The full map, from molecules to agents in the lab. Click a node."
+
+# --- Beyond research ---------------------------------------------------------
+beyond:
+  roles:
+    - text: "Co-president, UofT Women in CS"
+      icon: users
+    - text: "DCS Student Ambassador"
+      icon: flag
+    - text: "Founder, Toronto Ethics in AI Symposium"
+      icon: star
+    - text: "NCWIT Campus Representative"
+      icon: cap
+  hobbies:
+    - text: "Singing"
+      icon: mic
+    - text: "Double bass"
+      icon: music
+    - text: "Making jewelry"
+      icon: gem
+    - text: "Old sci-fi movies"
+      icon: film

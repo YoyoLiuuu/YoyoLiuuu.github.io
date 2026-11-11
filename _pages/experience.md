@@ -3,6 +3,7 @@ layout: archive
 title: "Experience"
 permalink: /experience/
 author_profile: true
+leaflet: true
 ---
 
 My journey so far — hover over the pins to explore.
@@ -17,11 +18,18 @@ My journey so far — hover over the pins to explore.
 
 <div id="journey-map"></div>
 
-<script src="/assets/js/journey-map.js?v=3"></script>
+<script src="/assets/js/journey-map.js?v=6"></script>
 
 ---
 
 ## Work Experience
+
+### MATS — Research Fellow (incoming)
+Starting January 2027 | London, UK
+- MATS 12.0, Lila Sciences stream (biosecurity track), mentored by David Peinador Veiga.
+- Evaluating and mitigating catastrophic risks from dangerous scientific capabilities in frontier AI, particularly biology, chemistry, and agents integrated with physical lab equipment.
+
+---
 
 ### Shopify — Applied Machine Learning Engineer Intern
 January – April 2026 | Toronto, ON

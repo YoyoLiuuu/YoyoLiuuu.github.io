@@ -1,5 +1,6 @@
-{% if site.url %}
-  {% assign base_path = site.url | append: site.baseurl %}
-{% else %}
-  {% assign base_path = site.github.url %}
-{% endif %}
+{% comment %}
+  Root-relative, so assets load from whatever host the page was opened on
+  (localhost, 127.0.0.1, or the live domain). An absolute URL here made the
+  icon fonts fail in local preview when the two hosts differed.
+{% endcomment %}
+{% assign base_path = site.baseurl %}

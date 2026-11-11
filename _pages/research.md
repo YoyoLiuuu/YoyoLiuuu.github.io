@@ -5,11 +5,18 @@ permalink: /research/
 author_profile: true
 ---
 
-My research focuses on building ML systems for scientific problems — particularly at the intersection of AI, chemistry, and structural biology. I've worked across protein design, RNA folding, molecular modeling, and LLM-driven bioengineering.
+I build machine-learning models and agents for chemistry and biology, from molecular representations to agents that choose experiments in a real laboratory. Across that work I keep coming back to the same questions: how these systems learn from scarce data, whether their reasoning can be checked, and when their decisions can be trusted.
+
+---
+## MATS (Machine Alignment, Transparency & Security)
+**Research Fellow (incoming) — MATS 12.0, Lila Sciences stream, biosecurity track** | January 2027 | London, UK<br>
+*Mentored by David Peinador Veiga*
+
+- Will work on **evaluating and mitigating catastrophic risks from dangerous scientific capabilities in frontier AI**, particularly biology, chemistry, and agents integrated with physical lab equipment.
 
 ---
 ## University of Toronto — Matter Lab (Aspuru-Guzik Group)
-**Undergraduate Research Project — Unhobble Science: Building a Model-Adaptive Layer in Chemistry Agents** | September 2026 – Present | Toronto, ON
+**Undergraduate Research Project — Unhobble Science: Building a Model-Adaptive Layer in Chemistry Agents** | September 2026 – Present | Toronto, ON<br>
 *Advised by Professor Alán Aspuru-Guzik and Professor Varinia Bernales*
 
 - Studying how to **unhobble a model and move knowledge between harnesses**: what is transferable across scaffolds, what is scaffold-specific, and what turns out to be unnecessary altogether.
@@ -22,6 +29,7 @@ My research focuses on building ML systems for scientific problems — particula
 - Architected and implemented a **full-stack platform connecting LLM agents with laboratory hardware and scientific software** through validated, permission-scoped interfaces for self-driving laboratories.
 - Deployed and served open-weight LLMs on local compute clusters, building inference infrastructure and tooling for researchers to run models within on-premise scientific workflows.
 - Engineered **closed-loop agentic workflows** for experiment execution, data analysis, and adaptive decision-making, integrating physical hardware with automated tool execution and failure recovery.
+- First-author paper, *The A to D in DMTA: Agentic Analysis for Self-Driving Labs*, accepted to the [NeurIPS 2026 AI4Mat Workshop](/publications/). Replaying a 28-well oxidant screen from archived measurements, the agent found the best condition in every campaign with a budget of 8+ injections; in the live run it flagged two failed sample transfers.
 - Continuing part-time after the summer internship on **reliable agentic reasoning and decision making** — making an agent's reasoning trustworthy enough to act on.
 
 ---
@@ -47,7 +55,7 @@ My research focuses on building ML systems for scientific problems — particula
 ---
 
 ## National University of Singapore — SERIUS Internship
-**Machine Learning Research Intern — Large Language Models (LLMs)** | May – August 2025 | Singapore
+**Machine Learning Research Intern — Large Language Models (LLMs)** | May – August 2025 | Singapore<br>
 *Supervised by Yeoh Jing Wui and Professor Poh Chueh Loo*
 
 - One of thirty students from North America selected for the 2025 SERIUS internship program at NUS.

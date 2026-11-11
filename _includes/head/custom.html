@@ -21,20 +21,24 @@
 <meta name="msapplication-TileColor" content="#000000">
 <meta name="msapplication-TileImage" content="{{ base_path }}/images/mstile-144x144.png?v=M44lzPylqQ">
 <meta name="msapplication-config" content="{{ base_path }}/images/browserconfig.xml?v=M44lzPylqQ">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#fbfaf8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14151a" media="(prefers-color-scheme: dark)">
 <link rel="stylesheet" href="{{ base_path }}/assets/css/academicons.css"/>
 
-<!-- Google Fonts - Inter -->
+<!-- Fonts: Newsreader (headings), Inter (text), IBM Plex Mono (labels) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
 
-<!-- Leaflet.js for interactive map -->
+{% if page.leaflet %}
+<!-- Leaflet.js for the journey map (only on pages that set `leaflet: true`) -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+{% endif %}
 
-<!-- Support for MatJax -->
-<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+{% if page.mathjax %}
+<!-- MathJax (only on pages that set `mathjax: true`) -->
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+{% endif %}
 
 <!-- end custom head snippets -->

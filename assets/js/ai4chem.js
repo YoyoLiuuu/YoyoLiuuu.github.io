@@ -16,7 +16,7 @@
   var NODES = [
     {
       id: 'repr', num: 1, size: 60,
-      color: '#6c5ce7', soft: 'rgba(108, 92, 231, 0.2)',
+      color: '#7a2a6c', soft: 'rgba(122, 42, 108, 0.2)',
       label: 'Molecular representation', scale: 'molecule · in silico',
       title: 'Machine learning with molecular representation',
       sub: 'How to best represent molecules, and design methods around that representation.',
@@ -37,7 +37,7 @@
     },
     {
       id: 'reason', num: 2, size: 72,
-      color: '#4f7fe0', soft: 'rgba(79, 127, 224, 0.2)',
+      color: '#c2185b', soft: 'rgba(194, 24, 91, 0.2)',
       label: 'Reasoning in molecule space', scale: 'reactions · in silico',
       title: 'Reasoning within molecule space',
       sub: 'What it even means to “reason” over molecules, and which model families can do it.',
@@ -55,7 +55,7 @@
     },
     {
       id: 'lang', num: 3, size: 84,
-      color: '#2ea0c4', soft: 'rgba(46, 160, 196, 0.2)',
+      color: '#e0527f', soft: 'rgba(224, 82, 127, 0.2)',
       label: 'Language meets geometry', scale: 'LLMs · agents',
       title: 'Connect language reasoning with geometry and molecular space',
       sub: 'Language models and agents that act on molecular structure, not just talk about it.',
@@ -69,7 +69,7 @@
     },
     {
       id: 'lab', num: 4, size: 96,
-      color: '#00b894', soft: 'rgba(0, 184, 148, 0.2)',
+      color: '#ee6c4d', soft: 'rgba(238, 108, 77, 0.22)',
       label: 'Agents in the lab', scale: 'self-driving lab · physical',
       title: 'Agentic systems connecting language, geometry and experimental feedback',
       sub: 'Where the loop closes on real experiments, and where reliability stops being optional.',
@@ -90,7 +90,7 @@
   var LAYERS = [
     {
       id: 'model-safety', type: 'layer', covers: ['repr', 'reason', 'lang', 'lab'],
-      color: '#e17055', soft: 'rgba(225, 112, 85, 0.26)', bg: 'rgba(225, 112, 85, 0.08)', bgHover: 'rgba(225, 112, 85, 0.16)',
+      color: '#b9770e', soft: 'rgba(185, 119, 14, 0.26)', bg: 'rgba(185, 119, 14, 0.08)', bgHover: 'rgba(185, 119, 14, 0.16)',
       label: 'Model safety', short: 'Model safety',
       title: 'Model safety',
       sub: 'Decision making, reasoning, interpretability, and confidence calibration. Can we trust what the model is doing before it acts?',
@@ -112,7 +112,7 @@
     },
     {
       id: 'lab-safety', type: 'layer', covers: ['lang', 'lab'],
-      color: '#d63031', soft: 'rgba(214, 48, 49, 0.24)', bg: 'rgba(214, 48, 49, 0.07)', bgHover: 'rgba(214, 48, 49, 0.14)',
+      color: '#6b6470', soft: 'rgba(107, 100, 112, 0.26)', bg: 'rgba(107, 100, 112, 0.08)', bgHover: 'rgba(107, 100, 112, 0.16)',
       label: 'Lab-in-the-loop safety', short: 'Lab guardrails',
       title: 'Lab-in-the-loop safety',
       sub: 'The guardrails that let an agent run experiments autonomously without a catastrophic mistake.',
@@ -184,7 +184,7 @@
 
   var header = el('div', 'ai4chem__header');
   header.appendChild(el('div', 'ai4chem__eyebrow', 'Interactive · click a node or a safety layer, hover an edge'));
-  header.appendChild(el('div', 'ai4chem__title', 'Where AI for chemistry is headed + where I want to work'));
+  header.appendChild(el('div', 'ai4chem__title', 'From molecules to agents in the lab, with safety underneath'));
   header.appendChild(el('div', 'ai4chem__sub', 'From “fundamental” chemistry on the left to agentic, cross-discipline work on the right. Each layer feeds the next, feedback runs back the other way, and two safety layers run underneath: one for the model, one for the lab.'));
   root.appendChild(header);
 
@@ -206,11 +206,11 @@
     m.setAttribute('orient', 'auto');
     var p = svgEl('path');
     p.setAttribute('d', 'M0 0L10 5L0 10z');
-    p.setAttribute('fill', color);
+    p.style.fill = color;
     m.appendChild(p);
     defs.appendChild(m);
   }
-  addMarker('muted', '#cfd4da');
+  addMarker('muted', 'var(--edge, #cfd4da)');
   NODES.forEach(function(n) { addMarker(n.id, n.color); });
 
   EDGES.forEach(function(e) {
@@ -327,7 +327,7 @@
       var on = id && (e.from === id || e.to === id);
       e.path.classList.toggle('is-on', !!on);
       e.path.classList.toggle('is-dim', !!id && !on);
-      var color = on ? byId[e.from].color : '#cfd4da';
+      var color = on ? byId[e.from].color : '';
       e.path.style.stroke = color;
       e.path.setAttribute('marker-end', 'url(#ai4-arrow-' + (on ? e.from : 'muted') + ')');
     });
@@ -483,5 +483,10 @@
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(scheduleDraw);
 
   draw();
-  select('repr');
+  // The homepage keeps the panel closed until a node is picked (less text up front).
+  if (root.hasAttribute('data-start-closed')) {
+    detail.innerHTML = '<p class="ai4chem__empty">Pick a node or a safety layer to see the questions I would ask there.</p>';
+  } else {
+    select('repr');
+  }
 })();

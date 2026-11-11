@@ -1,0 +1,198 @@
+---
+layout: default
+---
+
+{% include base_path %}
+{% assign author = site.author %}
+{% assign home = site.data.home %}
+{% assign avatar = author.avatar | prepend: "/images/" | prepend: base_path %}
+
+<div id="main" class="home" role="main">
+
+  {% comment %} ---------- Hero: who I am + the roadmap graphic ---------- {% endcomment %}
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__backdrop" aria-hidden="true"></div>
+
+    <div class="hero__text">
+      <p class="hero__eyebrow">{{ page.hero_eyebrow | default: author.location }}</p>
+      <h1 class="hero__title" id="hero-title">{{ page.hero_title | default: page.title }}</h1>
+      <p class="hero__lede">{{ page.hero_lede | default: site.description }}</p>
+
+      <ul class="hero__links">
+        {% if author.email %}<li><a class="btn-pill btn-pill--primary" href="mailto:{{ author.email }}"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i>Email me</a></li>{% endif %}
+        {% if author.googlescholar %}<li><a class="btn-pill" href="{{ author.googlescholar }}"><i class="ai ai-google-scholar" aria-hidden="true"></i>Scholar</a></li>{% endif %}
+        {% if author.github %}<li><a class="btn-pill" href="https://github.com/{{ author.github }}"><i class="fab fa-fw fa-github" aria-hidden="true"></i>GitHub</a></li>{% endif %}
+        {% if author.linkedin %}<li><a class="btn-pill" href="https://www.linkedin.com/in/{{ author.linkedin }}"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i>LinkedIn</a></li>{% endif %}
+      </ul>
+    </div>
+
+    {% assign rm = home.roadmap %}
+    <figure class="roadmap" aria-label="Roadmap: what I have built, where I am now, and where I am heading">
+      <div class="roadmap__labels" aria-hidden="true">
+        <span>{{ rm.built_label }}</span>
+        <span>{{ rm.now_label }}</span>
+        <span>{{ rm.next_label }}</span>
+      </div>
+
+      <div class="roadmap__body">
+        <svg class="roadmap__wires" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+          <path class="wire" style="stroke: {{ rm.built[0].color }}" d="M37 16.67 C 45 16.67, 43 50, 50 50"/>
+          <path class="wire" style="stroke: {{ rm.built[1].color }}" d="M37 50 L 50 50"/>
+          <path class="wire" style="stroke: {{ rm.built[2].color }}" d="M37 83.33 C 45 83.33, 43 50, 50 50"/>
+          <path class="wire wire--next" d="M50 50 C 57 50, 55 16.67, 63 16.67"/>
+          <path class="wire wire--next" d="M50 50 L 63 50"/>
+          <path class="wire wire--next" d="M50 50 C 57 50, 55 83.33, 63 83.33"/>
+        </svg>
+
+        <ul class="roadmap__col roadmap__col--built">
+          {% for item in rm.built %}
+          <li>
+            <button type="button" class="roadmap__item" style="--c: {{ item.color }}" data-pane="{{ item.title | slugify }}" aria-expanded="false" aria-controls="stage">
+              <span class="roadmap__icon">{% include icon.html name=item.icon %}</span>
+              <span class="roadmap__copy"><strong>{{ item.title }}</strong><small>{{ item.text }}</small></span>
+            </button>
+          </li>
+          {% endfor %}
+        </ul>
+
+        <div class="roadmap__now">
+          <img src="{{ avatar }}" alt="{{ author.name }}" width="72" height="72">
+        </div>
+
+        <ul class="roadmap__col roadmap__col--next">
+          {% for item in rm.next %}
+          <li>
+            <button type="button" class="roadmap__item" data-pane="{{ item.title | slugify }}" aria-expanded="false" aria-controls="stage">
+              <span class="roadmap__icon">{% include icon.html name=item.icon %}</span>
+              <span class="roadmap__copy"><strong>{{ item.title }}</strong><small>{{ item.text }}</small></span>
+            </button>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% if rm.hint %}<p class="roadmap__hint"><span aria-hidden="true">&#8593;</span> {{ rm.hint }}</p>{% endif %}
+    </figure>
+
+    {% comment %} One drawing per roadmap box; shown when its box is clicked (enhance.js). {% endcomment %}
+    <div class="stage" id="stage" hidden>
+      <button type="button" class="stage__close" aria-label="Close">&times;</button>
+      {% assign boxes = rm.built | concat: rm.next %}
+      {% for item in boxes %}
+      <div class="stage__pane" data-pane="{{ item.title | slugify }}"{% if item.color %} style="--c: {{ item.color }}"{% endif %} hidden>
+        <canvas class="stage__canvas stage__canvas--{{ item.scene }}" data-scene="{{ item.scene }}" role="img" aria-label="{{ item.scene_title }}: {{ item.scene_note }}"></canvas>
+        <div class="stage__copy">
+          <p class="stage__kicker">{{ item.title }}</p>
+          <h3 class="stage__title">{{ item.scene_title }}</h3>
+          <p class="stage__note">{{ item.scene_note }}</p>
+          {% if item.scene_hint %}<span class="hero__hint">{{ item.scene_hint }}</span>{% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <article class="page home__article" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="{{ site.title }}">
+    <div class="page__content is-enhanced" itemprop="text">
+
+      {% comment %} ---------- Where I am now ---------- {% endcomment %}
+      <section class="sec" data-sec="now">
+        <div class="sec__head"><h2 id="what-im-working-on-now">Where I am now</h2></div>
+        <div class="sec__body">
+          <ul class="tiles">
+            {% for item in home.now %}
+            <li class="tile">
+              <span class="tile__icon">{% include icon.html name=item.icon %}</span>
+              <span class="tile__status">{{ item.status }}</span>
+              <strong class="tile__title">{{ item.title }}</strong>
+              <span class="tile__text">{{ item.text }}</span>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </section>
+
+      {% comment %} ---------- What I've built ---------- {% endcomment %}
+      <section class="sec" data-sec="built">
+        <div class="sec__head"><h2 id="research-interests">What I’ve built</h2></div>
+        <div class="sec__body">
+          <ul class="tiles tiles--built">
+            {% for item in home.built %}
+            <li class="tile" style="--c: {{ item.color }}">
+              <span class="tile__icon tile__icon--solid">{% include icon.html name=item.icon %}</span>
+              <strong class="tile__title">{{ item.title }}</strong>
+              <span class="tile__text">{{ item.text }}</span>
+              <span class="tile__tags">
+                {% for tag in item.tags %}<a href="{{ base_path }}/publications/">{{ tag }}</a>{% endfor %}
+              </span>
+            </li>
+            {% endfor %}
+          </ul>
+          <p class="sec__more"><a href="{{ base_path }}/research/">All research <span aria-hidden="true">&rarr;</span></a> <a href="{{ base_path }}/publications/">All publications <span aria-hidden="true">&rarr;</span></a></p>
+        </div>
+      </section>
+
+      {% comment %} ---------- Where I'm heading ---------- {% endcomment %}
+      {% assign hd = home.heading %}
+      <section class="sec" data-sec="heading">
+        <div class="sec__head"><h2 id="phd-directions">Where I’m heading</h2></div>
+        <div class="sec__body">
+          <p class="sec__lede">{{ hd.lede }}</p>
+
+          <div class="heading-grid">
+            <figure class="heading-fig">
+              <canvas data-scene="{{ hd.figure_scene | default: 'trajectory' }}" class="heading-fig__canvas" role="img" aria-label="{{ hd.figure_title }}: {{ hd.figure_note }}"></canvas>
+              <figcaption>
+                <strong>{{ hd.figure_title }}</strong>
+                <span>{{ hd.figure_note }}</span>
+                {% if hd.figure_hint %}<span class="hero__hint">{{ hd.figure_hint }}</span>{% endif %}
+              </figcaption>
+            </figure>
+
+            <ul class="tiles tiles--stack">
+              {% for item in hd.directions %}
+              <li class="tile">
+                <span class="tile__icon">{% include icon.html name=item.icon %}</span>
+                <strong class="tile__title">{{ item.title }}</strong>
+                <span class="tile__text">{{ item.text }}</span>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+
+          <p class="sec__note">{{ hd.map_intro }}</p>
+          <div id="ai4chem" class="ai4chem" data-start-closed>
+            <noscript><p style="padding:1em 1.3em">This interactive map needs JavaScript. The short version: molecular representation → reasoning in molecule space → language meets geometry → agents in the lab, with experimental feedback flowing all the way back to the start, and two safety layers underneath: model safety (decision making, reasoning, interpretability, calibration) and lab-in-the-loop guardrails.</p></noscript>
+          </div>
+        </div>
+      </section>
+
+      {% comment %} ---------- Beyond research ---------- {% endcomment %}
+      <section class="sec" data-sec="beyond">
+        <div class="sec__head"><h2 id="beyond-research">Beyond research</h2></div>
+        <div class="sec__body">
+          <ul class="badges">
+            {% for item in home.beyond.roles %}<li class="badge">{% include icon.html name=item.icon %}{{ item.text }}</li>{% endfor %}
+          </ul>
+          <ul class="badges badges--soft">
+            {% for item in home.beyond.hobbies %}<li class="badge">{% include icon.html name=item.icon %}{{ item.text }}</li>{% endfor %}
+          </ul>
+
+          {% assign body = content | strip %}
+          {% if body != "" %}
+          <details class="longform">
+            <summary>{{ page.longform_label | default: "The longer version" }}</summary>
+            <div class="longform__body">{{ content }}</div>
+          </details>
+          {% endif %}
+        </div>
+      </section>
+
+    </div>
+  </article>
+</div>
+
+<script src="{{ base_path }}/assets/js/ai4chem.js?v=5"></script>
+<script src="{{ base_path }}/assets/js/trajectory.js"></script>
+<script src="{{ base_path }}/assets/js/molecule.js"></script>
+<script src="{{ base_path }}/assets/js/scenes.js"></script>
