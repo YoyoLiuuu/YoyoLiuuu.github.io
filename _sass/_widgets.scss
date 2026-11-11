@@ -34,11 +34,11 @@
   display: inline-block;
   flex-shrink: 0;
 
-  &.physical { background: #6c5ce7; }
-  &.remote { background: #b8b5e7; }
-  &.current { background: #00b894; }
-  &.birth { background: #fd79a8; }
-  &.home { background: #fdcb6e; }
+  &.physical { background: #c2185b; }
+  &.remote { background: #e9a8c2; }
+  &.current { background: #ee6c4d; }
+  &.birth { background: #7a2a6c; }
+  &.home { background: #f2b84b; }
 }
 
 
@@ -108,45 +108,45 @@ path.journey-land {
   border-radius: 4px;
   margin-bottom: 6px;
 
-  &.physical { background: rgba(108, 92, 231, 0.1); color: var(--accent); }
-  &.remote { background: rgba(184, 181, 231, 0.2); color: #7c78c9; }
-  &.current { background: rgba(0, 184, 148, 0.1); color: #00b894; }
-  &.home { background: rgba(253, 203, 110, 0.25); color: #b7791f; }
+  &.physical { background: var(--accent-soft); color: var(--accent); }
+  &.remote { background: rgba(233, 168, 194, 0.25); color: #b0457a; }
+  &.current { background: rgba(238, 108, 77, 0.12); color: var(--live); }
+  &.home { background: rgba(242, 184, 75, 0.25); color: var(--warn); }
 }
 
 .marker-physical {
-  background: #6c5ce7;
+  background: #c2185b;
   border: 2.5px solid var(--surface);
   border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(108, 92, 231, 0.35);
+  box-shadow: 0 2px 6px rgba(194, 24, 91, 0.35);
 }
 
 .marker-remote {
-  background: #b8b5e7;
+  background: #e9a8c2;
   border: 2.5px solid var(--surface);
   border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(108, 92, 231, 0.2);
+  box-shadow: 0 2px 6px rgba(194, 24, 91, 0.2);
 }
 
 .marker-birth {
-  background: #fd79a8;
+  background: #7a2a6c;
   border: 2.5px solid var(--surface);
   border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(253, 121, 168, 0.35);
+  box-shadow: 0 2px 6px rgba(122, 42, 108, 0.35);
 }
 
 .marker-home {
-  background: #fdcb6e;
+  background: #f2b84b;
   border: 2.5px solid var(--surface);
   border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(253, 203, 110, 0.5);
+  box-shadow: 0 2px 6px rgba(242, 184, 75, 0.5);
 }
 
 .marker-current {
-  background: #00b894;
+  background: #ee6c4d;
   border: 2.5px solid var(--surface);
   border-radius: 50%;
-  box-shadow: 0 0 0 4px rgba(0, 184, 148, 0.2), 0 2px 6px rgba(0, 184, 148, 0.35);
+  box-shadow: 0 0 0 4px rgba(238, 108, 77, 0.22), 0 2px 6px rgba(238, 108, 77, 0.35);
 }
 
 /* ==========================================================================
@@ -154,8 +154,8 @@ path.journey-land {
    ========================================================================== */
 
 .ai4chem {
-  --c: #6c5ce7;
-  --c-soft: rgba(108, 92, 231, 0.2);
+  --c: #c2185b;
+  --c-soft: rgba(194, 24, 91, 0.2);
   margin: 1.5em 0 0.5em;
   background: var(--surface);
   border: 1px solid var(--border);
@@ -328,10 +328,10 @@ path.journey-land {
   }
 
   &__layer {
-    --c: #e17055;
-    --c-soft: rgba(225, 112, 85, 0.26);
-    --c-bg: rgba(225, 112, 85, 0.08);
-    --c-bg-hover: rgba(225, 112, 85, 0.16);
+    --c: #b9770e;
+    --c-soft: rgba(185, 119, 14, 0.26);
+    --c-bg: rgba(185, 119, 14, 0.08);
+    --c-bg-hover: rgba(185, 119, 14, 0.16);
     display: flex;
     align-items: center;
     gap: 0.5em;
@@ -551,7 +551,7 @@ path.journey-land {
   }
 
   &__chip {
-    --chip: #6c5ce7;
+    --chip: #c2185b;
     display: inline-flex;
     align-items: center;
     gap: 0.45em;

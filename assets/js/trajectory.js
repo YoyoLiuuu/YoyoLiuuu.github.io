@@ -38,14 +38,14 @@
       ink: v('--ink-2', '#41464d'),
       muted: v('--muted', '#646b73'),
       edge: v('--edge', '#cbcfd5'),
-      accent: v('--accent', '#5b4bdb'),
-      act: v('--live', '#00a383'),
-      flag: v('--mol-o', '#ea6a52'),
+      accent: v('--accent', '#c2185b'),
+      act: v('--ok', '#7a2a6c'),
+      flag: v('--warn', '#c98509'),
       bg: v('--bg', '#fbfaf8')
     };
   }
   // step colours walk along the site gradient
-  var STEP_COLORS = ['#6c5ce7', '#6269e5', '#5876e2', '#4f83dc', '#4391d2', '#369fc6', '#28acb4', '#17b3a3'];
+  var STEP_COLORS = ['#e88fb4', '#e47aa6', '#df6598', '#d9508a', '#d23b7c', '#ca286d', '#c2185b', '#a81452'];
 
   // ---- size ------------------------------------------------------------------
 

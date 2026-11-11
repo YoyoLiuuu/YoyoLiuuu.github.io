@@ -18,11 +18,11 @@ $ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
    -------------------------------------------------------------------------- */
 
 :root {
-  /* the four stops are the node colours of the AI-for-chemistry pathway */
-  --grad: linear-gradient(100deg, #6c5ce7 0%, #4f7fe0 38%, #2ea0c4 68%, #00b894 100%);
-  --glow-a: rgba(108, 92, 231, 0.2);
-  --glow-b: rgba(0, 184, 148, 0.15);
-  --dot: rgba(35, 38, 43, 0.16);
+  /* plum -> magenta -> coral -> amber */
+  --grad: linear-gradient(100deg, #7a2a6c 0%, #c2185b 36%, #ee6c4d 72%, #f2a93b 100%);
+  --glow-a: rgba(194, 24, 91, 0.14);
+  --glow-b: rgba(242, 169, 59, 0.16);
+  --dot: rgba(42, 35, 40, 0.15);
 
   /* molecule model (assets/js/molecule.js reads these) */
   --mol-c: #3b4049;
@@ -32,8 +32,10 @@ $ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 :root[data-theme="dark"] {
-  --glow-a: rgba(124, 108, 255, 0.26);
-  --glow-b: rgba(0, 200, 160, 0.16);
+  /* lighter stops so the plum end stays readable on a dark page */
+  --grad: linear-gradient(100deg, #c465b4 0%, #ff5c9d 36%, #ff8a66 72%, #ffc15e 100%);
+  --glow-a: rgba(255, 90, 160, 0.2);
+  --glow-b: rgba(255, 154, 92, 0.13);
   --dot: rgba(233, 234, 238, 0.14);
 
   --mol-c: #8d94a1;
@@ -460,7 +462,7 @@ body {
 .author__avatar img {
   border: 3px solid transparent;
   background: linear-gradient(var(--bg), var(--bg)) padding-box, var(--grad) border-box;
-  box-shadow: 0 10px 28px rgba(108, 92, 231, 0.16);
+  box-shadow: 0 10px 28px rgba(194, 24, 91, 0.14);
 
   @media (min-width: $bp-wide) {
     border: 3px solid transparent;

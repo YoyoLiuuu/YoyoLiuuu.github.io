@@ -9,7 +9,7 @@
 (function () {
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var TAU = Math.PI * 2;
-  var STOPS = ['#6c5ce7', '#4f7fe0', '#2ea0c4']; // the site's three "built" colours
+  var STOPS = ['#7a2a6c', '#c2185b', '#e0527f']; // the site's three "built" colours
 
   // deterministic random numbers, so a drawing looks the same on every visit
   function rng(seed) {
@@ -27,8 +27,8 @@
     function v(name, fallback) { return s.getPropertyValue(name).trim() || fallback; }
     return {
       ink: v('--ink-2', '#41464d'), muted: v('--muted', '#646b73'), edge: v('--edge', '#cbcfd5'),
-      border: v('--border', '#e6e3dd'), accent: v('--accent', '#5b4bdb'), live: v('--live', '#00a383'),
-      flag: v('--mol-o', '#ea6a52'), bg: v('--surface', '#ffffff')
+      border: v('--border', '#e6e3dd'), accent: v('--accent', '#c2185b'), live: v('--ok', '#7a2a6c'),
+      flag: v('--warn', '#c98509'), bg: v('--surface', '#ffffff')
     };
   }
 

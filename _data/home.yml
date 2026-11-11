@@ -14,7 +14,7 @@ roadmap:
     - title: "Representations"
       text: "molecules, RNA, proteins"
       icon: molecule
-      color: "#6c5ce7"
+      color: "#7a2a6c"
       scene: molecule
       scene_title: "Give the model what the science knows"
       scene_note: "Symmetry and geometry go into the representation. This one is HBDI, the GFP chromophore from my time in the Brown Lab."
@@ -22,14 +22,14 @@ roadmap:
     - title: "Reasoning"
       text: "chemical language models"
       icon: route
-      color: "#4f7fe0"
+      color: "#c2185b"
       scene: latent
       scene_title: "Reasoning in latent space"
       scene_note: "LatentChem reasons in continuous vectors instead of words. Similar chemistry seems to end up in nearby regions."
     - title: "Agents"
       text: "self-driving labs"
       icon: flask
-      color: "#2ea0c4"
+      color: "#e0527f"
       scene: loop
       scene_title: "An agent inside the experiment"
       scene_note: "The agent analyzes results and designs the next step. Anything that changes the lab waits for human approval."
@@ -79,17 +79,17 @@ built:
   - title: "Representations"
     text: "Building what the science already knows into what a model sees."
     icon: molecule
-    color: "#6c5ce7"
+    color: "#7a2a6c"
     tags: ["NeurIPS 2026 WiML", "AAAI 2026 UC", "CUCAI 2025", "Cell Systems (in review)"]
   - title: "Reasoning"
     text: "Latent reasoning and confidence in chemical language models."
     icon: route
-    color: "#4f7fe0"
+    color: "#c2185b"
     tags: ["ICML 2026", "ICML 2026 WiML"]
   - title: "Agents"
     text: "An agent that analyzes experiments in a self-driving lab, under human control."
     icon: flask
-    color: "#2ea0c4"
+    color: "#e0527f"
     tags: ["NeurIPS 2026 AI4Mat"]
 
 # --- Where I'm heading -------------------------------------------------------

@@ -18,28 +18,32 @@ $font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace
 :root {
   color-scheme: light;
 
-  --bg: #fbfaf8;
+  /* warm neutrals */
+  --bg: #fcfaf7;
   --surface: #ffffff;
-  --surface-2: #f6f5f2;
-  --surface-veil: rgba(251, 250, 248, 0.82);
-  --ink: #23262b;
-  --ink-2: #41464d;
-  --muted: #646b73;
-  --border: #e6e3dd;
-  --edge: #cbcfd5;
+  --surface-2: #f7f3f0;
+  --surface-veil: rgba(252, 250, 247, 0.82);
+  --ink: #2a2328;
+  --ink-2: #4a4148;
+  --muted: #6f656c;
+  --border: #e9e2df;
+  --edge: #d2c8cc;
 
-  --accent: #5b4bdb;
-  --accent-strong: #4536b8;
-  --accent-soft: rgba(108, 92, 231, 0.1);
-  --live: #00a383;
+  /* magenta, with plum, coral and amber around it */
+  --accent: #c2185b;          // magenta: links, buttons, highlights
+  --accent-strong: #9a1248;
+  --accent-soft: rgba(194, 24, 91, 0.09);
+  --live: #cf4f1f;            // coral: "now" and "where I'm heading"
+  --ok: #7a2a6c;              // plum: checked / passed
+  --warn: #c98509;            // amber: flagged / verify first
 
-  --tip-bg: #23262b;
+  --tip-bg: #2a2328;
   --tip-ink: #ffffff;
-  --map-sea: #f1f1ee;
-  --map-land: #dcdcd6;
-  --map-coast: #cdcdc6;
+  --map-sea: #f4f0ed;
+  --map-land: #e0d8d4;
+  --map-coast: #d1c7c3;
 
-  --shadow: 0 1px 2px rgba(35, 38, 43, 0.04), 0 8px 24px rgba(35, 38, 43, 0.06);
+  --shadow: 0 1px 2px rgba(42, 35, 40, 0.04), 0 8px 24px rgba(42, 35, 40, 0.06);
 
   --masthead-h: 64px;
   --page-max: 70rem;
@@ -49,26 +53,28 @@ $font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace
 :root[data-theme="dark"] {
   color-scheme: dark;
 
-  --bg: #14151a;
-  --surface: #1c1e25;
-  --surface-2: #181a20;
-  --surface-veil: rgba(20, 21, 26, 0.82);
-  --ink: #e9eaee;
-  --ink-2: #c9ccd3;
-  --muted: #9da3ad;
-  --border: #2c2f39;
-  --edge: #4a4e5a;
+  --bg: #171316;
+  --surface: #211b20;
+  --surface-2: #1c171b;
+  --surface-veil: rgba(23, 19, 22, 0.82);
+  --ink: #f3ecf0;
+  --ink-2: #d6cad1;
+  --muted: #a99ba4;
+  --border: #352b33;
+  --edge: #57484f;
 
-  --accent: #a99eff;
-  --accent-strong: #c3bbff;
-  --accent-soft: rgba(169, 158, 255, 0.14);
-  --live: #2fd3ae;
+  --accent: #ff7eb6;
+  --accent-strong: #ffa8cf;
+  --accent-soft: rgba(255, 126, 182, 0.14);
+  --live: #ff9a5c;
+  --ok: #ffc2e0;
+  --warn: #ffc857;
 
-  --tip-bg: #e9eaee;
-  --tip-ink: #14151a;
-  --map-sea: #181a20;
-  --map-land: #2b2e38;
-  --map-coast: #3a3e4a;
+  --tip-bg: #f3ecf0;
+  --tip-ink: #171316;
+  --map-sea: #1c171b;
+  --map-land: #332a31;
+  --map-coast: #43373f;
 
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
 }
@@ -104,7 +110,7 @@ body {
 }
 
 ::selection {
-  background: rgba(108, 92, 231, 0.22);
+  background: rgba(194, 24, 91, 0.2);
 }
 
 a {
@@ -391,7 +397,7 @@ table {
     border: 0;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 0 0 1px var(--border), 0 6px 18px rgba(108, 92, 231, 0.16);
+    box-shadow: 0 0 0 1px var(--border), 0 6px 18px rgba(194, 24, 91, 0.14);
 
     @media (min-width: $bp-wide) {
       width: 148px;
