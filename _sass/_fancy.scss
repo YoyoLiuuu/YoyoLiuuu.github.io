@@ -959,7 +959,9 @@ body {
 }
 
 .heading-fig {
-  display: block;
+  display: flex; // column, so the drawing sits in the middle beside taller tiles
+  flex-direction: column;
+  justify-content: center;
   margin: 0;
   padding: 0.75rem 0.75rem 1rem;
   border: 1px solid var(--border);
@@ -986,7 +988,7 @@ body {
   display: block;
   width: 100%;
   aspect-ratio: 4 / 3;
-  cursor: crosshair;
+  cursor: default;
 }
 
 .badges {

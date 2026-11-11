@@ -8,8 +8,8 @@ author_profile: false
 # _data/home.yml. The text below the front matter is the collapsed
 # "longer version" at the bottom of the page.
 hero_title: "Hey, I’m <em>Yoyo</em>."
-hero_eyebrow: "ML for science · and when to trust it"
-hero_lede: "I build machine-learning models and agents for chemistry and biology. In my PhD, I want to make them checkable, understandable, and trustworthy."
+hero_eyebrow: "Machine learning for chemistry and biology"
+hero_lede: "I build machine-learning models and agents for chemistry and biology. In my PhD, I want to understand what they actually learn, and use that to make them better and more reliable."
 longform_label: "The longer version"
 redirect_from:
   - /about/

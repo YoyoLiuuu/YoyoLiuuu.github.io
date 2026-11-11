@@ -141,11 +141,11 @@ layout: default
 
           <div class="heading-grid">
             <figure class="heading-fig">
-              <canvas data-scene="trajectory" class="heading-fig__canvas" role="img" aria-label="Animation of reasoning trajectories: steps that stay inside a validated domain end in an action, and a step that leaves it is flagged for verification"></canvas>
+              <canvas data-scene="{{ hd.figure_scene | default: 'trajectory' }}" class="heading-fig__canvas" role="img" aria-label="{{ hd.figure_title }}: {{ hd.figure_note }}"></canvas>
               <figcaption>
                 <strong>{{ hd.figure_title }}</strong>
                 <span>{{ hd.figure_note }}</span>
-                <span class="hero__hint">{{ hd.figure_hint }}</span>
+                {% if hd.figure_hint %}<span class="hero__hint">{{ hd.figure_hint }}</span>{% endif %}
               </figcaption>
             </figure>
 

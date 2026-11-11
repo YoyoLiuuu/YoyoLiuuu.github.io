@@ -4,7 +4,7 @@
 
 # --- Roadmap at the top: built -> now -> next -------------------------------
 # Each box opens a drawing when clicked. `scene` picks the drawing:
-# molecule, latent, loop, trajectory, gate or lens (see assets/js/).
+# molecule, latent, loop, trajectory, gate, lens or edit (see assets/js/).
 roadmap:
   built_label: "What I've built"
   now_label: "Now"
@@ -34,26 +34,26 @@ roadmap:
       scene_title: "An agent inside the experiment"
       scene_note: "The agent analyzes results and designs the next step. Anything that changes the lab waits for human approval."
   next:
-    - title: "Validation"
-      text: "can each decision be checked?"
-      icon: check
-      scene: trajectory
-      scene_title: "Checked at every step"
-      scene_note: "Can a model flag when its reasoning leaves the validated domain, before an agent acts?"
-      scene_hint: "move your cursor to steer"
-    - title: "Safety"
-      text: "checks before every action"
-      icon: shield
-      scene: gate
-      scene_title: "Checks before every action"
-      scene_note: "Safety cheap enough to run every time: safe actions pass, risky ones stop for review."
-    - title: "Understanding"
-      text: "is the learned structure real?"
+    - title: "Understand"
+      text: "what has the model learned about chemistry?"
       icon: eye
       scene: lens
-      scene_title: "Is the structure real?"
-      scene_note: "Probe what a model has learned, then test whether it actually uses it."
+      scene_title: "Is the chemistry really in there?"
+      scene_note: "Do a model's internal states line up with real chemical structure, like motifs and 3D geometry, and does it use them?"
       scene_hint: "move your cursor to probe"
+    - title: "Improve"
+      text: "reason over geometry and language"
+      icon: molecule
+      scene: edit
+      scene_title: "Better chemistry, not just better scores"
+      scene_note: "If that structure is real, can it steer molecular design better than text prompting?"
+    - title: "Trust"
+      text: "know when to verify in the lab"
+      icon: shield
+      scene: trajectory
+      scene_title: "Checked at every step"
+      scene_note: "Can a model flag when its reasoning leaves the chemistry it was validated on, before an agent acts?"
+      scene_hint: "move your cursor to steer"
 
 # --- Where I am now ----------------------------------------------------------
 now:
@@ -71,7 +71,7 @@ now:
     icon: flask
   - title: "PhD applications"
     status: "Fall 2027"
-    text: "Validation, safety and understanding of AI for science."
+    text: "Understanding and improving ML models for chemistry."
     icon: cap
 
 # --- What I've built ---------------------------------------------------------
@@ -94,17 +94,20 @@ built:
 
 # --- Where I'm heading -------------------------------------------------------
 heading:
-  lede: "Each project left a question open about trust. In my PhD I want to work on those directly, with science as the test bed."
-  figure_title: "Reasoning, checked at every step"
-  figure_note: "Can a model flag when it leaves its validated domain, before an agent acts?"
-  figure_hint: "move your cursor to steer"
+  lede: "I want to understand what chemistry models actually learn, use that to make them better, and know when they can be trusted in the lab."
+  figure_scene: gate
+  figure_title: "Checks before every action"
+  figure_note: "Cheap enough to run every time: safe actions pass, risky ones stop for review."
   directions:
-    - title: "Safety cheap enough to use"
-      text: "Checks an agent can run before every action."
+    - title: "Does the model use chemistry, or only contain it?"
+      text: "Follow its reasoning against chemical motifs and 3D geometry."
+      icon: eye
+    - title: "Geometry and language together"
+      text: "Models that reason over molecules and text at once."
+      icon: molecule
+    - title: "Checks cheap enough to use"
+      text: "So an agent can verify before it acts in the lab."
       icon: shield
-    - title: "Reasoning that follows structure"
-      text: "A problem's structure, not its surface."
-      icon: route
   map_intro: "The full map, from molecules to agents in the lab. Click a node."
 
 # --- Beyond research ---------------------------------------------------------

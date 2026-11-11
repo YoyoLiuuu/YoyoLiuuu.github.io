@@ -7,7 +7,7 @@
 {% assign seo_url = seo_url | default: site.github.url %}
 
 {% if page.url == "/" %}
-  {% assign seo_title = site.title | append: " " | append: site.title_separator | append: " ML for science, and when to trust it" %}
+  {% assign seo_title = site.title | append: " " | append: site.title_separator | append: " Machine learning for chemistry and biology" %}
 {% elsif page.title %}
   {% assign seo_title = page.title | append: " " | append: site.title_separator | append: " " | append: site.title %}
 {% endif %}

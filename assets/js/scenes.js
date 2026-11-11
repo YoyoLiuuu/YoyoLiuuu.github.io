@@ -2,8 +2,9 @@
 // Each <canvas data-scene="name"> gets the scene of that name:
 //   latent  paths through latent space settling into clusters      (Reasoning)
 //   loop    design - make - test - analyze, with a human gate       (Agents)
-//   gate    actions checked before they reach the lab               (Safety)
-//   lens    a probe that reveals hidden structure                   (Understanding)
+//   gate    actions checked before they reach the lab               (checks before acting)
+//   lens    a probe that reveals hidden structure                   (Understand)
+//   edit    molecular edits tried and scored                        (Improve)
 // The molecule and trajectory drawings live in molecule.js / trajectory.js.
 (function () {
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -250,7 +251,75 @@
     };
   }
 
-  var SCENES = { latent: latent, loop: loop, gate: gate, lens: lens };
+  // ---- edit: try molecular edits, keep the one that scores best --------------
+  // An illustration only: the bars are made-up scores, not real chemistry.
+
+  function edit(env) {
+    var groups = ['H', 'F', 'OH', 'NH\u2082', 'CH\u2083', 'OCH\u2083'];
+    var score = [0.26, 0.42, 0.58, 0.5, 0.74, 0.9];
+    var BEAT = 1.15;
+    return function (t) {
+      var ctx = env.ctx, W = env.W, H = env.H, c = env.c;
+      var n = groups.length;
+      var beat = reduceMotion ? n - 1 : Math.floor(t / BEAT) % (n + 2);   // two beats of rest at the end
+      var i = Math.min(beat, n - 1);
+      var pop = reduceMotion || beat >= n ? 1 : ease((t % BEAT) / 0.3);
+
+      // the ring being edited
+      var cx = W * 0.27, cy = H * 0.5, r = Math.min(W * 0.13, H * 0.2);
+      ctx.strokeStyle = c.ink;
+      ctx.lineWidth = 2;
+      ctx.lineJoin = 'round';
+      ctx.beginPath();
+      for (var k = 0; k < 6; k++) {
+        var x = cx + Math.cos(k * TAU / 6) * r, y = cy + Math.sin(k * TAU / 6) * r;
+        if (k === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      }
+      ctx.closePath();
+      ctx.stroke();
+      ctx.beginPath(); ctx.arc(cx, cy, r * 0.58, 0, TAU); ctx.stroke();
+
+      // fixed side, and the position being edited
+      ctx.beginPath(); ctx.moveTo(cx - r, cy); ctx.lineTo(cx - r * 1.6, cy); ctx.stroke();
+      ctx.strokeStyle = c.accent;
+      ctx.beginPath(); ctx.moveTo(cx + r, cy); ctx.lineTo(cx + r * 1.55, cy); ctx.stroke();
+      ctx.font = '600 ' + Math.round(Math.max(13, r * 0.42)) + 'px Inter, sans-serif';
+      ctx.textBaseline = 'middle';
+      ctx.textAlign = 'right';
+      ctx.fillStyle = c.ink;
+      ctx.fillText('R', cx - r * 1.7, cy);
+      ctx.textAlign = 'left';
+      ctx.fillStyle = c.accent;
+      ctx.globalAlpha = pop;
+      ctx.fillText(groups[i], cx + r * 1.65, cy - (1 - pop) * 8);
+      ctx.globalAlpha = 1;
+      text(env, 'edit', cx + r * 1.3, cy - r * 0.55, c.accent);
+
+      // one bar per candidate tried so far
+      var x0 = W * 0.6, x1 = W * 0.93, base = H * 0.78, top = H * 0.2;
+      var bw = (x1 - x0) / n * 0.58, best = 0;
+      for (var j = 0; j <= i; j++) if (score[j] > score[best]) best = j;
+      ctx.strokeStyle = c.border;
+      ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(x0 - 6, base); ctx.lineTo(x1, base); ctx.stroke();
+      for (j = 0; j <= i; j++) {
+        var grow = j === i ? pop : 1;
+        var bx = x0 + (x1 - x0) * j / n, bh = (base - top) * score[j] * grow;
+        ctx.fillStyle = j === best ? c.live : c.edge;
+        ctx.globalAlpha = j === i || j === best ? 1 : 0.6;
+        ctx.beginPath();
+        if (ctx.roundRect) ctx.roundRect(bx, base - bh, bw, bh, [4, 4, 0, 0]); else ctx.rect(bx, base - bh, bw, bh);
+        ctx.fill();
+        ctx.globalAlpha = 1;
+        text(env, groups[j], bx + bw / 2, base + 12, j === i ? c.accent : c.muted);
+      }
+      var bestX = x0 + (x1 - x0) * best / n + bw / 2;
+      text(env, 'best so far', bestX, base - (base - top) * score[best] - 12, c.live);
+      text(env, 'objective', (x0 + x1) / 2 - 8, H * 0.93, c.muted);
+    };
+  }
+
+  var SCENES = { latent: latent, loop: loop, gate: gate, lens: lens, edit: edit };
 
   // ---- driver: size, theme, pointer, and only animate while on screen --------
 
