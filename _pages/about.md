@@ -9,7 +9,7 @@ author_profile: false
 # "longer version" at the bottom of the page.
 hero_title: "Hey, I’m <em>Yoyo</em>."
 hero_eyebrow: "Machine learning for chemistry and biology"
-hero_lede: "I build machine-learning models and agents for chemistry and biology. In my PhD, I want to understand what they actually learn, and use that to make them better and more reliable."
+hero_lede: "I build machine-learning models and agents for chemistry and biology. In my PhD, I hope to work on both the models and the agentic systems behind scientific discovery: how models represent and reason about molecules, and how agents built on them can be trusted in the lab."
 longform_label: "The longer version"
 redirect_from:
   - /about/
@@ -25,6 +25,8 @@ Since May 2026, I've been an **ML Research Intern at the Acceleration Consortium
 Before that, I was an **Applied ML Engineer Intern at Shopify** on the Core (Search Relevance) team, a **LLM Research Intern at the National University of Singapore**, and a research student advised by **Professor Anatole von Lilienfeld**. 
 
 I care about making ML useful for scientific problems: not just training models, but designing evaluation pipelines, engineering datasets, and building systems that scale. Whether it's fine-tuning LLMs for metabolite pathway reasoning or implementing inverse-folding benchmarks for protein design, I like getting my hands dirty with the full stack of research engineering.
+
+In my PhD, I hope to work on both the machine learning models and the agentic systems behind scientific discovery: how models can best represent and reason about molecules, and how agents built on them can be trusted in the lab, from reliable decisions to resisting adversarial inputs. I'm also excited to explore new directions where these questions lead.
 
 Outside the lab, I am the co-president of **UofT Women in Computer Science** (WiCS) and a **Student Ambassador for the Department of Computer Science** at UofT. I founded the **Toronto Ethics in AI Symposium** (TEAS) and served as a **NCWIT Campus Representative**. I also sing, play double bass and make jewelry. I love watching old Sci-Fi movies :D
 

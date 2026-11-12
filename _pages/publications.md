@@ -18,7 +18,7 @@ Author: **Yimeng Liu**.
 
 **ICML 2026**<br>
 *LatentChem: From Textual CoT to Latent Thinking in Chemical Reasoning.*<br>
-Authors: Xinwu Ye\*, Yicheng Mao\*, Yuxuan Liao, Jia Zhang, **Yimeng Liu**, Li Hao, Fang Wu, Zhiwei Li, Zehong Wang, Yingcheng Wu, Zhiyuan Liu, Zhenfei Yin, Li Yuan, Philip Torr, Huan Sun, Xiangxiang Zeng, Mengdi Wang, Le Cong, Shenghua Gao, Xiangru Tang
+Authors: Xinwu Ye\*, Yicheng Mao\*, Yuxuan Liao, Jia Zhang, **Yimeng Liu**, Li Hao, Fang Wu, Zhiwei Li, Zehong Wang, Zhiyuan Liu, Zhenfei Yin, Li Yuan, Philip Torr, Huan Sun, Xiangxiang Zeng, Mengdi Wang, Le Cong, Shenghua Gao, Xiangru Tang
 
 ---
 
@@ -52,7 +52,7 @@ Authors: **Yimeng Liu**\*, Priyanka Mary Mammen\*, Mahalakshmi Venkateswarlu.
 
 ## Preprints
 
-**arXiv, 2026**<br>
+**Advanced Science (in review) · arXiv preprint, 2026**<br>
 *El Agente Fármaco: A Scalable AI Scientist for Drug Discovery.*<br>
 Authors: M. Müller, M. G. Vakili, Y. Ogura, E. Ashoori, S. Wang, A. S. Nascimento, E. Calleja, Y. Zhao, **Yimeng Liu**, et al. [arXiv:2611.03832](https://arxiv.org/abs/2611.03832)
 

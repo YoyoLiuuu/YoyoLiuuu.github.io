@@ -115,7 +115,7 @@
       color: '#6b6470', soft: 'rgba(107, 100, 112, 0.26)', bg: 'rgba(107, 100, 112, 0.08)', bgHover: 'rgba(107, 100, 112, 0.16)',
       label: 'Lab-in-the-loop safety', short: 'Lab guardrails',
       title: 'Lab-in-the-loop safety',
-      sub: 'The guardrails that let an agent run experiments autonomously without a catastrophic mistake.',
+      sub: 'The guardrails that let an agent run experiments autonomously without a catastrophic mistake, including when its inputs are adversarial.',
       tree: [
         ['What guardrails does an agent need to be autonomous in a lab without catastrophic failures?', [
           'Which actions must be validated, permission-scoped, or simulated before they touch real equipment or reagents?',
@@ -127,6 +127,10 @@
         ['How does an agent notice an experiment going wrong, and recover safely?', [
           'From its own uncertainty, from instrument feedback, or both?',
           'What does a safe fallback look like when a run is aborted part-way through?'
+        ]],
+        ['Can an agent resist adversarial inputs?', [
+          'It reads instrument output, protocols, and papers it did not write. What happens when those are contaminated, poisoned, or misleading?',
+          'Can an agent act on untrusted scientific data without letting that data choose its actions?'
         ]],
         'What does a reliability evaluation for a self-driving lab look like, and how do we know an agent is ready for real-world adoption?'
       ]

@@ -5,7 +5,7 @@ permalink: /research/
 author_profile: true
 ---
 
-I build machine-learning models and agents for chemistry and biology, from molecular representations to agents that choose experiments in a real laboratory. Across that work I keep coming back to the same questions: how these systems learn from scarce data, whether their reasoning can be checked, and when their decisions can be trusted.
+I build machine-learning models and agents for chemistry and biology, from molecular representations to agents that choose experiments in a real laboratory. Across that work I keep coming back to the same questions: how these systems learn from scarce data, whether their reasoning can be checked, and when their decisions can be trusted, including when what they read is adversarial.
 
 ---
 ## MATS (Machine Alignment, Transparency & Security)
@@ -37,7 +37,7 @@ I build machine-learning models and agents for chemistry and biology, from molec
 ## University of Toronto — Chemspace Lab
 **Machine Learning Research Student** | May 2024 – April 2026 | Toronto, ON
 
-- Developed a **data-efficient learning architecture** by deriving symmetric representations from second-derivative Hessian and DFT matrices, accelerating the modeling of alchemical exchange invariant molecules by **2×**.
+- Designed **symmetry-aware, data-efficient representations** from physics-chosen invariants on the parent geometry for alchemical-exchange-invariant molecules: within about 2 mHa of SchNet up to about 200 training molecules at 1/2,300 of its compute, and ahead of SOAP and both Coulomb-matrix variants up to about 400.
 - Investigated methods for **designing chemical features** for molecular energy curves by comparing interpolation-based 3D sorting with ML-based approaches, analyzing how ordering/representation of atoms affects downstream model interpretability.
 - Implemented algorithms such as A\*, locality-sensitive hashing, and genetic algorithms on molecular energy curve sorting. Developed a KNN classifier to group molecules for generating smooth 3D molecular energy curves.
 - Explored how a **generative Gaussian mixture model** with cross-validation using PyTorch could predict low-energy conformers of 4-atom molecules.

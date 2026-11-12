@@ -48,7 +48,7 @@ roadmap:
       scene_title: "Better chemistry, not just better scores"
       scene_note: "If that structure is real, can it steer molecular design better than text prompting?"
     - title: "Trust"
-      text: "know when to verify in the lab"
+      text: "reliable decisions, resistant to adversarial inputs"
       icon: shield
       scene: trajectory
       scene_title: "Checked at every step"
@@ -71,7 +71,7 @@ now:
     icon: flask
   - title: "PhD applications"
     status: "Fall 2027"
-    text: "Understanding and improving ML models for chemistry."
+    text: "ML models and agentic systems for scientific discovery."
     icon: cap
 
 # --- What I've built ---------------------------------------------------------
@@ -94,7 +94,7 @@ built:
 
 # --- Where I'm heading -------------------------------------------------------
 heading:
-  lede: "I want to understand what chemistry models actually learn, use that to make them better, and know when they can be trusted in the lab."
+  lede: "In my PhD, I hope to work on both the machine learning models and the agentic systems behind scientific discovery: how models can best represent and reason about molecules, and how agents built on them can be trusted in the lab, from reliable decisions to resisting adversarial inputs. I'm also excited to explore new directions where these questions lead."
   figure_scene: gate
   figure_title: "Checks before every action"
   figure_note: "Cheap enough to run every time: safe actions pass, risky ones stop for review."
@@ -108,6 +108,9 @@ heading:
     - title: "Checks cheap enough to use"
       text: "So an agent can verify before it acts in the lab."
       icon: shield
+    - title: "Agents that resist adversarial inputs"
+      text: "What an agent reads in the lab shouldn't get to choose its actions."
+      icon: flask
   map_intro: "The full map, from molecules to agents in the lab. Click a node."
 
 # --- Beyond research ---------------------------------------------------------
