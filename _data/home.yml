@@ -4,7 +4,7 @@
 
 # --- Roadmap at the top: built -> now -> next -------------------------------
 # Each box opens a drawing when clicked. `scene` picks the drawing:
-# molecule, latent, loop, trajectory, gate, lens or edit (see assets/js/).
+# molecule, latent, loop, trajectory, gate, scaling, lens or edit (see assets/js/).
 roadmap:
   built_label: "What I've built"
   now_label: "Now"
@@ -20,7 +20,7 @@ roadmap:
       scene_note: "Symmetry and geometry go into the representation. This one is HBDI, the GFP chromophore from my time in the Brown Lab."
       scene_hint: "drag to rotate"
     - title: "Reasoning"
-      text: "chemical language models"
+      text: "latent reasoning, confidence"
       icon: route
       color: "#c2185b"
       scene: latent
@@ -35,20 +35,19 @@ roadmap:
       scene_note: "The agent analyzes results and designs the next step. Anything that changes the lab waits for human approval."
   next:
     - title: "Understand"
-      text: "what has the model learned about chemistry?"
+      text: "when does built-in scientific structure still help?"
       icon: eye
-      scene: lens
-      scene_title: "Is the chemistry really in there?"
-      scene_note: "Do a model's internal states line up with real chemical structure, like motifs and 3D geometry, and does it use them?"
-      scene_hint: "move your cursor to probe"
+      scene: scaling
+      scene_title: "Does built-in structure still help at scale?"
+      scene_note: "My symmetry-built representation kept pace with a neural network on a few hundred molecules, then hit a floor. Do such gains vanish with scale, and what are they worth where data or compute is limited?"
     - title: "Improve"
       text: "reason over geometry and language"
       icon: molecule
       scene: edit
-      scene_title: "Better chemistry, not just better scores"
-      scene_note: "If that structure is real, can it steer molecular design better than text prompting?"
+      scene_title: "Geometry and language, together"
+      scene_note: "Which architectures best integrate molecular geometry with sequence and language, and does each make the other better?"
     - title: "Trust"
-      text: "reliable decisions, resistant to adversarial inputs"
+      text: "checks before an agent acts, even on adversarial inputs"
       icon: shield
       scene: trajectory
       scene_title: "Checked at every step"
@@ -75,42 +74,51 @@ now:
     icon: cap
 
 # --- What I've built ---------------------------------------------------------
+# `result` is one measured outcome, in the SOP's wording.
 built:
   - title: "Representations"
     text: "Building what the science already knows into what a model sees."
+    result: "Within about 2 mHa of SchNet up to about 200 training molecules."
     icon: molecule
     color: "#7a2a6c"
     tags: ["NeurIPS 2026 WiML", "AAAI 2026 UC", "CUCAI 2025", "Cell Systems (in review)"]
   - title: "Reasoning"
-    text: "Latent reasoning and confidence in chemical language models."
+    text: "Latent reasoning in a chemistry language model, and when a model's confidence can be relied on."
+    result: "Beats chain-of-thought in about 60% of non-tied comparisons, with a tenth of the reasoning steps."
     icon: route
     color: "#c2185b"
     tags: ["ICML 2026", "ICML 2026 WiML"]
   - title: "Agents"
     text: "An agent that analyzes experiments in a self-driving lab, under human control."
+    result: "Found the best of 28 conditions in every replayed run of 8+ measurements."
     icon: flask
     color: "#e0527f"
     tags: ["NeurIPS 2026 AI4Mat"]
 
 # --- Where I'm heading -------------------------------------------------------
 heading:
-  lede: "In my PhD, I hope to work on both the machine learning models and the agentic systems behind scientific discovery: how models can best represent and reason about molecules, and how agents built on them can be trusted in the lab, from reliable decisions to resisting adversarial inputs. I'm also excited to explore new directions where these questions lead."
+  lede: "In my PhD, I hope to work on both the machine learning models and the agentic systems behind scientific discovery: how models can best represent and reason about molecules, including where data and compute are limited, and how agents built on them can be trusted in the lab, from reliable decisions to resisting adversarial inputs. I'm also excited to explore new directions where these questions lead."
   figure_scene: gate
   figure_title: "Checks before every action"
   figure_note: "Cheap enough to run every time: safe actions pass, risky ones stop for review."
+  # `status` is the roadmap box each direction belongs to.
   directions:
-    - title: "Does the model use chemistry, or only contain it?"
-      text: "Follow its reasoning against chemical motifs and 3D geometry."
-      icon: eye
+    - title: "When does built-in structure still help?"
+      status: "Understand"
+      text: "Do the gains from symmetry and geometry vanish with scale, and what are they worth where data or compute is limited?"
+      icon: layers
     - title: "Geometry and language together"
-      text: "Models that reason over molecules and text at once."
+      status: "Improve"
+      text: "Models that reason over molecules and text at once, and whether each makes the other better."
       icon: molecule
-    - title: "Checks cheap enough to use"
-      text: "So an agent can verify before it acts in the lab."
-      icon: shield
-    - title: "Agents that resist adversarial inputs"
+    - title: "What is the model actually doing?"
+      status: "Trust"
+      text: "Latent reasoning leaves no steps to read. Turn what it does into checks cheap enough to run before an agent acts."
+      icon: eye
+    - title: "Checks that hold on adversarial inputs"
+      status: "Trust"
       text: "What an agent reads in the lab shouldn't get to choose its actions."
-      icon: flask
+      icon: shield
   map_intro: "The full map, from molecules to agents in the lab. Click a node."
 
 # --- Beyond research ---------------------------------------------------------

@@ -32,7 +32,8 @@
           'Could GPU / hardware be designed for better molecular representation?',
           'Could statistical methods be developed to predict molecular dynamics over long ranges of time?'
         ]],
-        'Can we design networks with high inductive bias that are still generalizable (train on small amounts of data, but have it work for a large number of use cases)?'
+        'Can we design networks with high inductive bias that are still generalizable (train on small amounts of data, but have it work for a large number of use cases)?',
+        'When does building scientific structure into a model, such as symmetry or geometry, still help as data grows, and what is it worth where data or compute is limited?'
       ]
     },
     {
@@ -86,13 +87,13 @@
     }
   ];
 
-  // Safety layers sit under the node row and span the nodes they cover.
+  // Trust layers sit under the node row and span the nodes they cover.
   var LAYERS = [
     {
       id: 'model-safety', type: 'layer', covers: ['repr', 'reason', 'lang', 'lab'],
       color: '#b9770e', soft: 'rgba(185, 119, 14, 0.26)', bg: 'rgba(185, 119, 14, 0.08)', bgHover: 'rgba(185, 119, 14, 0.16)',
-      label: 'Model safety', short: 'Model safety',
-      title: 'Model safety',
+      label: 'Trust in the model', short: 'Trust in the model',
+      title: 'Trust in the model',
       sub: 'Decision making, reasoning, interpretability, and confidence calibration. Can we trust what the model is doing before it acts?',
       tree: [
         ['How does decision making inside an agentic system actually work?', [
@@ -113,8 +114,8 @@
     {
       id: 'lab-safety', type: 'layer', covers: ['lang', 'lab'],
       color: '#6b6470', soft: 'rgba(107, 100, 112, 0.26)', bg: 'rgba(107, 100, 112, 0.08)', bgHover: 'rgba(107, 100, 112, 0.16)',
-      label: 'Lab-in-the-loop safety', short: 'Lab guardrails',
-      title: 'Lab-in-the-loop safety',
+      label: 'Trust in the lab', short: 'Trust in the lab',
+      title: 'Trust in the lab',
       sub: 'The guardrails that let an agent run experiments autonomously without a catastrophic mistake, including when its inputs are adversarial.',
       tree: [
         ['What guardrails does an agent need to be autonomous in a lab without catastrophic failures?', [
@@ -187,9 +188,9 @@
   root.innerHTML = '';
 
   var header = el('div', 'ai4chem__header');
-  header.appendChild(el('div', 'ai4chem__eyebrow', 'Interactive · click a node or a safety layer, hover an edge'));
-  header.appendChild(el('div', 'ai4chem__title', 'From molecules to agents in the lab, with safety underneath'));
-  header.appendChild(el('div', 'ai4chem__sub', 'From “fundamental” chemistry on the left to agentic, cross-discipline work on the right. Each layer feeds the next, feedback runs back the other way, and two safety layers run underneath: one for the model, one for the lab.'));
+  header.appendChild(el('div', 'ai4chem__eyebrow', 'Interactive · click a node or a trust layer, hover an edge'));
+  header.appendChild(el('div', 'ai4chem__title', 'From molecules to agents in the lab, with trust underneath'));
+  header.appendChild(el('div', 'ai4chem__sub', 'From “fundamental” chemistry on the left to agentic, cross-discipline work on the right. Each layer feeds the next, feedback runs back the other way, and two trust layers run underneath: one for the model, one for the lab.'));
   root.appendChild(header);
 
   var stage = el('div', 'ai4chem__stage');
@@ -404,7 +405,7 @@
       });
       detail.appendChild(conn);
 
-      var safety = chipGroup('Safety layers');
+      var safety = chipGroup('Trust layers');
       LAYERS.forEach(function(l) {
         if (l.covers.indexOf(n.id) === -1) return;
         safety.chips.appendChild(chip(l.color, ICONS.shield, l.label, l.sub, l.id));
@@ -489,7 +490,7 @@
   draw();
   // The homepage keeps the panel closed until a node is picked (less text up front).
   if (root.hasAttribute('data-start-closed')) {
-    detail.innerHTML = '<p class="ai4chem__empty">Pick a node or a safety layer to see the questions I would ask there.</p>';
+    detail.innerHTML = '<p class="ai4chem__empty">Pick a node or a trust layer to see the questions I would ask there.</p>';
   } else {
     select('repr');
   }

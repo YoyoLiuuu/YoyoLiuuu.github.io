@@ -3,8 +3,9 @@
 //   latent  paths through latent space settling into clusters      (Reasoning)
 //   loop    design - make - test - analyze, with a human gate       (Agents)
 //   gate    actions checked before they reach the lab               (checks before acting)
-//   lens    a probe that reveals hidden structure                   (Understand)
+//   scaling built-in structure vs a neural network as data grows    (Understand)
 //   edit    molecular edits tried and scored                        (Improve)
+//   lens    a probe that reveals hidden structure                   (not on the page at the moment)
 // The molecule and trajectory drawings live in molecule.js / trajectory.js.
 (function () {
   var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -251,6 +252,60 @@
     };
   }
 
+  // ---- scaling: built-in structure keeps pace on little data, then hits a floor
+  // An illustration only: the curves sketch the trend, they are not measured data.
+
+  function scaling(env) {
+    var FLOOR = 0.4, K = 14, SCARCE = 0.36;
+    function net(u) { return 0.82 * Math.pow(1 - u, 1.4) + 0.07; }
+    // runs alongside the network, then levels off at FLOOR
+    function built(u) { return Math.log(Math.exp(K * (net(u) + 0.03)) + Math.exp(K * FLOOR)) / K; }
+    return function (t) {
+      var ctx = env.ctx, W = env.W, H = env.H, c = env.c;
+      var x0 = W * 0.13, x1 = W * 0.93, base = H * 0.8, top = H * 0.14;
+      function px(u) { return x0 + u * (x1 - x0); }
+      function py(v) { return base - v * (base - top); }
+      var drawn = reduceMotion ? 1 : Math.min(1, (t % 6.5) / 3.6);   // 3.6 s drawing, then rest
+
+      // where data is scarce
+      ctx.globalAlpha = 0.08;
+      ctx.fillStyle = STOPS[0];
+      ctx.fillRect(x0, top, px(SCARCE) - x0, base - top);
+      ctx.globalAlpha = 1;
+      text(env, 'limited data', px(SCARCE / 2), base - 13, STOPS[0]);
+
+      // axes
+      ctx.strokeStyle = c.edge;
+      ctx.lineWidth = 1.5;
+      ctx.lineJoin = 'round';
+      ctx.beginPath(); ctx.moveTo(x0, top); ctx.lineTo(x0, base); ctx.lineTo(x1, base); ctx.stroke();
+      text(env, 'error', x0, top - 12, c.muted);
+      text(env, 'training data', (x0 + x1) / 2, base + 18, c.muted);
+      text(env, 'illustration, not measured data', x1, top - 12, c.muted, 'right');
+
+      function curve(fn, color, width) {
+        ctx.beginPath();
+        for (var s = 0; s <= 60; s++) {
+          var u = drawn * s / 60;
+          if (s === 0) ctx.moveTo(px(u), py(fn(u))); else ctx.lineTo(px(u), py(fn(u)));
+        }
+        ctx.strokeStyle = color;
+        ctx.lineWidth = width;
+        ctx.lineCap = 'round';
+        ctx.stroke();
+        dot(ctx, px(drawn), py(fn(drawn)), 4, color);
+      }
+      curve(net, c.muted, 2);
+      curve(built, STOPS[0], 2.6);
+
+      if (drawn > 0.3) text(env, 'keeps pace', px(SCARCE / 2), py(0.42), STOPS[0]);
+      if (drawn >= 1) {
+        text(env, 'structure built in', x1, py(FLOOR) - 13, STOPS[0], 'right');
+        text(env, 'neural network', px(0.6), py(net(0.6)) + 17, c.muted);
+      }
+    };
+  }
+
   // ---- edit: try molecular edits, keep the one that scores best --------------
   // An illustration only: the bars are made-up scores, not real chemistry.
 
@@ -319,7 +374,7 @@
     };
   }
 
-  var SCENES = { latent: latent, loop: loop, gate: gate, lens: lens, edit: edit };
+  var SCENES = { latent: latent, loop: loop, gate: gate, scaling: scaling, lens: lens, edit: edit };
 
   // ---- driver: size, theme, pointer, and only animate while on screen --------
 

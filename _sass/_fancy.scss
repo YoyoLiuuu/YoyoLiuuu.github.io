@@ -927,6 +927,16 @@ body {
   line-height: 1.5;
 }
 
+/* one measured outcome under a "What I've built" card */
+.tile__result {
+  margin-top: 0.7rem;
+  padding-left: 0.65rem;
+  border-left: 2px solid var(--c);
+  color: var(--ink-2);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
 .tile__tags {
   display: flex;
   flex-wrap: wrap;

@@ -13,6 +13,7 @@ I build machine-learning models and agents for chemistry and biology, from molec
 *Mentored by David Peinador Veiga*
 
 - Will work on **evaluating and mitigating catastrophic risks from dangerous scientific capabilities in frontier AI**, particularly biology, chemistry, and agents integrated with physical lab equipment.
+- Plan to test whether a model's **reasoning trajectory can flag when it leaves its validated domain**, early enough to verify before an agent acts.
 
 ---
 ## University of Toronto — Matter Lab (Aspuru-Guzik Group)
@@ -29,8 +30,26 @@ I build machine-learning models and agents for chemistry and biology, from molec
 - Architected and implemented a **full-stack platform connecting LLM agents with laboratory hardware and scientific software** through validated, permission-scoped interfaces for self-driving laboratories.
 - Deployed and served open-weight LLMs on local compute clusters, building inference infrastructure and tooling for researchers to run models within on-premise scientific workflows.
 - Engineered **closed-loop agentic workflows** for experiment execution, data analysis, and adaptive decision-making, integrating physical hardware with automated tool execution and failure recovery.
-- First-author paper, *The A to D in DMTA: Agentic Analysis for Self-Driving Labs*, accepted to the [NeurIPS 2026 AI4Mat Workshop](/publications/). Replaying a 28-well oxidant screen from archived measurements, the agent found the best condition in every campaign with a budget of 8+ injections; in the live run it flagged two failed sample transfers.
+- First-author paper, *Closing the Analyze-to-Design Gap: An Authorization-Bounded Agent for Self-Driving Laboratories* ([arXiv:2611.25043](https://arxiv.org/abs/2611.25043)); an earlier version, *The A to D in DMTA*, was accepted to the [NeurIPS 2026 AI4Mat Workshop](/publications/). Replaying a 28-well oxidant screen from archived measurements, the agent found the best condition in every campaign with a budget of 8+ injections, where eight random picks include it only 29% of the time; in the live run it flagged two failed sample transfers.
 - Continuing part-time after the summer internship on **reliable agentic reasoning and decision making** — making an agent's reasoning trustworthy enough to act on.
+
+---
+
+## LatentChem — Latent Reasoning in a Chemistry Language Model
+**Co-author** | ICML 2026 | [arXiv:2602.07075](https://arxiv.org/abs/2602.07075)
+
+- Helped design the **reasoning logic and training strategy** for a chemistry language model that reasons in continuous vectors instead of words; also helped construct the dataset and train the model.
+- We adapted Coconut's continuous-thought reasoning and added a **latent token that represents the chemical structure** and is updated as the reasoning proceeds.
+- Beats a strong chain-of-thought baseline in about **60% of non-tied comparisons with roughly a tenth of the reasoning steps**.
+- t-SNE visualizations of its latent states showed similar chemical reasoning ending in nearby regions. I want to test whether that structure is real, and whether it can make latent reasoning traceable.
+
+---
+
+## Trajectory-Based Confidence — When Should a Model Ask for a Hint?
+**Co-first author** | WiML Workshop at ICML 2026 | [Poster](/posters/wiml-icml-2026/)
+
+- Asked whether a **small language model's confidence can tell it when to ask for a hint**, comparing six confidence signals. Set up the experimental framework, designed the experiments, and ran most of them.
+- Only the **disagreement among a model's sampled answers** stays selective across all four models, and on the two we timed, computing it costs more than the hints it saves.
 
 ---
 
