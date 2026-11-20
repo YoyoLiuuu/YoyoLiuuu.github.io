@@ -43,7 +43,7 @@ Authors: Xiangru Tang\*, Xinwu Ye\*, Fang Wu\*, **Yimeng Liu**, Anna Su, Antonia
 **NeurIPS 2026, AI for Accelerated Materials Design (AI4Mat) Workshop**<br>
 *Closing the Analyze-to-Design Gap: An Authorization-Bounded Agent for Self-Driving Laboratories.*<br>
 Authors: **Yimeng Liu**, E. Isbrandt\*, F. Katzenburg\*, Kevin Greenman, H. Hao, Y. Cao, Varinia Bernales, Alán Aspuru-Guzik.<br>
-Presented at the workshop as "The A to D in DMTA (Design, Make, Test, and Analyze): Agentic Analysis for Self-Driving Labs". [arXiv:2611.25043](https://arxiv.org/abs/2611.25043)<br>
+Presented at the workshop as "The A to D in DMTA (Design, Make, Test, and Analyze): Agentic Analysis for Self-Driving Labs". [arXiv:2611.25043](https://arxiv.org/abs/2611.25043) · [Poster](/posters/ai4mat-neurips-2026/)<br>
 *Grew out of my [ML research internship](/research/) at the Acceleration Consortium.*
 
 ---
