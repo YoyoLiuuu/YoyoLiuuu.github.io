@@ -67,14 +67,6 @@ I build machine-learning models and agents for chemistry and biology, from molec
 
 ---
 
-## Pioneer Academics
-**Researcher — Computational Chemistry** | May – September 2022 | Remote
-
-- **Modeled the secondary and tertiary structures of the HIV-1 RNA terminal loop hairpin**, integrating computational chemistry and molecular structural analysis under the mentorship of Professor Lectka (Johns Hopkins University). Achieved a grade of A.
-- Utilized Gaussian, GAMESS, and Spartan to optimize 3D RNA conformations and studied how **hairpin folding** influences key **molecular properties**, including polarity, energy, intramolecular forces, and interactions with other molecules.
-
----
-
 ## University of Alberta — Brown Lab
 **Research Assistant — Computational Chemistry** | October 2021 – July 2023 | Edmonton, AB
 
