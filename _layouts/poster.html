@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+{% comment %}
+  One poster, at /posters/<slug>/. The PDF and its preview image are found by
+  slug: files/posters/<slug>.pdf and files/posters/<slug>.jpg (both written by
+  scripts/add_poster.sh).
+{% endcomment %}
+
+{% include base_path %}
+{% capture stem %}{{ base_path }}/files/posters/{{ page.slug }}{% endcapture %}
+
+<div id="main" class="poster-page" role="main">
+  <article class="poster{% if page.orientation == 'portrait' %} poster--portrait{% endif %}">
+    <header class="poster__head">
+      <p class="poster__eyebrow"><a href="{{ base_path }}/posters/">Posters</a></p>
+      <h1 class="page__title">{{ page.title }}</h1>
+      <p class="poster__venue">
+        {{ page.venue }}{% if page.location %}<span class="poster__sep" aria-hidden="true">·</span>{{ page.location }}{% endif %}{% if page.presented %}<span class="poster__sep" aria-hidden="true">·</span>{{ page.presented | date: "%B %Y" }}{% endif %}
+      </p>
+      {% if page.authors %}<p class="poster__authors">{{ page.authors }}{% if page.note %} <span class="poster__note">({{ page.note }})</span>{% endif %}</p>{% endif %}
+      <p class="poster__actions">
+        <a class="btn-pill btn-pill--primary" href="{{ stem }}.pdf"><i class="fas fa-file-pdf" aria-hidden="true"></i> Open PDF</a>
+        <a class="btn-pill" href="{{ base_path }}/posters/">All posters</a>
+      </p>
+    </header>
+
+    {{ content }}
+
+    <a class="poster__sheet" href="{{ stem }}.pdf" title="Open the full-resolution PDF">
+      <img src="{{ stem }}.jpg" alt="Poster: {{ page.title | escape }}">
+    </a>
+  </article>
+</div>

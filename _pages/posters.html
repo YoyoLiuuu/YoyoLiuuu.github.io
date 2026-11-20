@@ -1,0 +1,31 @@
+---
+layout: archive
+title: "Posters"
+permalink: /posters/
+author_profile: true
+---
+
+{% comment %}
+  Lists everything in _posters/, newest first. To add one:
+  scripts/add_poster.sh <poster.pdf> <slug>
+{% endcomment %}
+
+{% include base_path %}
+{% assign posters = site.posters | sort: "presented" | reverse %}
+
+<p class="poster-list__intro">Posters from conferences and workshops. Each one opens on its own page, with the full PDF.</p>
+
+<div class="poster-list">
+  {% for poster in posters %}
+    <a class="poster-card" href="{{ base_path }}{{ poster.url }}">
+      <span class="poster-card__thumb">
+        <img src="{{ base_path }}/files/posters/{{ poster.slug }}-thumb.jpg" alt="" loading="lazy">
+      </span>
+      <span class="poster-card__body">
+        <span class="poster-card__venue">{{ poster.venue }}{% if poster.presented %} · {{ poster.presented | date: "%b %Y" }}{% endif %}</span>
+        <span class="poster-card__title">{{ poster.title }}</span>
+        {% if poster.authors %}<span class="poster-card__authors">{{ poster.authors }}</span>{% endif %}
+      </span>
+    </a>
+  {% endfor %}
+</div>

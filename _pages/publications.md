@@ -24,7 +24,7 @@ Authors: Xinwu Ye\*, Yicheng Mao\*, Yuxuan Liao, Jia Zhang, **Yimeng Liu**, Li H
 
 **Canadian Undergraduate Conference on AI (CUCAI) 2025**<br>
 *RiboFold — Ribozyme RNA 3D Folding Prediction.*<br>
-Authors: **Yimeng Liu**\*, Purav Gupta\*, Nicholas Carbones, Xin Lei Lin, Flora Liu, Ahmad Khan, Rahul Selvakumar.
+Authors: **Yimeng Liu**\*, Purav Gupta\*, Nicholas Carbones, Xin Lei Lin, Flora Liu, Ahmad Khan, Rahul Selvakumar. [Poster](/posters/cucai-2025/)
 
 ---
 
@@ -39,14 +39,14 @@ Authors: **Yimeng Liu**, E. Isbrandt\*, F. Katzenburg\*, Kevin Greenman, H. Hao,
 
 **NeurIPS 2026, Women in Machine Learning Workshop**<br>
 *Recovering Hidden Chemistry: Improving LLM Fine-Tuning on Metabolic Pathways.*<br>
-Author: **Yimeng Liu**.<br>
+Author: **Yimeng Liu**. [Poster](/posters/wiml-neurips-2026/)<br>
 *Grew out of my [SERIUS research internship](/research/#national-university-of-singapore--serius-internship) at the National University of Singapore.*
 
 ---
 
 **ICML 2026, Women in Machine Learning Workshop**<br>
 *Trajectory-Based Confidence for Efficient Hint Retrieval in Agentic Small Language Models.*<br>
-Authors: **Yimeng Liu**\*, Priyanka Mary Mammen\*, Mahalakshmi Venkateswarlu.
+Authors: **Yimeng Liu**\*, Priyanka Mary Mammen\*, Mahalakshmi Venkateswarlu. [Poster](/posters/wiml-icml-2026/)
 
 ---
 
