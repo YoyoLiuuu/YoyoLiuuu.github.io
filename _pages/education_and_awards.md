@@ -10,7 +10,7 @@ redirect_from:
 ## Education
 
 **University of Toronto, St. George Campus**, September 2023 – June 2027<br>
-*Honours Bachelor of Science in Computer Science and Biological Chemistry*, GPA: 3.92
+*Honours Bachelor of Science in Computer Science*, GPA: 3.92
 
 - Specialist in Artificial Intelligence, Technology Leadership Initiative
 - Arts and Science Internship Program (Co-op)
