@@ -23,16 +23,27 @@ redirect_from:
 
 ## Awards
 
-- **WiML Travel Grant** — Women in Machine Learning Workshop at NeurIPS 2026
-- **Summer Research Award in Accelerated Discovery** — Acceleration Consortium
-- **AAAI 2026 Undergraduate Consortium Scholarship Recipient** — AAAI 2026
-- **Dean's List 2024, 2025, 2026** — University of Toronto
-- **The Dr Lorus J. Milne and Dr Margery J. Milne Research Award**
-- **Centre of International Experience Summer Research Exchange Award**
-- **The John Grant Leadership Award**
-- **The Roy Alvin Hope Scholarship**
-- **The Dr Roseann Runte Award**
-- **The Katherine St. John Scholarship**
+### Research funding
+
+- **Summer Research Award in Accelerated Discovery** — Acceleration Consortium, University of Toronto (CAD 10,000, 2026)
+- **Summer Research Exchange Award** — University of Toronto, for the NUS exchange (CAD 5,000, 2025)
+- **Dr. Lorus J. Milne and Dr. Margery J. Milne Research Award** — Victoria College (CAD 3,000, 2025)
+
+### Conference travel
+
+- **WiML Travel Grant** — for NeurIPS 2026 (about USD 2,000)
+- **Susan McDonald Award** — for NeurIPS 2026 (CAD 1,000)
+- **Department of Computer Science Travel Grant** — for ICML 2026 (CAD 600)
+- **AAAI 2026 Undergraduate Consortium Scholarship** — travel, accommodation and registration
+
+### University of Toronto
+
+- **Konrad Group Women in Technology Scholarship** (CAD 2,000, 2026)
+- **John Grant Leadership Award** (CAD 1,500, 2025)
+- **Roy Alvin Hope Scholarship** (CAD 1,000, 2026)
+- **Dean's List** — 2023–24, 2024–25, 2025–26
+- **Dr. Roseann Runte Award**
+- **Katherine St. John Scholarship**
 - **Department of Computer Science Engagement Award**
 
 ---
