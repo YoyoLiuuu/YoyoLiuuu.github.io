@@ -15,14 +15,6 @@ author_profile: true
 
 ---
 
-## RiboFold — Ribozyme RNA 3D Folding Prediction
-**Team Lead** | University of Toronto Machine Intelligence Student Team | October 2024 – March 2025
-
-- Led a team of 6 developers to research and develop a model that **predicts 3D RNA folding** of ribozymes.
-- Won the **Cross-Disciplinary Impact Award** at the Canadian Undergraduate Conference on AI 2025 amongst 70+ projects.
-
----
-
 ## Eco-Score Calculator (Partnership with Cash App)
 **Developer** | University of Toronto, Focus in Technology Leadership Program | September 2024 – January 2025
 

@@ -8,61 +8,65 @@ author_profile: true
 Full list on [Google Scholar](https://scholar.google.com/citations?user=9_QdylYAAAAJ&hl=en). \* marks equal contribution.
 {: .pub-links}
 
-## Conference Papers
-
-**AAAI 2026 (Undergraduate Consortium)**<br>
-*Towards Data-Efficient Deep Learning for RNA 3D Structure Prediction and Design.*<br>
-Author: **Yimeng Liu**.
-
----
+## Publications
 
 **ICML 2026**<br>
 *LatentChem: From Textual CoT to Latent Thinking in Chemical Reasoning.*<br>
-Authors: Xinwu Ye\*, Yicheng Mao\*, Yuxuan Liao, Jia Zhang, **Yimeng Liu**, Li Hao, Fang Wu, Zhiwei Li, Zehong Wang, Zhiyuan Liu, Zhenfei Yin, Li Yuan, Philip Torr, Huan Sun, Xiangxiang Zeng, Mengdi Wang, Le Cong, Shenghua Gao, Xiangru Tang
+Authors: Xinwu Ye\*, Yicheng Mao\*, Yuxuan Liao, Jia Zhang, **Yimeng Liu**, Li Hao, Fang Wu, Zhiwei Li, Zehong Wang, Zhiyuan Liu, Zhenfei Yin, Li Yuan, Philip Torr, Huan Sun, Xiangxiang Zeng, Mengdi Wang, Le Cong, Shenghua Gao, Xiangru Tang.<br>
+[arXiv:2602.07075](https://arxiv.org/abs/2602.07075)
 
 ---
 
-**Canadian Undergraduate Conference on AI (CUCAI) 2025**<br>
-*RiboFold — Ribozyme RNA 3D Folding Prediction.*<br>
-Authors: **Yimeng Liu**\*, Purav Gupta\*, Nicholas Carbones, Xin Lei Lin, Flora Liu, Ahmad Khan, Rahul Selvakumar. [Poster](/posters/cucai-2025/)
+**AAAI 2026 (Undergraduate Consortium)**<br>
+*Towards Data-Efficient Deep Learning for RNA 3D Structure Prediction and Design.*<br>
+Author: **Yimeng Liu**.<br>
+Proceedings of the AAAI Conference on Artificial Intelligence 40(48), 41501–41503. [doi:10.1609/aaai.v40i48.42320](https://doi.org/10.1609/aaai.v40i48.42320)
 
 ---
 
-## Workshop Papers
+**Advanced Science (in review) · arXiv preprint, 2026**<br>
+*El Agente Fármaco: A Scalable AI Scientist for Drug Discovery.*<br>
+Authors: M. Müller, M. G. Vakili, Y. Ogura, E. Ashoori, S. Wang, A. S. Nascimento, E. Calleja, Y. Zhao, **Yimeng Liu**, et al. (16 authors).<br>
+Role: designed and implemented the evaluation pipeline. [arXiv:2611.03832](https://arxiv.org/abs/2611.03832)
+
+---
+
+**Cell Systems (in review) · bioRxiv preprint, 2024**<br>
+*BC-Design: A Biochemistry-Aware Framework for Inverse Protein Design.*<br>
+Authors: Xiangru Tang\*, Xinwu Ye\*, Fang Wu\*, **Yimeng Liu**, Anna Su, Antonia Panescu, Guanlue Li, Daniel Shao, Dong Xu, Mark Gerstein.<br>
+[bioRxiv:2024.10.28.620755](https://doi.org/10.1101/2024.10.28.620755)
+
+---
+
+## Workshop Papers and Posters
 
 **NeurIPS 2026, AI for Accelerated Materials Design (AI4Mat) Workshop**<br>
-*The A to D in DMTA (Design, Make, Test, and Analyze): Agentic Analysis for Self-Driving Labs.*<br>
+*Closing the Analyze-to-Design Gap: An Authorization-Bounded Agent for Self-Driving Laboratories.*<br>
 Authors: **Yimeng Liu**, E. Isbrandt\*, F. Katzenburg\*, Kevin Greenman, H. Hao, Y. Cao, Varinia Bernales, Alán Aspuru-Guzik.<br>
+Presented at the workshop as "The A to D in DMTA (Design, Make, Test, and Analyze): Agentic Analysis for Self-Driving Labs". [arXiv:2611.25043](https://arxiv.org/abs/2611.25043)<br>
 *Grew out of my [ML research internship](/research/) at the Acceleration Consortium.*
 
 ---
 
 **NeurIPS 2026, Women in Machine Learning Workshop**<br>
 *Recovering Hidden Chemistry: Improving LLM Fine-Tuning on Metabolic Pathways.*<br>
-Author: **Yimeng Liu**. [Poster](/posters/wiml-neurips-2026/)<br>
+Author: **Yimeng Liu**.<br>
+[Poster](/posters/wiml-neurips-2026/)<br>
 *Grew out of my [SERIUS research internship](/research/#national-university-of-singapore--serius-internship) at the National University of Singapore.*
 
 ---
 
 **ICML 2026, Women in Machine Learning Workshop**<br>
 *Trajectory-Based Confidence for Efficient Hint Retrieval in Agentic Small Language Models.*<br>
-Authors: **Yimeng Liu**\*, Priyanka Mary Mammen\*, Mahalakshmi Venkateswarlu. [Poster](/posters/wiml-icml-2026/)
+Authors: **Yimeng Liu**\*, Priyanka Mary Mammen\*, Mahalakshmi Venkateswarlu.<br>
+[Poster](/posters/wiml-icml-2026/)
 
 ---
 
-## Preprints
-
-**Advanced Science (in review) · arXiv preprint, 2026**<br>
-*El Agente Fármaco: A Scalable AI Scientist for Drug Discovery.*<br>
-Authors: M. Müller, M. G. Vakili, Y. Ogura, E. Ashoori, S. Wang, A. S. Nascimento, E. Calleja, Y. Zhao, **Yimeng Liu**, et al. [arXiv:2611.03832](https://arxiv.org/abs/2611.03832)
-
----
-
-## Journal Papers
-
-**Cell Systems (in review) · bioRxiv preprint, 2024**<br>
-*BC-Design: A Biochemistry-Aware Framework for Inverse Protein Design.*<br>
-Authors: Xiangru Tang\*, Xinwu Ye\*, Fang Wu\*, **Yimeng Liu**, Anna Su, Antonia Panescu, Guanlue Li, Daniel Shao, Dong Xu, Mark Gerstein.
+**Canadian Undergraduate Conference on AI (CUCAI) 2025 · Cross-Disciplinary Impact Award**<br>
+*RiboFold: Ribozyme RNA 3D Folding Prediction.*<br>
+Authors: **Yimeng Liu**\*, Purav Gupta\*, Nicholas Carbones, Xin Lei Lin, Flora Liu, Ahmad Khan, Rahul Selvakumar.<br>
+[Poster](/posters/cucai-2025/)
 
 ---
 
